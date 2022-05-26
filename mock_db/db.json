@@ -1,0 +1,69 @@
+{
+  "clients" : [
+    {
+      "id":1, "nom": "Olivier", "prenom": "Aton",
+      "adresse": "Soccer tokyo", "societe": "New Team"
+    },
+    {
+      "id":2, "nom": "Jones", "prenom": "Indiana",
+      "adresse": "Le temple perdu", "societe": "La jungle"
+    },
+    {
+      "id":3, "nom": "Simpson", "prenom": "Homer",
+      "adresse": "Springfield", "societe": "Centrale nucléaire"
+    },
+    {
+      "id":4, "nom": "Thierry", "prenom": "Henry",
+      "adresse": "1 Arsenal street", "societe": "Equipe de France"
+    },
+    {
+      "id":5, "nom": "Batman", "prenom": "Night",
+      "adresse": "12 rue de la chauve-souris", "societe": "Batmobile"
+    }
+  ],
+
+  "commandes" : [
+    {
+      "id":1, "nom": "Olivier", "prenom": "Aton",
+      "adresse": "Soccer tokyo", "societe": "New Team"
+    },
+    {
+      "id":2, "nom": "Jones", "prenom": "Indiana",
+      "adresse": "Le temple perdu", "societe": "La jungle"
+    },
+    {
+      "id":3, "nom": "Simpson", "prenom": "Homer",
+      "adresse": "Springfield", "societe": "Centrale nucléaire"
+    },
+    {
+      "id":4, "nom": "Thierry", "prenom": "Henry",
+      "adresse": "1 Arsenal street", "societe": "Equipe de France"
+    },
+    {
+      "id":5, "nom": "Batman", "prenom": "Night",
+      "adresse": "12 rue de la chauve-souris", "societe": "Batmobile"
+    }
+    ],"clients" : [
+    {
+      "id":1, "nom": "Olivier", "prenom": "Aton",
+      "adresse": "Soccer tokyo", "societe": "New Team"
+    },
+    {
+      "id":2, "nom": "Jones", "prenom": "Indiana",
+      "adresse": "Le temple perdu", "societe": "La jungle"
+    },
+    {
+      "id":3, "nom": "Simpson", "prenom": "Homer",
+      "adresse": "Springfield", "societe": "Centrale nucléaire"
+    },
+    {
+      "id":4, "nom": "Thierry", "prenom": "Henry",
+      "adresse": "1 Arsenal street", "societe": "Equipe de France"
+    },
+    {
+      "id":5, "nom": "Batman", "prenom": "Night",
+      "adresse": "12 rue de la chauve-souris", "societe": "Batmobile"
+    }
+  ]
+}
+
