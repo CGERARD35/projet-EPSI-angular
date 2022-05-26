@@ -16,6 +16,10 @@ const routes: Routes = [
       import('./clients/clients.module')
         .then((module_) => module_.ClientsModule)
   },
+  { path: 'statistics',  loadChildren : () =>
+      import('./statistics/statistics.module')
+        .then((module_) => module_.StatisticsModule)
+  }
 ];
 
 @NgModule({
