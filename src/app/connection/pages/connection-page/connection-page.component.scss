@@ -1,0 +1,216 @@
+// Calquer sur la homepage
+.connection-page{
+  .home-left{
+    width: 50vw;
+    .card{
+      .login{
+        h2{
+          margin-top: -2rem;
+          margin-bottom: .5rem;
+        }
+        label{
+          font-size: .9rem;
+          margin-left: 2rem;
+          margin-right: auto;
+          margin-bottom: .3rem;
+        }
+        input{
+          border-radius: 3px;
+          border: 1px solid var(--black);
+          height: 25px;
+          width: 200px;
+          padding-left: .3rem;
+          outline-color: var(--blue);
+        }
+        .login-button{
+          margin-top: 2.2rem;
+          height: 35px;
+          font-size: .85rem;
+          font-weight: bold;
+          text-align: center;
+          margin-bottom: auto;
+          width: 130px;
+          cursor: pointer;
+          background-color: var(--blue);
+          border: 2px solid var(--blue);
+          border-radius: 4px;
+          transition: all .4s;
+          outline-color: var(--extreme-dark-blue);
+          color: var(--white);
+          &:hover{
+            background-color: var(--hover-blue);
+            border: 2px solid var(--hover-blue);
+          }
+
+        }
+      }
+
+    }
+  }
+  .home-right{
+    left: 50vw;
+    width: 50vw;
+    .home-right-title{
+      text-align: center;
+    }
+  }
+}
+h2{
+  text-align: center;
+  .login-logo{
+    width: 80px;
+    height: 80px;
+    border-left: 20px solid var(--orange);
+    border-right: 20px solid var(--blue);
+    border-radius: 50%;
+    margin-top: 1rem;
+    margin-bottom: 1.2rem;
+    .logo-blue-bar{
+      font-size: 4.5rem;
+      color: var(--blue);
+      margin-right: -.5rem;
+    }
+    .logo-orange-bar{
+      font-size: 4.5rem;
+      color: var(--orange);
+      text-shadow: 2px 0px 1px var(--orange);
+    }
+  }
+}
+
+.landing-page-overflow{
+  overflow: hidden;
+}
+.home-left{
+  background: var(--orange) 100%;
+  width: 0vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  .home-left-title{
+    font-size: var(--h2-font-size);
+    font-weight: bold;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transform: rotate(-90deg);
+    text-shadow: var(--text-shadow);
+  }
+  .card{
+    position: absolute;
+    width: 265px;
+    height: 380px;
+    border-radius: 10px;
+    box-shadow: 0px 1px 2px var(--grey);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    .login{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 3rem;
+      h2{
+        margin-bottom: 1rem;
+        font-size: var(--h2-font-size);
+      }
+      img{
+        width: 200px;
+        height: 100%;
+      }
+      a{
+        font-size: .9rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: auto;
+        height: 35px;
+        width: 130px;
+        padding-top: .4rem;
+        margin-top: 2.5rem;
+        border: none;
+        border-radius: 4px;
+        color: var(--white);
+        background-color: var(--blue);
+        border: 2px solid var(--blue);
+        transition: all .4s;
+        cursor: pointer;
+        &:hover{
+          color: var(--white);
+          background-color: var(--hover-blue);
+          border: 2px solid var(--hover-blue);
+        }
+      }
+    }
+  }
+  .home-card-background{
+    background: linear-gradient(1900deg, var(--blue) 10%, var(--white) 10%);
+  }
+
+}
+
+.home-right{
+  position: absolute;
+  background: var(--blue);
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  left: 100vw;
+  top: 18px;
+  .home-right-title{
+    font-size: var(--h2-font-size);
+    font-weight: bold;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: var(--text-shadow);
+  }
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .home-left {
+    .home-left-title {
+      font-size: var(--h2-font-size-medium);
+    }
+  }
+  .home-right{
+    .home-right-title{
+      font-size: var(--h2-font-size-medium);
+    }
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .home-left {
+    .home-left-title {
+      font-size: var(--h2-font-size-min);
+    }
+  }
+  .home-right{
+    .home-right-title{
+      font-size: var(--h2-font-size-min);
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .home-left {
+    .home-left-title {
+      opacity: 0;
+    }
+  }
+  .home-right{
+    .home-right-title{
+      opacity: 0;
+    }
+  }
+}
+
+
+
+
