@@ -1,0 +1,132 @@
+.section-form {
+  background-color: var(--middle-blue);
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 70px;
+  padding: 20px;
+  display: flex;
+  border-radius: 4px;
+  .form-title {
+    color: var(--orange);
+    display: flex;
+    width: 100%;
+    text-align: start;
+  }
+  .form {
+    color: var(--orange);
+    .form-title {
+      display: flex;
+    }
+    .bloc {
+      display: flex;
+    }
+    .form-bloc {
+      display: flex;
+      flex-direction: column;
+      margin: 10px;
+      flex: 1;
+      :last-child {
+        flex: 1;
+      }
+      fieldset {
+        border: 0;
+      }
+      .form-line {
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        input {
+          margin-top: 5px;
+          border-radius: 4px;
+        }
+      }
+      .form-radio {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 5px;
+      }
+      input[type="radio"] {
+        margin: 0 0 0 10px;
+      }
+      .form-notes {
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+      }
+      textarea[name="notes"] {
+        resize: none;
+        border-radius: 4px;
+      }
+    }
+    .form-button {
+      display: flex;
+      margin-top: -0.8rem;
+      justify-content: flex-end;
+    }
+    button {
+      background-color: white;
+      color: var(--orange);
+      margin-right: 2rem;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .bloc {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .bloc {
+    flex-direction: row;
+    flex: 1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section-form {
+    margin-left: 50px;
+    flex-direction: column;
+    .form{
+      .form-button-small-screen{
+        display: flex;
+        justify-content: center;
+        margin-left: 2rem;
+        .button-small-screen{
+          width:100px;
+        }
+      }
+      .form-button {
+        display: none;
+      }
+      textarea[name="notes"] {
+        min-height: 150px;
+        width: auto;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .section-form {
+    margin-left: 150px;
+    flex-direction: column;
+    .form-button-small-screen{
+      display: none;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
