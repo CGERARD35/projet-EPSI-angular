@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@import "src/styles/root";
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--body-font);
+
+}
+
+body{
+  background-color: var(--dark-blue);
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
