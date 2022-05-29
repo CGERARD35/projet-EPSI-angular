@@ -36,6 +36,7 @@
         display: flex;
         flex-direction: column;
         input {
+          padding-left: 5px;
           margin-top: 5px;
           border-radius: 4px;
         }
@@ -55,6 +56,7 @@
         margin: 10px;
       }
       textarea[name="notes"] {
+        padding-left: 5px;
         resize: none;
         border-radius: 4px;
       }
