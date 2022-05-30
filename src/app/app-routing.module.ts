@@ -14,7 +14,7 @@ const routes: Routes = [
         .then((module_) => module_.ConnectionModule)
   },
   {
-  path: 'home',
+  path: '',
   component: MenuComponent,
   children: [
     { path: 'clients',  loadChildren : () =>

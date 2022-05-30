@@ -51,6 +51,10 @@
     border-radius: 4px;
     color: var(--extreme-dark-blue);
     background-color: var(--hover-blue);
+    transition: all .4s;
+    &:hover{
+      background-color: var(--orange);
+    }
   }
 }
 
