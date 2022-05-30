@@ -1,6 +1,6 @@
 // GRAPH CHIFFRE D'AFFAIRE DE L'ANNEE
 
-const labels = [
+var labels = [
     'Janvier',
     'Février',
     'Mars',
@@ -15,7 +15,7 @@ const labels = [
     'Décembre',
 ];
 
-const data = {
+var data = {
     labels: labels,
     datasets: [{
         label: 'Chiffre d\'affaire par mois',
@@ -25,7 +25,7 @@ const data = {
     }]
 };
 
-const config = {
+var config = {
     type: 'line',
     data: data,
     options: {
@@ -33,7 +33,7 @@ const config = {
     }
 };
 
-const myChart = new Chart(
+var myChart = new Chart(
     document.getElementById('myChart'),
     config
 );
@@ -43,13 +43,13 @@ const myChart = new Chart(
 
 // GRAPH PRODUIT LE PLUS VENDU
 
-const labelsPie = [
+var labelsPie = [
     'Site Web',
     'CRM',
     'E-Commerce'
 ];
 
-const dataPie = {
+var dataPie = {
     labels: labelsPie,
     datasets: [{
         label: 'Produits les plus vendus',
@@ -68,7 +68,7 @@ const dataPie = {
     }]
 };
 
-const configPie = {
+var configPie = {
     type: 'pie',
     data: dataPie,
     options: {
@@ -76,7 +76,7 @@ const configPie = {
     }
 };
 
-const myChart2 = new Chart(
+var myChart2 = new Chart(
     document.getElementById('myChart2'),
     configPie
 );
@@ -86,14 +86,14 @@ const myChart2 = new Chart(
 
 // GRAPH CHIFFRE PAR VENDEUR
 
-const labelsBar1 = [
+var labelsBar1 = [
     'Carl',
     'Benjamin',
     'Gurvan',
     'Capgemini'
 ];
 
-const dataBar1 = {
+var dataBar1 = {
     labels: labelsBar1,
     datasets: [{
         label: 'Chiffres par vendeurs',
@@ -108,7 +108,7 @@ const dataBar1 = {
     }]
 };
 
-const configBar1 = {
+var configBar1 = {
     type: 'bar',
     data: dataBar1,
     options: {
@@ -116,7 +116,7 @@ const configBar1 = {
     }
 };
 
-const myChart3 = new Chart(
+var myChart3 = new Chart(
     document.getElementById('myChart3'),
     configBar1
 );
@@ -127,7 +127,7 @@ const myChart3 = new Chart(
 
 // GRAPH CHIFFRES PAR CLIENTS
 
-const labelsClients = [
+var labelsClients = [
     'Capgemini',
     'Capgemini',
     'Capgemini',
@@ -142,7 +142,7 @@ const labelsClients = [
     'Capgemini',
 ];
 
-const dataClients = {
+var dataClients = {
     labels: labelsClients,
     datasets: [{
         label: 'Chiffres par clients',
@@ -152,7 +152,7 @@ const dataClients = {
     }]
 };
 
-const configClients = {
+var configClients = {
     type: 'line',
     data: dataClients,
     options: {
@@ -160,7 +160,7 @@ const configClients = {
     }
 };
 
-const myChart4 = new Chart(
+var myChart4 = new Chart(
     document.getElementById('myChart4'),
     configClients
 );
