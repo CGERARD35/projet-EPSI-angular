@@ -33,7 +33,7 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes,
     //Permet d'utiliser le lazy-loading sur l'ensemble de l'application
-    { preloadingStrategy : PreloadAllModules }
+    // { preloadingStrategy : PreloadAllModules }
   )],
   exports: [RouterModule]
 })
