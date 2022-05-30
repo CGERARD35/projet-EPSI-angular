@@ -1,4 +1,4 @@
-const input = document.getElementById("searchbar");
+var input = document.getElementById("searchbar");
 input.addEventListener('input', filterList)
 function filterList(){
     filter = input.value.toLowerCase()
