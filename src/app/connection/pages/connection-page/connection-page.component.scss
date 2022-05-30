@@ -84,7 +84,7 @@ h2{
 .home-left{
   background: var(--orange) 100%;
   width: 0vw;
-  height: 100vh;
+  height: calc(100vh - 20px);
   display: flex;
   align-items: center;
   .home-left-title{
@@ -157,7 +157,7 @@ h2{
   display: flex;
   align-items: center;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 20px);
   z-index: -1;
   left: 100vw;
   top: 18px;
