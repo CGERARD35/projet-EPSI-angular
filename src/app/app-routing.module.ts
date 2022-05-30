@@ -16,6 +16,12 @@ const routes: Routes = [
       import('./clients/clients.module')
         .then((module_) => module_.ClientsModule)
   },
+  {
+    path: 'orders', loadChildren: () =>
+      import('./orders/orders.module')
+        .then((module_) => module_.OrdersModule)
+
+  },
   { path: 'statistics',  loadChildren : () =>
       import('./statistics/statistics.module')
         .then((module_) => module_.StatisticsModule)
@@ -27,6 +33,10 @@ const routes: Routes = [
   { path: 'admin',  loadChildren : () =>
       import('./admin/admin.module')
         .then((module_) => module_.AdminModule)
+  },
+  {path:'**', loadChildren:
+      () => import('./page-not-found/page-not-found.module')
+        .then((module_) => module_.PageNotFoundModule)
   }
 ];
 
