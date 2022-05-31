@@ -2,13 +2,14 @@
   "clients" : [
     {
       "id":1,
-      "nom": "Aton",
-      "prenom": "Olivier",
+      "nom": "Olivier",
+      "prenom": "Aton",
       "societe": "New Team",
       "portable": "0609080706",
       "fixe": "0299675432",
       "statut" : "actif",
-      "notes" : "blablablalabla"
+      "notes" : "blablablalabla",
+      "mail" : "Bob@Bob"
     },
     {
       "id":2,
@@ -18,7 +19,8 @@
       "portable": "0609080706",
       "fixe": "0299675432",
       "statut" : "actif",
-      "notes" : "blablablalabla"
+      "notes" : "blablablalabla",
+      "mail" : "Bob@Bob"
     },
     {
       "id":3,
@@ -28,7 +30,8 @@
       "portable": "0609080706",
       "fixe": "0299675432",
       "statut" : "actif",
-      "notes" : "blablablalabla"
+      "notes" : "blablablalabla",
+      "mail" : "Bob@Bob"
     },
     {
       "id":4,
@@ -38,7 +41,8 @@
       "portable": "0609080706",
       "fixe": "0299675432",
       "statut" : "actif",
-      "notes" : "blablablalabla"
+      "notes" : "blablablalabla",
+      "mail" : "Bob@Bob"
     },
     {
       "id":5,
@@ -48,7 +52,8 @@
       "portable": "0609080706",
       "fixe": "0299675432",
       "statut" : "actif",
-      "notes" : "blablablalabla"
+      "notes" : "blablablalabla",
+      "mail" : "Bob@Bob"
     }
   ],
 
