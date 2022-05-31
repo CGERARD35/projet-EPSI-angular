@@ -1,11 +1,15 @@
 import {ClientI} from "../interface/client-i";
 
 export class Client implements ClientI{
-  adresse = '';
   id = 0;
   nom = '';
   prenom = '';
   societe = '';
+  portable = '';
+  fixe = '';
+  statut = '';
+  notes = '';
+  mail = '';
 
 
   constructor(obj? : Partial<Client>) {

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Observable} from "rxjs";
+import {Client} from "../../../core/models/client";
+import {ClientsService} from "../../clients.service";
 
 @Component({
   selector: 'app-page-clients-list',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageClientsListComponent implements OnInit {
 
-  constructor() { }
+  public clients$!: Observable<Client[]>;
+
+
+  constructor(private clientService: ClientsService) { }
 
   ngOnInit(): void {
+    this.clients$ = this.clientService.getCollection();
+
     this.loadScript('../../../../assets/searchbar.js');
   }
 

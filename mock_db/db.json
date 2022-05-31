@@ -8,7 +8,8 @@
       "portable": "0609080706",
       "fixe": "0299675432",
       "statut" : "actif",
-      "notes" : "blablablalabla"
+      "notes" : "blablablalabla",
+      "mail" : "Bob@Bob"
     },
     {
       "id":2,
@@ -18,7 +19,8 @@
       "portable": "0609080706",
       "fixe": "0299675432",
       "statut" : "actif",
-      "notes" : "blablablalabla"
+      "notes" : "blablablalabla",
+      "mail" : "Bob@Bob"
     },
     {
       "id":3,
@@ -28,7 +30,8 @@
       "portable": "0609080706",
       "fixe": "0299675432",
       "statut" : "actif",
-      "notes" : "blablablalabla"
+      "notes" : "blablablalabla",
+      "mail" : "Bob@Bob"
     },
     {
       "id":4,
@@ -38,7 +41,8 @@
       "portable": "0609080706",
       "fixe": "0299675432",
       "statut" : "actif",
-      "notes" : "blablablalabla"
+      "notes" : "blablablalabla",
+      "mail" : "Bob@Bob"
     },
     {
       "id":5,
@@ -48,7 +52,8 @@
       "portable": "0609080706",
       "fixe": "0299675432",
       "statut" : "actif",
-      "notes" : "blablablalabla"
+      "notes" : "blablablalabla",
+      "mail" : "Bob@Bob"
     }
   ],
 
@@ -73,7 +78,7 @@
       "id":5, "nom": "Batman", "prenom": "Night",
       "adresse": "12 rue de la chauve-souris", "societe": "Batmobile"
     }
-  ],"clients" : [
+  ],"produits" : [
   {
     "id":1, "nom": "Olivier", "prenom": "Aton",
     "adresse": "Soccer tokyo", "societe": "New Team"
