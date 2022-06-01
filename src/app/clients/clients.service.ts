@@ -28,7 +28,7 @@ export class ClientsService {
     return this.httpClient.put<Client>(this.url + '/' + client.id, client);
   }
 
-  addItemById(client: Client): Observable<void> {
-    return this.httpClient.post<void>(this.url, client);
+  addItemById(client: Client): Observable<Client> {
+    return this.httpClient.post<Client>(this.url, client);
   }
 }

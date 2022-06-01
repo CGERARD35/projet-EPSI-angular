@@ -5,7 +5,7 @@
       <h1 class="form-title">Modifier Client</h1>
       <div class="form-button">
         <button class="principal-button" id="edit-button" type="button" (click)="updateClient()"> Modifier</button>
-        <button class="principal-button" id="cancel" type="button">Annuler</button>
+        <button class="principal-button" id="cancel" type="button" [routerLink]="'/clients'">Annuler</button>
       </div>
     </div>
     <div class="bloc">
@@ -18,27 +18,33 @@
 
         <div class="form-line">
           <label for="client-first-name">Prénom du Client</label>
-          <input id="client-first-name" placeholder="Saisir le prénom du Client"
+          <input id="client-first-name" placeholder="Saisir le prénom du client"
                  type="text" name="clientFirstName" [(ngModel)]="client.prenom" required>
         </div>
 
         <div class="form-line">
           <label for="society">Société</label>
           <input id="society" placeholder="Saisir la société"
-                 type="text" name="society" [value]="client.societe">
+                 type="text" name="society" [(ngModel)]="client.societe">
         </div>
 
         <div class="form-line">
           <label for="portable-phone">Téléphone portable</label>
           <input id="portable-phone" placeholder="06 ~"
-                 type="tel" name="portablePhone" [value]="client.portable">
+                 type="tel" name="portablePhone" [(ngModel)]="client.portable">
         </div>
 
         <div class="form-line">
           <label for="fix-phone">Téléphone fixe</label>
           <input id="fix-phone" placeholder="02 ~"
-                 type="tel" name="fixPhone" [value]="client.fixe">
+                 type="tel" name="fixPhone" [(ngModel)]="client.fixe">
         </div>
+
+        <div class="form-line">
+          <label for="mail">e-mail</label>
+          <input id="mail" placeholder="exemple@exemple.com" type="email" name="mail" [(ngModel)]="client.mail">
+        </div>
+
       </div>
       <div class="form-bloc">
         <fieldset class="form-line">
@@ -46,12 +52,12 @@
           <div class="form-radio">
             <div class="radio-option">
               <input type="radio" id="active" name="statut"
-                     value="active" [value]="client.statut">
+                     value="active" [(ngModel)]="client.statut">
               <label for="active">Actif</label>
             </div>
             <div class="radio-option">
               <input type="radio" id="inactive" name="statut"
-                     value="inactive" [value]="client.statut">
+                     value="inactive" [(ngModel)]="client.statut">
               <label for="inactive">Inactif</label>
             </div>
           </div>
@@ -63,8 +69,8 @@
       </div>
     </div>
     <div class="form-button-small-screen">
-      <button class="button-small-screen"  id="edit-button-bottom">Modifier</button>
-      <button class="button-small-screen" id="cancel-bottom" type="button">Annuler</button>
+      <button class="button-small-screen"  id="edit-button-bottom" (click)="updateClient()">Modifier</button>
+      <button class="button-small-screen" id="cancel-bottom" type="button" [routerLink]="'/clients'">Annuler</button>
     </div>
   </form>
   <!-- End Formulaire Modifier Client -->
