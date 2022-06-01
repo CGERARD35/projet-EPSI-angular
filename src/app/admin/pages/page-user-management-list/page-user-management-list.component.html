@@ -28,41 +28,16 @@
       <th>Action</th>
       <th>Etat</th>
     </tr>
-
     </thead>
 
     <tbody>
-    <tr>
-      <td>1</td>
-      <td>Gurvan Mansanarez</td>
-      <td>gurvan.mansanarez@cap.fr</td>
-      <td>Admin</td>
+    <tr *ngFor="let admin of admin$ | async">
+      <td>{{admin.id}}</td>
+      <td>{{admin.nom}} {{admin.prenom}}</td>
+      <td>{{admin.email}}</td>
+      <td>{{admin.role}}</td>
       <td><i class="fa-solid fa-pen-to-square"></i> <i class="fa-solid fa-trash-can"></i></td>
-      <td><p class="contact-active">Actif</p></td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Gurvan Mansanarez</td>
-      <td>gurvan.mansanarez@cap.fr</td>
-      <td>Admin</td>
-      <td><i class="fa-solid fa-pen-to-square"></i> <i class="fa-solid fa-trash-can"></i></td>
-      <td><p class="contact-active">Actif</p></td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Gurvan Mansanarez</td>
-      <td>gurvan.mansanarez@cap.fr</td>
-      <td>Admin</td>
-      <td><i class="fa-solid fa-pen-to-square"></i> <i class="fa-solid fa-trash-can"></i></td>
-      <td><p class="contact-inactif">Inactif</p></td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>Gurvan Mansanarez</td>
-      <td>gurvan.mansanarez@cap.fr</td>
-      <td>Admin</td>
-      <td><i class="fa-solid fa-pen-to-square"></i> <i class="fa-solid fa-trash-can"></i></td>
-      <td><p class="contact-active">Actif</p></td>
+      <td><p class="contact-active">{{admin.statut}}</p></td>
     </tr>
     </tbody>
   </table>
