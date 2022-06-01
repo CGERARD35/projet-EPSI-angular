@@ -1,184 +1,160 @@
 {
-  "clients": [
+  "clients" : [
     {
-      "id": 1,
-      "nom": "Aton",
-      "prenom": "Olivier",
-      "societe": "New Team",
-      "portable": "0609080706",
-      "fixe": "0299675432",
-      "statut": "active",
-      "notes": "blablablalabla",
-      "mail": "Bob@Bob"
-    },
-    {
-      "id": 2,
+      "id":1,
       "nom": "Olivier",
       "prenom": "Aton",
       "societe": "New Team",
       "portable": "0609080706",
       "fixe": "0299675432",
-      "statut": "actif",
-      "notes": "blablablalabla",
-      "mail": "Bob@Bob"
+      "statut" : "actif",
+      "notes" : "blablablalabla",
+      "mail" : "Bob@Bob"
     },
     {
-      "id": 3,
+      "id":2,
       "nom": "Olivier",
       "prenom": "Aton",
       "societe": "New Team",
       "portable": "0609080706",
       "fixe": "0299675432",
-      "statut": "actif",
-      "notes": "blablablalabla",
-      "mail": "Bob@Bob"
+      "statut" : "actif",
+      "notes" : "blablablalabla",
+      "mail" : "Bob@Bob"
     },
     {
-      "id": 4,
+      "id":3,
       "nom": "Olivier",
       "prenom": "Aton",
       "societe": "New Team",
       "portable": "0609080706",
       "fixe": "0299675432",
-      "statut": "actif",
-      "notes": "blablablalabla",
-      "mail": "Bob@Bob"
+      "statut" : "actif",
+      "notes" : "blablablalabla",
+      "mail" : "Bob@Bob"
     },
     {
-      "id": 5,
+      "id":4,
       "nom": "Olivier",
       "prenom": "Aton",
       "societe": "New Team",
       "portable": "0609080706",
       "fixe": "0299675432",
-      "statut": "actif",
-      "notes": "blablablalabla",
-      "mail": "Bob@Bob"
+      "statut" : "actif",
+      "notes" : "blablablalabla",
+      "mail" : "Bob@Bob"
     },
     {
-      "id": 6,
+      "id":5,
       "nom": "Olivier",
-      "prenom": "Test",
-      "societe": "FDGHJKLM",
-      "portable": "123456789",
-      "fixe": "12345678",
-      "statut": "active",
-      "notes": "",
-      "mail": "dzqdqd@zcdqvcqe"
+      "prenom": "Aton",
+      "societe": "New Team",
+      "portable": "0609080706",
+      "fixe": "0299675432",
+      "statut" : "actif",
+      "notes" : "blablablalabla",
+      "mail" : "Bob@Bob"
     }
   ],
-  "commande": [
+
+  "commande" : [
     {
       "id": 1,
       "company": "Capgemini",
       "date_commande": "12/03/22",
       "prix": "30000",
       "duree": "3 jours",
-      "statut": "PAYEE",
+      "statut" : "PAYEE",
       "client": {
-        "nom": "Aton",
-        "prenom": "bob"
+        "nom" : "Aton",
+        "prenom" : "bob"
       },
       "produit": {
-        "nomProduit": "Angular"
+        "nomProduit" : "Angular"
       }
     },
     {
-      "id": 2,
+      "id":2,
       "company": "Renault",
       "date_commande": "22/05/22",
       "prix": "1000",
       "duree": "4 jours",
-      "statut": "IMPAYEE",
+      "statut" : "IMPAYEE",
       "client": {
-        "nom": "Aton",
-        "prenom": "michael"
+        "nom" : "Aton",
+        "prenom" : "michael"
       },
       "produit": {
-        "nomProduit": "Angular"
+        "nomProduit" : "Angular"
       }
     },
     {
-      "id": 3,
+      "id":3,
       "company": "Sopra Steria",
       "date_commande": "02/10/22",
       "prix": "4000",
       "duree": "7 jours",
-      "statut": "PAYEE",
+      "statut" : "PAYEE",
       "client": {
-        "nom": "Aton",
-        "prenom": "Olivier"
+        "nom" : "Aton",
+        "prenom" : "Olivier"
       },
       "produit": {
-        "nomProduit": "Angular"
+        "nomProduit" : "Angular"
       }
     },
     {
-      "id": 4,
+      "id":4,
       "company": "Mercedes",
       "dateCommande": "12/09/21",
       "prix": "900",
       "duree": "1 jour",
-      "statut": "IMPAYEE",
+      "statut" : "IMPAYEE",
       "client": {
-        "nom": "Aton",
-        "prenom": "Olivier"
+        "nom" : "Aton",
+        "prenom" : "Olivier"
       },
       "produit": {
-        "nomProduit": "Angular"
+        "nomProduit" : "Angular"
       }
     },
     {
-      "id": 5,
+      "id":5,
       "company": "Zalando",
       "date_commande": "02/07/22",
       "prix": "30000",
       "duree": "10 jours",
-      "statut": "PAYEE",
+      "statut" : "PAYEE",
       "client": {
-        "nom": "Aton",
-        "prenom": "Olivier"
+        "nom" : "Aton",
+        "prenom" : "Olivier"
       },
       "produit": {
-        "nomProduit": "Angular"
+        "nomProduit" : "Angular"
       }
     }
   ],
-  "produit": [
+  "produit" : [
     {
-      "id": 1,
-      "nom": "Site vitrine",
-      "type": "Aton",
-      "prix": "1500",
-      "statut": "actif"
+      "id":1, "nom": "Site vitrine", "type": "Aton",
+      "prix": "1500","statut" : "actif"
     },
     {
-      "id": 2,
-      "nom": "CRM JAVA ANGULAR",
-      "type": "Aton",
-      "prix": "5000",
-      "statut": "actif"
+      "id":2, "nom": "CRM JAVA ANGULAR", "type": "Aton",
+      "prix": "5000","statut" : "actif"
     },
     {
-      "id": 3,
-      "nom": "Site e-commerce",
-      "type": "Aton",
-      "prix": "500",
-      "statut": "actif"
+      "id":3, "nom": "Site e-commerce", "type": "Aton",
+      "prix": "500","statut" : "actif"
     },
     {
-      "id": 4,
-      "nom": "Site LuiViThon",
-      "type": "Aton",
-      "prix": "1500",
-      "statut": "actif"
+      "id":4, "nom": "Site LuiViThon", "type": "Aton",
+      "prix": "1500","statut" : "inactif"
     },
     {
-      "id": 5,
-      "nom": "Site vitrine",
-      "type": "Aton",
-      "prix": "1500",
-      "statut": "actif"
+      "id":5, "nom": "Site vitrine", "type": "Aton",
+      "prix": "1500","statut" : "actif"
     }
   ]
 }
+

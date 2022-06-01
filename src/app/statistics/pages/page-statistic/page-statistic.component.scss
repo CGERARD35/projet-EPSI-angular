@@ -2,7 +2,7 @@
   width: calc(100% - 100px);
   display: flex;
   height: 400px;
-  margin: 15px 0 0 100px;
+  margin: 12px 0 0 100px;
 }
 .container-stat:nth-of-type(2) {
   margin-top: 0;
@@ -43,10 +43,16 @@
 
 
 @media only screen and (max-width: 1000px) {
-
   .container-stat {
     display: flex;
     flex-direction: column;
     height: auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container-stat {
+    width: 100%;
+    margin: 12px 0 0 0;
   }
 }
