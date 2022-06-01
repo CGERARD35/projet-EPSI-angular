@@ -1,1 +1,52 @@
 <p>page-add-product works!</p>
+<!-- Début Formulaire Nouveau Produit -->
+<section class="section-form">
+  <form class="form" method="POST" action="#">
+    <div class="title-bloc">
+      <h1 class="form-title">Nouveau Produit</h1>
+      <div class="form-button">
+        <button class="principal-button" id="add-button" type="submit">Ajouter</button>
+        <button class="principal-button" id="cancel" type="button">Annuler</button>
+      </div>
+    </div>
+    <div class="bloc">
+      <div class="form-bloc">
+        <div class="form-line">
+          <label for="product-name">Nom du produit</label>
+          <input id="product-name" placeholder="Saisir le nom du produit" type="text" name="productName" required>
+        </div>
+
+        <div class="form-line">
+          <label for="product-type">Type de produit</label>
+          <input id="product-type" placeholder="Saisir le type de produit" type="text" name="productType" required>
+        </div>
+
+        <div class="form-line">
+          <label for="price">Prix</label>
+          <input id="price" placeholder="Saisir le prix" type="text" name="price">
+        </div>
+      </div>
+      <div class="form-bloc">
+        <fieldset class="form-line">
+          <legend>Statut</legend>
+          <div class="form-radio">
+            <div class="radio-option">
+              <input type="radio" id="active" name="statut" value="active">
+              <label for="active">Actif</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="inactive" name="statut" value="inactive">
+              <label for="inactive">Inactif</label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+    <div class="form-button-small-screen">
+      <button class="button-small-screen"  id="add-button-bottom" type="submit">Ajouter</button>
+      <button class="button-small-screen" id="cancel-bottom" type="button">Annuler</button>
+    </div>
+  </form>
+  <!-- End Formulaire Nouveau Client -->
+
+</section>

@@ -1,8 +1,46 @@
-<p>Tableau Gestion des Utilisateurs !Tableau Gestion des Utilisateurs !Tableau Gestion des Utilisateurs !</p>
-<p>Tableau Gestion des Utilisateurs !Tableau Gestion des Utilisateurs !Tableau Gestion des Utilisateurs !</p>
-<p>Tableau Gestion des Utilisateurs !Tableau Gestion des Utilisateurs !Tableau Gestion des Utilisateurs !</p>
-<p>Tableau Gestion des Utilisateurs !Tableau Gestion des Utilisateurs !Tableau Gestion des Utilisateurs !</p>
-<p>Tableau Gestion des Utilisateurs !Tableau Gestion des Utilisateurs !Tableau Gestion des Utilisateurs !</p>
-<p>Tableau Gestion des Utilisateurs !Tableau Gestion des Utilisateurs !Tableau Gestion des Utilisateurs !</p>
-<p>Tableau Gestion des Utilisateurs !Tableau Gestion des Utilisateurs !Tableau Gestion des Utilisateurs !</p>
-<p>Tableau Gestion des Utilisateurs !Tableau Gestion des Utilisateurs !Tableau Gestion des Utilisateurs !</p>
+<!--search input-->
+<div class="search-bar">
+  <div class="search-container">
+    <div class="search-bar-links">
+      <a routerLink="#" class="sorting-link" title="Tous les utilisateurs">Tous</a><span>|</span>
+      <a routerLink="#" class="sorting-link" title="Tous les utilisateurs actif">Actif</a><span>|</span>
+      <a routerLink="#" class="sorting-link" title="Tous les utilisateurs inactif">Inactif</a>
+    </div>
+
+    <div class="search-bar-by-name">
+      <label for="searchbar"></label>
+      <input id="searchbar" type="text" title="Rechercher" placeholder="Nom de l'utilisateur...">
+    </div>
+  </div>
+  <a routerLink="../add" class="adding-link" title="ajouter un utilisateur"><i class="fa-solid fa-plus"></i>Ajouter un utilisateur</a>
+</div>
+<!--fin search input-->
+
+<div class="container-table-user">
+
+  <table id="table-user">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nom et prénom</th>
+      <th>Email</th>
+      <th>Rôle</th>
+      <th>Action</th>
+      <th>Etat</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let admin of admin$ | async">
+      <td>{{admin.id}}</td>
+      <td>{{admin.nom}} {{admin.prenom}}</td>
+      <td>{{admin.email}}</td>
+      <td>{{admin.role}}</td>
+      <td><i class="fa-solid fa-pen-to-square"></i> <i class="fa-solid fa-trash-can"></i></td>
+      <td><p class="contact-active">{{admin.statut}}</p></td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+

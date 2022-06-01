@@ -1,57 +1,63 @@
-<!-- Début Formulaire Nouveau CLient -->
+<!-- Début Formulaire Nouveau Client -->
 <section class="section-form">
-  <form class="form" method="POST" action="#">
+  <form class="form" method="POST">
     <div class="title-bloc">
       <h1 class="form-title">Nouveau Client</h1>
       <div class="form-button">
-        <button class="principal-button" id="add-button" type="submit">Ajouter</button>
-        <button class="principal-button" id="cancel" type="button">Annuler</button>
+        <button class="principal-button" id="add-button" type="submit" (click)="addClient()">Ajouter</button>
+        <button class="principal-button" id="cancel" type="button" [routerLink]="'/clients'">Annuler</button>
       </div>
     </div>
     <div class="bloc">
       <div class="form-bloc">
         <div class="form-line">
           <label for="client-last-name">Nom du client</label>
-          <input id="client-last-name" placeholder="Saisir le nom du client" type="text" name="clientLastName" required>
+          <input id="client-last-name" placeholder="Saisir le nom du client" type="text" name="clientLastName" [(ngModel)]="newClient.nom" required>
         </div>
 
         <div class="form-line">
           <label for="client-first-name">Prénom du Client</label>
-          <input id="client-first-name" placeholder="Saisir le prénom du Client" type="text" name="clientFirstName" required>
+          <input id="client-first-name" placeholder="Saisir le prénom du client" type="text" name="clientFirstName" [(ngModel)]="newClient.prenom" required>
         </div>
 
         <div class="form-line">
           <label for="society">Société</label>
-          <input id="society" placeholder="Saisir la société" type="text" name="society">
+          <input id="society" placeholder="Saisir la société" type="text" name="society" [(ngModel)]="newClient.societe">
         </div>
 
         <div class="form-line">
           <label for="portable-phone">Téléphone portable</label>
-          <input id="portable-phone" placeholder="06 ~" type="tel" name="portablePhone">
+          <input id="portable-phone" placeholder="06 ~" type="tel" name="portablePhone" [(ngModel)]="newClient.portable">
         </div>
 
         <div class="form-line">
           <label for="fix-phone">Téléphone fixe</label>
-          <input id="fix-phone" placeholder="02 ~" type="tel" name="fixPhone">
+          <input id="fix-phone" placeholder="02 ~" type="tel" name="fixPhone" [(ngModel)]="newClient.fixe">
         </div>
+
+        <div class="form-line">
+          <label for="mail">e-mail</label>
+          <input id="mail" placeholder="02 ~" type="email" name="mail" [(ngModel)]="newClient.mail">
+        </div>
+
       </div>
       <div class="form-bloc">
         <fieldset class="form-line">
           <legend>Statut</legend>
           <div class="form-radio">
             <div class="radio-option">
-              <input type="radio" id="active" name="statut" value="active">
+              <input type="radio" id="active" name="statut" value="active"[(ngModel)]="newClient.statut">
               <label for="active">Actif</label>
             </div>
             <div class="radio-option">
-              <input type="radio" id="inactive" name="statut" value="inactive">
+              <input type="radio" id="inactive" name="statut" value="inactive" [(ngModel)]="newClient.statut">
               <label for="inactive">Inactif</label>
             </div>
           </div>
         </fieldset>
         <div class="form-notes">
           <label for="notes">Notes</label>
-          <textarea id="notes" name="notes"></textarea>
+          <textarea id="notes" name="notes">{{newClient.notes}}</textarea>
         </div>
       </div>
     </div>

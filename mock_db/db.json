@@ -1,65 +1,67 @@
 {
-  "clients": [
+  "clients" : [
     {
-      "id": 1,
+      "id":1,
       "nom": "Olivier",
       "prenom": "Aton",
       "societe": "New Team",
       "portable": "0609080706",
       "fixe": "0299675432",
-      "statut": "actif",
-      "notes": "blablablalabla",
-      "mail": "Bob@Bob"
+      "statut" : "actif",
+      "notes" : "blablablalabla",
+      "mail" : "Bob@Bob"
     },
     {
-      "id": 2,
-      "nom": "Olivier",
-      "prenom": "Bruce",
-      "societe": "New Team",
-      "portable": "0609080706",
-      "fixe": "0299675432",
-      "statut": "actif",
-      "notes": "blablablalabla",
-      "mail": "Bob@Bob"
-    },
-    {
-      "id": 3,
+      "id":2,
       "nom": "Olivier",
       "prenom": "Aton",
       "societe": "New Team",
       "portable": "0609080706",
       "fixe": "0299675432",
-      "statut": "actif",
-      "notes": "blablablalabla",
-      "mail": "Bob@Bob"
+      "statut" : "actif",
+      "notes" : "blablablalabla",
+      "mail" : "Bob@Bob"
     },
     {
-      "id": 4,
+      "id":3,
       "nom": "Olivier",
       "prenom": "Aton",
       "societe": "New Team",
       "portable": "0609080706",
       "fixe": "0299675432",
-      "statut": "actif",
-      "notes": "blablablalabla",
-      "mail": "Bob@Bob"
+      "statut" : "actif",
+      "notes" : "blablablalabla",
+      "mail" : "Bob@Bob"
     },
     {
-      "id": 5,
+      "id":4,
       "nom": "Olivier",
       "prenom": "Aton",
       "societe": "New Team",
       "portable": "0609080706",
       "fixe": "0299675432",
-      "statut": "actif",
-      "notes": "blablablalabla",
-      "mail": "Bob@Bob"
+      "statut" : "actif",
+      "notes" : "blablablalabla",
+      "mail" : "Bob@Bob"
+    },
+    {
+      "id":5,
+      "nom": "Olivier",
+      "prenom": "Aton",
+      "societe": "New Team",
+      "portable": "0609080706",
+      "fixe": "0299675432",
+      "statut" : "actif",
+      "notes" : "blablablalabla",
+      "mail" : "Bob@Bob"
     }
   ],
-  "commande": [
+
+  "commande" : [
     {
       "id": 1,
-      "dateCommande": "12/03/22",
+      "company": "Capgemini",
+      "date_commande": "12/03/22",
       "prix": "30000",
       "duree": "3",
       "statut": "Impayé",
@@ -69,7 +71,7 @@
         "notes": "zaezaeazeaze"
       },
       "produit": {
-        "nomProduit": "Angular"
+        "nomProduit" : "Angular"
       }
     },
     {
@@ -85,7 +87,7 @@
         "company": "Capgemini"
       },
       "produit": {
-        "nomProduit": "Angular"
+        "nomProduit" : "Angular"
       }
     },
     {
@@ -117,7 +119,7 @@
         "company": "Capgemini"
       },
       "produit": {
-        "nomProduit": "Angular"
+        "nomProduit" : "Angular"
       }
     },
     {
@@ -133,11 +135,11 @@
         "company": "Capgemini"
       },
       "produit": {
-        "nomProduit": "Angular"
+        "nomProduit" : "Angular"
       }
     }
   ],
-  "produit": [
+  "produit" : [
     {
       "id": 1,
       "nom": "Site vitrine",
@@ -164,7 +166,7 @@
       "nom": "Site LuiViThon",
       "type": "Aton",
       "prix": "1500",
-      "statut": "actif"
+      "statut": "inactif"
     },
     {
       "id": 5,
@@ -173,5 +175,35 @@
       "prix": "1500",
       "statut": "actif"
     }
+  ],
+  "admin": [
+    {
+      "id": 1,
+      "nom": "Gerard",
+      "prenom": "Carl",
+      "email": "carl.g@cap.fr",
+      "password": "1234",
+      "statut": "Actif",
+      "role": "Admin"
+    },
+    {
+      "id": 2,
+      "nom": "Theron",
+      "prenom": "Benjamin",
+      "email": "benjamin.t@cap.fr",
+      "password": "1234",
+      "statut": "Actif",
+      "role": "Admin"
+    },
+    {
+      "id": 3,
+      "nom": "Mansanarez",
+      "prenom": "Gurvan",
+      "email": "Gurvan.m@cap.fr",
+      "password": "1234",
+      "statut": "Actif",
+      "role": "Admin"
+    }
   ]
 }
+
