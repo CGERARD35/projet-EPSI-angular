@@ -1,1 +1,71 @@
-<p>page-add-orders works!</p>
+<!-- Début Formulaire Modifier la commande -->
+<section class="section-form">
+  <form class="form" method="post">
+    <div class="title-bloc">
+      <h1 class="form-title">Modifier la commande</h1>
+      <div class="form-button">
+        <button class="principal-button" id="edit-button" type="submit" routerLink="/orders" (click)="createOrder()"> Modifier</button>
+        <button class="principal-button" id="cancel" type="button" routerLink="/orders">Annuler</button>
+      </div>
+    </div>
+    <div class="bloc">
+      <div class="form-bloc">
+        <div class="form-line">
+
+        </div>
+
+
+
+        <div class="form-line">
+          <label for="client-first-name">Date de la commande</label>
+          <input id="client-first-name" placeholder="Saisir la date de la commande"
+                 type="text" name="clientFirstName" required>
+        </div>
+
+<!--        <div class="form-line">-->
+<!--          <p class="title">Société</p>-->
+<!--          <p>{{order?.client?.company}}</p>-->
+<!--        </div>-->
+
+        <div class="form-line">
+          <label for="portable-phone">Durée de la prestation (en jours)</label>
+          <input id="portable-phone" placeholder="Saisir la durée de la prestation"
+                 type="tel" name="portablePhone" required>
+        </div>
+
+        <div class="form-line">
+          <label for="fix-phone">Prix de la commande</label>
+          <input id="fix-phone" placeholder="Saisir le prix de la commande~"
+                 type="tel" name="fixPhone" required>
+        </div>
+      </div>
+      <div class="form-bloc">
+        <fieldset class="form-line">
+          <legend>Statut</legend>
+          <div class="form-radio">
+            <div class="radio-option">
+              <input type="radio" id="paye" name="statut"
+                     value="Payé">
+              <label for="paye">Payé</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="impaye" name="statut"
+                     value="Impayé" required>
+              <label for="impaye">Impayé</label>
+            </div>
+          </div>
+        </fieldset>
+        <div class="form-notes">
+          <label for="notes">Notes</label>
+          <textarea id="notes" name="notes"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="form-button-small-screen">
+      <button class="button-small-screen"  id="edit-button-bottom" (click)="createOrder()">Modifier</button>
+      <button class="button-small-screen" id="cancel-bottom" type="button">Annuler</button>
+    </div>
+  </form>
+  <!-- End Formulaire Modifier Client -->
+
+</section>

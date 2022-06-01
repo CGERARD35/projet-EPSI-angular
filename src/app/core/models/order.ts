@@ -1,29 +1,29 @@
-import {OrderI} from "../interface/order-i";
+import {ClientOrderI, OrderI, ProduitOrderI} from "../interface/order-i";
 
-export class Order implements OrderI{
-  "id": 0;
-  "company": '';
-  "date_commande": '';
-  "prix": 0;
-  "duree": '';
-  "statut" : '';
-  "nomClient" : '';
-  "prenomClient" :'';
-  "nomUser" : '';
-  "nomProduit" : '';
-  "client": {
-    "nom": '';
-    "prenom": '';
-  }
-  "produit": {
-    "nomProduit" : '';
-  }
+export class Order implements OrderI {
+  id = 0;
+  dateCommande = '';
+  prix = 0;
+  duree = '';
+  statut = '';
+  notes = '';
+  client: ClientOrderI = new Cli();
+  produit = new Produit();
 
-
-  constructor(obj? : Partial<Order>) {
+  constructor(obj?: Partial<Order>) {
     if (obj) {
       Object.assign(this, obj);
     }
   }
 
+}
+
+export class Cli implements ClientOrderI {
+  nom = '';
+  prenom = '';
+  company = '';
+}
+
+export class Produit implements ProduitOrderI {
+  nomProduit = '';
 }
