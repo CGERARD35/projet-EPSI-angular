@@ -5,6 +5,7 @@ import { ClientsRoutingModule } from './clients-routing.module';
 import { PageAddClientComponent } from './pages/page-add-client/page-add-client.component';
 import { PageEditClientComponent } from './pages/page-edit-client/page-edit-client.component';
 import { PageClientsListComponent } from './pages/page-clients-list/page-clients-list.component';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -13,10 +14,11 @@ import { PageClientsListComponent } from './pages/page-clients-list/page-clients
     PageEditClientComponent,
     PageClientsListComponent,
 ],
-  imports: [
-    CommonModule,
-    ClientsRoutingModule,
-  ],
+    imports: [
+        CommonModule,
+        ClientsRoutingModule,
+        FormsModule,
+    ],
   exports: [
     PageClientsListComponent,
     PageAddClientComponent,

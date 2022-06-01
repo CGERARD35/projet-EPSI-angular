@@ -136,24 +136,24 @@
   ],
   "produit" : [
     {
-      "id":1, "nom": "Olivier", "prenom": "Aton",
-      "adresse": "Soccer tokyo", "societe": "New Team"
+      "id":1, "nom": "Site vitrine", "type": "Aton",
+      "prix": "1500","statut" : "actif"
     },
     {
-      "id":2, "nom": "Jones", "prenom": "Indiana",
-      "adresse": "Le temple perdu", "societe": "La jungle"
+      "id":2, "nom": "CRM JAVA ANGULAR", "type": "Aton",
+      "prix": "5000","statut" : "actif"
     },
     {
-      "id":3, "nom": "Simpson", "prenom": "Homer",
-      "adresse": "Springfield", "societe": "Centrale nucléaire"
+      "id":3, "nom": "Site e-commerce", "type": "Aton",
+      "prix": "500","statut" : "actif"
     },
     {
-      "id":4, "nom": "Thierry", "prenom": "Henry",
-      "adresse": "1 Arsenal street", "societe": "Equipe de France"
+      "id":4, "nom": "Site LuiViThon", "type": "Aton",
+      "prix": "1500","statut" : "actif"
     },
     {
-      "id":5, "nom": "Batman", "prenom": "Night",
-      "adresse": "12 rue de la chauve-souris", "societe": "Batmobile"
+      "id":5, "nom": "Site vitrine", "type": "Aton",
+      "prix": "1500","statut" : "actif"
     }
   ]
 }

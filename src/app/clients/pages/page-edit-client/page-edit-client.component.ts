@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ClientsService} from "../../clients.service";
 import {Client} from "../../../core/models/client";
@@ -13,25 +13,24 @@ export class PageEditClientComponent implements OnInit {
   public clientId = 0;
   public client: Client = new Client;
 
-  constructor(private activatedRoute: ActivatedRoute, private clientService: ClientsService) { }
-
-  ngOnInit(): void {
-    this.getClientByIdFromUrl()
+  constructor(private activatedRoute: ActivatedRoute, private clientService: ClientsService) {
   }
 
-  private getClient() {
+  ngOnInit(): void {
+    this.clientId = Number(this.activatedRoute.snapshot.paramMap.get('id'))
+    this.getCurrentClient();
+  }
+
+  private getCurrentClient() {
     this.clientService.getItemById(this.clientId).subscribe(
       client => this.client = client
     )
-    }
-    private getClientByIdFromUrl(){
-    this.activatedRoute.url.subscribe(
-      url => {
-        const id = url[url.length - 1].path;
-        this.clientId = Number(id);
-        this.getClient();
-      }
-    )
-    }
+  }
 
+  updateClient() {
+    console.log(this.client)
+    this.clientService.updateItemById(this.client).subscribe(
+      result => this.client = result
+    )
+  }
 }
