@@ -11,6 +11,8 @@ import {ClientsService} from "../../clients.service";
 export class PageClientsListComponent implements OnInit {
 
   public clients$!: Observable<Client[]>;
+  public status!: string;
+  public client: Client[] | undefined;
 
   constructor(private clientService: ClientsService) { }
 
@@ -18,6 +20,15 @@ export class PageClientsListComponent implements OnInit {
     this.clients$ = this.clientService.getCollection();
 
     this.loadScript('../../../../assets/searchbar.js');
+  }
+
+  public deleteClient(clientId: number){
+    this.clientService.deleteItemById(clientId).subscribe(
+      () => {
+        this.status = "Supprimé";
+        this.clients$ = this.clientService.getCollection();
+      }
+    )
   }
 
   public loadScript(url: string) {

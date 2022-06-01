@@ -1,63 +1,62 @@
 {
-  "clients" : [
+  "clients": [
     {
-      "id":1,
+      "id": 1,
       "nom": "Olivier",
       "prenom": "Aton",
       "societe": "New Team",
       "portable": "0609080706",
       "fixe": "0299675432",
-      "statut" : "actif",
-      "notes" : "blablablalabla",
-      "mail" : "Bob@Bob"
+      "statut": "active",
+      "notes": "blablablalabla",
+      "mail": "Bob@Bob"
     },
     {
-      "id":2,
+      "id": 2,
       "nom": "Olivier",
       "prenom": "Aton",
       "societe": "New Team",
       "portable": "0609080706",
       "fixe": "0299675432",
-      "statut" : "actif",
-      "notes" : "blablablalabla",
-      "mail" : "Bob@Bob"
+      "statut": "actif",
+      "notes": "blablablalabla",
+      "mail": "Bob@Bob"
     },
     {
-      "id":3,
+      "id": 3,
       "nom": "Olivier",
       "prenom": "Aton",
       "societe": "New Team",
       "portable": "0609080706",
       "fixe": "0299675432",
-      "statut" : "actif",
-      "notes" : "blablablalabla",
-      "mail" : "Bob@Bob"
+      "statut": "actif",
+      "notes": "blablablalabla",
+      "mail": "Bob@Bob"
     },
     {
-      "id":4,
+      "id": 4,
       "nom": "Olivier",
       "prenom": "Aton",
       "societe": "New Team",
       "portable": "0609080706",
       "fixe": "0299675432",
-      "statut" : "actif",
-      "notes" : "blablablalabla",
-      "mail" : "Bob@Bob"
+      "statut": "actif",
+      "notes": "blablablalabla",
+      "mail": "Bob@Bob"
     },
     {
-      "id":5,
+      "id": 5,
       "nom": "Olivier",
       "prenom": "Aton",
       "societe": "New Team",
       "portable": "0609080706",
       "fixe": "0299675432",
-      "statut" : "actif",
-      "notes" : "blablablalabla",
-      "mail" : "Bob@Bob"
+      "statut": "actif",
+      "notes": "blablablalabla",
+      "mail": "Bob@Bob"
     }
   ],
-
-  "commande" : [
+  "commande": [
     {
       "id": 1,
       "company": "Capgemini",
@@ -71,7 +70,7 @@
         "notes": "zaezaeazeaze"
       },
       "produit": {
-        "nomProduit" : "Angular"
+        "nomProduit": "Angular"
       }
     },
     {
@@ -87,7 +86,7 @@
         "company": "Capgemini"
       },
       "produit": {
-        "nomProduit" : "Angular"
+        "nomProduit": "Angular"
       }
     },
     {
@@ -95,7 +94,7 @@
       "dateCommande": "02/10/22",
       "prix": "4000",
       "duree": "7",
-      "statut": "Payé",
+      "statut": "Impayé",
       "notes": "zaezaeazeaze",
       "client": {
         "nom": "Aton",
@@ -119,7 +118,7 @@
         "company": "Capgemini"
       },
       "produit": {
-        "nomProduit" : "Angular"
+        "nomProduit": "Angular"
       }
     },
     {
@@ -135,24 +134,24 @@
         "company": "Capgemini"
       },
       "produit": {
-        "nomProduit" : "Angular"
+        "nomProduit": "Angular"
       }
     }
   ],
-  "produit" : [
+  "produit": [
     {
       "id": 1,
-      "nom": "Site vitrine",
+      "nom": "Site Vitrine",
       "type": "Aton",
       "prix": "1500",
-      "statut": "actif"
+      "statut": "Inactif"
     },
     {
       "id": 2,
       "nom": "CRM JAVA ANGULAR",
       "type": "Aton",
       "prix": "5000",
-      "statut": "actif"
+      "statut": "Actif"
     },
     {
       "id": 3,
@@ -163,17 +162,17 @@
     },
     {
       "id": 4,
-      "nom": "Site LuiViThon",
+      "nom": "Site LOUIS VI",
       "type": "Aton",
       "prix": "1500",
-      "statut": "inactif"
+      "statut": "Inactif"
     },
     {
       "id": 5,
-      "nom": "Site vitrine",
+      "nom": "Site vitrine VI",
       "type": "Aton",
       "prix": "1500",
-      "statut": "actif"
+      "statut": "Actif"
     }
   ],
   "admin": [
@@ -206,4 +205,3 @@
     }
   ]
 }
-
