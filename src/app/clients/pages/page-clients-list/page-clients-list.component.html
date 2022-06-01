@@ -22,7 +22,7 @@
     <div class="contact-header">
       <p>{{client.prenom}} {{client.nom | uppercase}}</p>
       <p class="contact-active">{{client.statut}}</p>
-      <a routerLink="../edit/1"title="Modifier le client"><i class="fa-solid fa-pen-to-square"></i></a>
+      <a routerLink="../edit/{{client.id}}"title="Modifier le client"><i class="fa-solid fa-pen-to-square"></i></a>
     </div>
     <div class="contact-footer">
       <p><i class="fa-solid fa-briefcase"></i>{{client.societe}}</p>

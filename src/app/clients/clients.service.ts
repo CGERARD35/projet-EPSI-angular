@@ -24,8 +24,8 @@ export class ClientsService {
     return this.httpClient.delete<void>(this.url + '/' + id);
   }
 
-  updateItemById(client: Client): Observable<void> {
-    return this.httpClient.put<void>(this.url + '/' + client.id, client);
+  updateItemById(client: Client): Observable<Client> {
+    return this.httpClient.put<Client>(this.url + '/' + client.id, client);
   }
 
   addItemById(client: Client): Observable<void> {
