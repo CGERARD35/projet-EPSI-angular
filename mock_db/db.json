@@ -67,7 +67,7 @@
       "statut" : "PAYEE",
       "client": {
         "nom" : "Aton",
-        "prenom" : "Olivier"
+        "prenom" : "bob"
       },
       "produit": {
         "nomProduit" : "Angular"
@@ -82,7 +82,7 @@
       "statut" : "IMPAYEE",
       "client": {
         "nom" : "Aton",
-        "prenom" : "Olivier"
+        "prenom" : "michael"
       },
       "produit": {
         "nomProduit" : "Angular"
@@ -95,10 +95,6 @@
       "prix": "4000",
       "duree": "7 jours",
       "statut" : "PAYEE",
-      "nomClient" : "Aton",
-      "prenomClient" : "Olivier",
-      "nomUser" : "benjamin.theron@epsi.com",
-      "nomProduit" : "Angular",
       "client": {
         "nom" : "Aton",
         "prenom" : "Olivier"
@@ -129,10 +125,6 @@
       "prix": "30000",
       "duree": "10 jours",
       "statut" : "PAYEE",
-      "nomClient" : "Aton",
-      "prenomClient" : "Olivier",
-      "nomUser" : "benjamin.theron@epsi.com",
-      "nomProduit" : "Angular",
       "client": {
         "nom" : "Aton",
         "prenom" : "Olivier"

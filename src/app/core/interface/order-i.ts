@@ -1,7 +1,19 @@
 export interface OrderI {
-  id: number;
-  nom: string;
-  prenom: string;
-  adresse: string;
-  societe: string;
+  "id": number,
+  "company": string,
+  "date_commande": string,
+  "prix": number,
+  "duree": string
+  "statut" : string,
+  "nomClient" : string,
+  "prenomClient" :string,
+  "nomUser" : string,
+  "nomProduit" : string,
+  "client": {
+    "nom" : string,
+    "prenom" : string,
+  },
+  "produit": {
+    "nomProduit" : string,
+  }
 }

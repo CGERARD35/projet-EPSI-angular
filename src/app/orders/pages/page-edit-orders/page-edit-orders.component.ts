@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {OrdersService} from "../../services/orders.service";
+import {Order} from "../../../core/models/order";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-page-edit-orders',
@@ -7,9 +10,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageEditOrdersComponent implements OnInit {
 
-  constructor() { }
+  public orderId = 0;
+  public order = new Order();
+
+  constructor(private activatedRoute : ActivatedRoute,
+              private orderService : OrdersService) { }
 
   ngOnInit(): void {
+    this.activatedRoute.url.subscribe(
+      url => {
+        const id = url[url.length - 1].path;
+        this.orderId = Number(id);
+        this.getOrder();
+      }
+    );
   }
+
+  private getOrder() {
+    this.orderService.getOrderById(this.orderId).subscribe(
+      order => {
+        this.order = order;
+        console.info(order);
+      }
+    )
+  }
+
 
 }

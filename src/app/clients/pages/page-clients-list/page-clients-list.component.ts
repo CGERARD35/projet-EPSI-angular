@@ -12,7 +12,6 @@ export class PageClientsListComponent implements OnInit {
 
   public clients$!: Observable<Client[]>;
 
-
   constructor(private clientService: ClientsService) { }
 
   ngOnInit(): void {
