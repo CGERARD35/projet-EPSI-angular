@@ -13,13 +13,13 @@
         <div class="form-line">
           <label for="client-last-name">Nom du client</label>
           <input id="client-last-name" placeholder="Saisir le nom du client"
-                 type="text" name="clientLastName" [value]="client.nom" required>
+                 type="text" name="clientLastName" [(ngModel)]="client.nom" required>
         </div>
 
         <div class="form-line">
           <label for="client-first-name">Prénom du Client</label>
           <input id="client-first-name" placeholder="Saisir le prénom du Client"
-                 type="text" name="clientFirstName" [ngModel]="client.prenom" required>
+                 type="text" name="clientFirstName" [(ngModel)]="client.prenom" required>
         </div>
 
         <div class="form-line">

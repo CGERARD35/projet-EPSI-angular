@@ -18,19 +18,25 @@ export class PageEditClientComponent implements OnInit {
 
   ngOnInit(): void {
     this.clientId = Number(this.activatedRoute.snapshot.paramMap.get('id'))
+    console.log(this.clientId)
     this.getCurrentClient();
   }
 
   private getCurrentClient() {
     this.clientService.getItemById(this.clientId).subscribe(
-      client => this.client = client
+      client => {
+        this.client = client
+      }
     )
+
   }
 
   updateClient() {
     console.log(this.client)
     this.clientService.updateItemById(this.client).subscribe(
-      result => this.client = result
+      result =>  {
+        this.client = result
+      }
     )
   }
 }
