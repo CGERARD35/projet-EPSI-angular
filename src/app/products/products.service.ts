@@ -24,8 +24,8 @@ export class ProductsService {
     return this.httpClient.delete<void>(this.url + '/' + id);
   }
 
-  updateItemById(product: Product): Observable<void> {
-    return this.httpClient.put<void>(this.url + '/' + product.id, product);
+  updateItemById(product: Product): Observable<Product> {
+    return this.httpClient.put<Product>(this.url + '/' + product.id, product);
   }
 
   addItemById(client: Product): Observable<void> {
