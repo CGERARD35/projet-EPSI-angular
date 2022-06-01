@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Product} from "../../../core/models/product";
+import {ActivatedRoute} from "@angular/router";
+import {ProductsService} from "../../products.service";
 
 @Component({
   selector: 'app-page-add-product',
@@ -7,9 +10,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageAddProductComponent implements OnInit {
 
-  constructor() { }
+  public newProduct: Product = new Product;
+  public product!:Product[];
+
+  constructor(private activatedRoute: ActivatedRoute, private productService: ProductsService) {
+  }
 
   ngOnInit(): void {
   }
 
+  private getProduct(){
+    this.productService.getCollection().subscribe(
+      product => {
+        console.log(product)
+        this.product = product
+      }
+    )
+  }
+
+  public addProduct() {
+    this.productService.addItemById(this.newProduct).subscribe(
+      () => {
+        this.getProduct();
+      }
+    )
+
+  }
 }

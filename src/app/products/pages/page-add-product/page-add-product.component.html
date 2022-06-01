@@ -4,7 +4,7 @@
     <div class="title-bloc">
       <h1 class="form-title">Nouveau Produit</h1>
       <div class="form-button">
-        <button class="principal-button" id="add-button" type="submit" [routerLink]="'/products'">Ajouter</button>
+        <button class="principal-button" id="add-button" type="submit" (click)="addProduct()" [routerLink]="'/products'">Ajouter</button>
         <button class="principal-button" id="cancel" type="button" [routerLink]="'/products'">Annuler</button>
       </div>
     </div>
@@ -12,17 +12,17 @@
       <div class="form-bloc">
         <div class="form-line">
           <label for="product-name">Nom du produit</label>
-          <input id="product-name" placeholder="Saisir le nom du produit" type="text" name="productName" required>
+          <input id="product-name" placeholder="Saisir le nom du produit" type="text" name="productName" [(ngModel)]="newProduct.nom" required>
         </div>
 
         <div class="form-line">
           <label for="product-type">Type de produit</label>
-          <input id="product-type" placeholder="Saisir le type de produit" type="text" name="productType" required>
+          <input id="product-type" placeholder="Saisir le type de produit" type="text" name="productType" [(ngModel)]="newProduct.type" required>
         </div>
 
         <div class="form-line">
           <label for="price">Prix</label>
-          <input id="price" placeholder="Saisir le prix" type="text" name="price">
+          <input id="price" placeholder="Saisir le prix" type="text" name="price" [(ngModel)]="newProduct.prix">
         </div>
       </div>
       <div class="form-bloc">
@@ -30,11 +30,11 @@
           <legend>Statut</legend>
           <div class="form-radio">
             <div class="radio-option">
-              <input type="radio" id="active" name="statut" value="active">
+              <input type="radio" id="active" name="statut" value="Actif" [(ngModel)]="newProduct.statut" [checked]="newProduct.statut === 'Actif'">
               <label for="active">Actif</label>
             </div>
             <div class="radio-option">
-              <input type="radio" id="inactive" name="statut" value="inactive">
+              <input type="radio" id="inactive" name="statut" value="Inactif" [(ngModel)]="newProduct.statut" [checked]="newProduct.statut === 'Inactif'">
               <label for="inactive">Inactif</label>
             </div>
           </div>
@@ -42,7 +42,7 @@
       </div>
     </div>
     <div class="form-button-small-screen">
-      <button class="button-small-screen"  id="add-button-bottom" type="submit" [routerLink]="'/products'">Ajouter</button>
+      <button class="button-small-screen"  id="add-button-bottom" type="submit" (click)="addProduct()" [routerLink]="'/products'">Ajouter</button>
       <button class="button-small-screen" id="cancel-bottom" type="button" [routerLink]="'/products'">Annuler</button>
     </div>
   </form>
