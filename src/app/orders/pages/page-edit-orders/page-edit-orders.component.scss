@@ -1,5 +1,9 @@
 @import "src/styles/form";
-p {
-  margin: 200px;
-  color: #ff8b25;
+.form-line{
+  p{
+    color: var(--white);
+  }
+  .title{
+    color: var(--orange);
+  }
 }

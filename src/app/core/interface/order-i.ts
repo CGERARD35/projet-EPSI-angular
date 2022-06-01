@@ -1,19 +1,20 @@
 export interface OrderI {
-  "id": number,
-  "company": string,
-  "date_commande": string,
-  "prix": number,
-  "duree": string
-  "statut" : string,
-  "nomClient" : string,
-  "prenomClient" :string,
-  "nomUser" : string,
-  "nomProduit" : string,
-  "client": {
-    "nom" : string,
-    "prenom" : string,
-  },
-  "produit": {
-    "nomProduit" : string,
-  }
+  id: number,
+  dateCommande: string,
+  prix: number,
+  duree: string
+  statut : string,
+  notes: string,
+  client: ClientOrderI,
+  produit: ProduitOrderI,
+}
+
+export interface ClientOrderI {
+  nom : string,
+  prenom : string,
+  company : string,
+}
+
+export interface ProduitOrderI {
+  nomProduit : string,
 }

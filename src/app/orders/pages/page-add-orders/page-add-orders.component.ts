@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ClientsService} from "../../../clients/clients.service";
 
 @Component({
   selector: 'app-page-add-orders',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageAddOrdersComponent implements OnInit {
 
-  constructor() { }
+
+
+  constructor(
+    private clientsService : ClientsService
+  ) { }
 
   ngOnInit(): void {
   }
 
+  createOrder() {
+
+  }
 }
