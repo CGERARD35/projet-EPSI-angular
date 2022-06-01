@@ -14,11 +14,11 @@ import {FormsModule} from "@angular/forms";
     PageEditOrdersComponent,
     PageListOrdersComponent
   ],
-    imports: [
-        CommonModule,
-        OrdersRoutingModule,
-        FormsModule
-    ],
+  imports: [
+    CommonModule,
+    OrdersRoutingModule,
+    FormsModule,
+  ],
   exports: [
     PageAddOrdersComponent,
     PageEditOrdersComponent,

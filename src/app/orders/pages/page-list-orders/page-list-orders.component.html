@@ -1,10 +1,13 @@
 <!--search input-->
+<ng-template #paye></ng-template>
+<ng-template #impaye></ng-template>
+
 <div class="search-bar">
   <div class="search-container">
     <div class="search-bar-links">
-      <a routerLink="#" class="sorting-link" title="Tous les orders">Tous</a><span>|</span>
-      <a routerLink="#" class="sorting-link" title="Tous les orders actif">Actif</a><span>|</span>
-      <a routerLink="#" class="sorting-link" title="Tous les orders inactif">Inactif</a>
+      <a routerLink="#" class="sorting-link" title="Tous les orders">Toutes</a><span>|</span>
+      <a routerLink="#" class="sorting-link" title="Tous les orders actif">Payées</a><span>|</span>
+      <a routerLink="#" class="sorting-link" title="Tous les orders inactif">Impayées</a>
     </div>
 
     <div class="search-bar-by-name">
@@ -12,7 +15,7 @@
       <input id="searchbar" type="text" title="Rechercher" placeholder="Nom du order...">
     </div>
   </div>
-  <a routerLink="../add" class="adding-link" title="ajouter un order"><i class="fa-solid fa-plus"></i>Ajouter un order</a>
+  <a routerLink="../add" class="adding-link" title="ajouter une commande"><i class="fa-solid fa-plus"></i>Nouvelle commande</a>
 </div>
 <!--fin search input-->
 
@@ -20,7 +23,13 @@
   <div class="card" *ngFor="let order of orders$ | async">
     <div class="contact-header">
       <p>{{order.client.nom}} {{order.client.prenom}}</p>
-      <p class="contact-active">{{order.statut}}</p>
+      <div *ngIf="order.statut === 'Payé' then paye else impaye" ></div>
+      <ng-template #paye>
+        <p class="contact-active">{{order.statut}}</p>
+      </ng-template>
+      <ng-template #impaye>
+        <p class="contact-inactif">{{order.statut}}</p>
+      </ng-template>
       <a routerLink="../edit/{{order.id}}"title="Modifier la commande"><i class="fa-solid fa-pen-to-square"></i></a>
     </div>
     <div class="contact-footer">

@@ -2,9 +2,9 @@
 <section class="section-form">
   <form class="form" method="post">
     <div class="title-bloc">
-      <h1 class="form-title">Ajouter la commande</h1>
+      <h1 class="form-title">Ajouter une commande</h1>
       <div class="form-button">
-        <button class="principal-button" id="edit-button" type="submit" routerLink="/orders" (click)="createOrder()"> Ajouter</button>
+        <button class="principal-button" id="edit-button" type="button" routerLink="/orders" (click)="createOrder()"> Ajouter</button>
         <button class="principal-button" id="cancel" type="button" routerLink="/orders">Annuler</button>
       </div>
     </div>
@@ -13,35 +13,42 @@
 
         <div class="form-line">
           <p>Client</p>
-          <select>
-            <option *ngFor="let client of clients$ | async" value="{{client}}">Nom : {{client.nom}} | Prénom : {{client.prenom}} | Société : {{client.societe}}</option>
+          <select (focus)="selectClient($event)" (change)="selectClient($event)">
+            <option *ngFor="let client of clients$ | async" [value]="client.id">
+             {{client.nom}} {{client.prenom}} ~ {{client.societe}}
+            </option>
           </select>
         </div>
 
         <div class="form-line">
           <p>Produit</p>
-          <select>
-            <option *ngFor="let product of products$ | async" value="{{product}}">{{product.nom}}</option>
+          <select (focus)="selectProduct($event)" (change)="selectProduct($event)">
+            <option *ngFor="let product of products$ | async" [value]="product.id">
+              {{product.nom}}
+            </option>
           </select>
         </div>
 
         <div class="form-line">
-          <label for="client-first-name">Date de la commande</label>
-          <input id="client-first-name" placeholder="Saisir la date de la commande"
-                 type="date" name="clientFirstName" required>
+          <label for="date-order">Date de la commande</label>
+          <input id="date-order" placeholder="Saisir la date de la commande"
+                 type="date" name="date-order" required
+                 [(ngModel)]="newOrder.dateCommande">
         </div>
 
 
         <div class="form-line">
-          <label for="portable-phone">Durée de la prestation (en jours)</label>
-          <input id="portable-phone" placeholder="Saisir la durée de la prestation"
-                 type="tel" name="portablePhone" required>
+          <label for="duration-service">Durée de la prestation (en jours)</label>
+          <input id="duration-service" placeholder="Saisir la durée de la prestation"
+                 type="text" name="duration-service" required
+                 [(ngModel)]="newOrder.duree">
         </div>
 
         <div class="form-line">
           <label for="prix">Prix de la commande</label>
           <input id="prix" placeholder="Saisir le prix de la commande~"
-                 type="number" name="prix" required>
+                 type="number" name="prix" required
+                 [(ngModel)]="newOrder.prix">
         </div>
       </div>
       <div class="form-bloc">
@@ -50,19 +57,23 @@
           <div class="form-radio">
             <div class="radio-option">
               <input type="radio" id="paye" name="statut"
-                     value="Payé">
+                     value="Payé"
+                     [(ngModel)]="newOrder.statut">
               <label for="paye">Payé</label>
             </div>
             <div class="radio-option">
               <input type="radio" id="impaye" name="statut"
-                     value="Impayé" required>
+                     value="Impayé" required
+                     [(ngModel)]="newOrder.statut">
               <label for="impaye">Impayé</label>
             </div>
           </div>
         </fieldset>
         <div class="form-notes">
           <label for="notes">Notes</label>
-          <textarea id="notes" name="notes"></textarea>
+          <textarea id="notes" name="notes"
+                    [(ngModel)]="newOrder.notes">
+          </textarea>
         </div>
       </div>
     </div>

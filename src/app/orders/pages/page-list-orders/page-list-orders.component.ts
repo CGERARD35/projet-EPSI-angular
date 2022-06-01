@@ -16,6 +16,17 @@ export class PageListOrdersComponent implements OnInit {
 
   ngOnInit(): void {
     this.orders$ = this.ordersService.getAllOrders();
+    this.loadScript('../../../../assets/searchbar.js');
+  }
+
+  public loadScript(url: string) {
+    const body = <HTMLDivElement> document.body;
+    const script = document.createElement('script');
+    script.innerHTML = '';
+    script.src = url;
+    script.async = false;
+    script.defer = true;
+    body.appendChild(script);
   }
 
 }
