@@ -30,7 +30,7 @@ export class PageAddClientComponent implements OnInit {
 
   public addClient() {
     this.clientService.addItemById(this.newClient).subscribe(
-      client => {
+      () => {
         this.getClient();
       }
     )

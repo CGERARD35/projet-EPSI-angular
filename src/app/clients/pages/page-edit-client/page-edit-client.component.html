@@ -1,6 +1,6 @@
 <!-- Début Formulaire Modifier CLient -->
 <section class="section-form">
-  <form class="form" >
+  <form class="form" action="clients">
     <div class="title-bloc">
       <h1 class="form-title">Modifier Client</h1>
       <div class="form-button">
@@ -52,12 +52,12 @@
           <div class="form-radio">
             <div class="radio-option">
               <input type="radio" id="active" name="statut"
-                     value="active" [(ngModel)]="client.statut">
+                     value="Active" [(ngModel)]="client.statut" [checked]="client.statut === 'Active'">
               <label for="active">Actif</label>
             </div>
             <div class="radio-option">
               <input type="radio" id="inactive" name="statut"
-                     value="inactive" [(ngModel)]="client.statut">
+                     value="Inactive" [(ngModel)]="client.statut" [checked]="client.statut === 'Inactive'">
               <label for="inactive">Inactif</label>
             </div>
           </div>

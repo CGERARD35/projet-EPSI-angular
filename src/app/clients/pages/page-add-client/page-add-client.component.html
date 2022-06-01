@@ -37,7 +37,7 @@
 
         <div class="form-line">
           <label for="mail">e-mail</label>
-          <input id="mail" placeholder="02 ~" type="email" name="mail" [(ngModel)]="newClient.mail">
+          <input id="mail" placeholder="exemple@exemple.com" type="email" name="mail" [(ngModel)]="newClient.mail">
         </div>
 
       </div>
@@ -46,11 +46,11 @@
           <legend>Statut</legend>
           <div class="form-radio">
             <div class="radio-option">
-              <input type="radio" id="active" name="statut" value="active"[(ngModel)]="newClient.statut">
+              <input type="radio" id="active" name="statut" value="Active"[(ngModel)]="newClient.statut">
               <label for="active">Actif</label>
             </div>
             <div class="radio-option">
-              <input type="radio" id="inactive" name="statut" value="inactive" [(ngModel)]="newClient.statut">
+              <input type="radio" id="inactive" name="statut" value="Inactive" [(ngModel)]="newClient.statut">
               <label for="inactive">Inactif</label>
             </div>
           </div>
@@ -62,8 +62,8 @@
       </div>
     </div>
     <div class="form-button-small-screen">
-      <button class="button-small-screen"  id="add-button-bottom" type="submit">Ajouter</button>
-      <button class="button-small-screen" id="cancel-bottom" type="button">Annuler</button>
+      <button class="button-small-screen"  id="add-button-bottom" type="submit" (click)="addClient()">Ajouter</button>
+      <button class="button-small-screen" id="cancel-bottom" type="button" [routerLink]="'/clients'">Annuler</button>
     </div>
   </form>
   <!-- End Formulaire Nouveau Client -->
