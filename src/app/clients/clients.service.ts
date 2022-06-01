@@ -20,8 +20,8 @@ export class ClientsService {
     return this.httpClient.get<Client[]>(this.url);
   }
 
-  deleteItemById(id: number): Observable<void> {
-    return this.httpClient.delete<void>(this.url + '/' + id);
+  deleteItemById(id: number): Observable<Client> {
+    return this.httpClient.delete<Client>(this.url + '/' + id);
   }
 
   updateItemById(client: Client): Observable<Client> {
