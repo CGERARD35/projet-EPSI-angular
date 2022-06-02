@@ -33,7 +33,7 @@
       }
       input{
         height: 25px;
-        width: 300px;
+        width: 240px;
         margin-left: 1.2rem;
         padding-left: 28px;
         outline-color: var(--orange);
@@ -166,6 +166,9 @@
       transform: translatey(-3px);
       border: .12rem ridge var(--flashy-green);
       box-shadow: 1px 5px 22px var(--black);
+      .contact-header .contact-inactif{
+        animation: displayRed .9s infinite ease-in-out;
+      }
     }
     i{
       color: var(--orange);
@@ -177,6 +180,14 @@
     a{
       cursor: pointer;
     }
+  }
+}
+
+@keyframes displayRed {
+  0%{
+    background-color: var(--light-red);
+  } 100%{
+        background-color: var(--extreme-dark-blue);
   }
 }
 
@@ -220,13 +231,46 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1200px) {
+  .cards-container {
+    .card{
+      height: 190px;
+      width: 210px;
+      .contact-header{
+        flex-direction: column;
+        p{
+          margin-bottom: .8rem;
+          &:nth-of-type(2){
+            text-align: center;
+            width: 70px;
+          }
+        }
+      }
+    }
+  }
+
+  }
+
+@media only screen and (max-width: 860px) {
   .cards-container {
     width: 80%;
-    align-items: center;
+    margin-left: 18%;
     justify-content: center;
     grid-gap: 10px;
     grid-template-columns: repeat(2, 1fr);
+    .card{
+      height: 140px;
+      width: 300px;
+      .contact-header{
+        flex-direction: row;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .cards-container {
+    margin-left: auto;
   }
 }
 

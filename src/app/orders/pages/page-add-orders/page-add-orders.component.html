@@ -13,17 +13,16 @@
 
         <div class="form-line">
           <p>Client</p>
-          <select (focus)="selectClient($event)" (change)="selectClient($event)">
-            <option *ngFor="let client of clients$ | async" [value]="client.id">
+          <select (change)="selectClient($event)">
+            <option *ngFor="let client of clients$ | async" [value]="client.id" [selected]="client.id === 1">
              {{client.nom}} {{client.prenom}} ~ {{client.societe}}
             </option>
           </select>
         </div>
-
         <div class="form-line">
           <p>Produit</p>
-          <select (focus)="selectProduct($event)" (change)="selectProduct($event)">
-            <option *ngFor="let product of products$ | async" [value]="product.id">
+          <select (change)="selectProduct($event)">
+            <option *ngFor="let product of products$ | async" [value]="product.id" [selected]="client.id === 1">
               {{product.nom}}
             </option>
           </select>
@@ -40,15 +39,15 @@
         <div class="form-line">
           <label for="duration-service">Durée de la prestation (en jours)</label>
           <input id="duration-service" placeholder="Saisir la durée de la prestation"
-                 type="text" name="duration-service" required
+                 type="number" name="duration-service" required
                  [(ngModel)]="newOrder.duree">
         </div>
 
         <div class="form-line">
           <label for="prix">Prix de la commande</label>
-          <input id="prix" placeholder="Saisir le prix de la commande~"
-                 type="number" name="prix" required
-                 [(ngModel)]="newOrder.prix">
+          <p id="prix" placeholder="Saisir le prix de la commande~"
+                 type="text" name="prix" required
+             [(ngModel)]="newOrder.prix">{{product.prix*newOrder.duree | currency :'EUR'}} </p>
         </div>
       </div>
       <div class="form-bloc">
@@ -57,15 +56,15 @@
           <div class="form-radio">
             <div class="radio-option">
               <input type="radio" id="paye" name="statut"
-                     value="Payé"
+                     value="Payée"
                      [(ngModel)]="newOrder.statut">
-              <label for="paye">Payé</label>
+              <label for="paye">Payée</label>
             </div>
             <div class="radio-option">
               <input type="radio" id="impaye" name="statut"
-                     value="Impayé" required
+                     value="Impayée" required
                      [(ngModel)]="newOrder.statut">
-              <label for="impaye">Impayé</label>
+              <label for="impaye">Impayée</label>
             </div>
           </div>
         </fieldset>

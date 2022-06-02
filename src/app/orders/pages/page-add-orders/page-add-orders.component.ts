@@ -65,7 +65,11 @@ export class PageAddOrdersComponent implements OnInit {
     this.newOrder.client.nom = this.client.nom;
     this.newOrder.client.prenom = this.client.prenom;
     this.newOrder.client.company = this.client.societe;
+    this.newOrder.prix = this.product.prix * this.newOrder.duree;
     this.ordersService.addOrder(this.newOrder).subscribe(
       (order)=> this.newOrder = order)
+    this.getClients()
+    this.getOrders()
+    this.getProducts()
   }
 }

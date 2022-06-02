@@ -38,8 +38,8 @@
 
         <div class="form-line">
           <label for="fix-phone">Prix de la commande</label>
-          <input id="fix-phone" placeholder="Saisir le prix de la commande~"
-                 type="tel" name="fixPhone" [(ngModel)]="order.prix">
+          <p id="fix-phone" placeholder="Saisir le prix de la commande~"
+             type="tel" name="fixPhone" [(ngModel)]="order.prix">{{order.prix | currency :'EUR'}} </p>
         </div>
       </div>
       <div class="form-bloc">

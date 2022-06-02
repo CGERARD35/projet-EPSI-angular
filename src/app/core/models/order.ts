@@ -4,7 +4,7 @@ export class Order implements OrderI {
   id = 0;
   dateCommande = '';
   prix = 0;
-  duree = '';
+  duree = 0;
   statut = '';
   notes = '';
   client: ClientOrderI = new Cli();

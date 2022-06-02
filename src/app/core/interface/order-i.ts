@@ -2,7 +2,7 @@ export interface OrderI {
   id: number,
   dateCommande: string,
   prix: number,
-  duree: string
+  duree: number,
   statut : string,
   notes: string,
   client: ClientOrderI,
