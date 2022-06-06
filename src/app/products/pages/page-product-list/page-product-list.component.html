@@ -22,12 +22,15 @@
     <div class="contact-header">
       <p>{{produit.nom}}</p>
       <p class="contact-active">{{produit.statut}}</p>
-      <a routerLink="../edit/{{produit.id}}"title="Modifier le client"><i class="fa-solid fa-pen-to-square"></i></a>
+      <div>
+        <a routerLink="../edit/{{produit.id}}" title="Modifier le produit"><i class="fa-solid fa-pen-to-square"></i></a>
+        <a routerLink="../delete/{{produit.id}}" title="Supprimer le produit"><i class="fa-solid fa-trash-can"></i></a>
+      </div>
     </div>
     <div class="contact-footer">
-      <p><i class="fa-solid fa-key"></i>{{produit.id}}</p>
-      <p><i class="fa-solid fa-money-check-dollar"></i>{{produit.prix}}</p>
-      <p><i class="fa-solid fa-quote-left"></i>{{produit.type}}</p>
+      <p><i class="fa-solid fa-key"></i>ID : {{produit.id}}</p>
+      <p><i class="fa-solid fa-money-check-dollar"></i>Prix : {{produit.prix}}</p>
+      <p><i class="fa-solid fa-quote-left"></i>Type : {{produit.type}}</p>
     </div>
   </div>
 </div>
