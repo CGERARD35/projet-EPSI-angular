@@ -4,7 +4,7 @@
     <div class="title-bloc">
       <h1 class="form-title">Modifier Client</h1>
       <div class="form-button">
-        <button class="principal-button" id="edit-button" type="button" (click)="updateClient()"> Modifier</button>
+          <button class="principal-button" id="edit-button" type="button" (click)="updateClient(); showToastr()"> Modifier</button>
         <button class="principal-button" id="cancel" type="button" [routerLink]="'/clients'">Annuler</button>
       </div>
     </div>

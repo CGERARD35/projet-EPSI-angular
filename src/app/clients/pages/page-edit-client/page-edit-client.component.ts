@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ClientsService} from "../../clients.service";
 import {Client} from "../../../core/models/client";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-page-edit-client',
@@ -13,7 +14,9 @@ export class PageEditClientComponent implements OnInit {
   public clientId = 0;
   public client: Client = new Client;
 
-  constructor(private activatedRoute: ActivatedRoute, private clientService: ClientsService) {
+  constructor(private activatedRoute: ActivatedRoute,
+              private clientService: ClientsService,
+              private toastr: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -38,5 +41,10 @@ export class PageEditClientComponent implements OnInit {
         this.client = result
       }
     )
+  }
+
+  showToastr() {
+    this.toastr.success('', 'Client modifié');
+
   }
 }

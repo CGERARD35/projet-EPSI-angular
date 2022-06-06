@@ -3,6 +3,7 @@
   <form class="form" method="POST">
     <div class="title-bloc">
       <h1 class="form-title">Nouveau Client</h1>
+      <p>Client ajouté</p>
       <div class="form-button">
         <button class="principal-button" id="add-button" type="submit" (click)="addClient()">Ajouter</button>
         <button class="principal-button" id="cancel" type="button" [routerLink]="'/clients'">Annuler</button>
@@ -46,7 +47,7 @@
           <legend>Statut</legend>
           <div class="form-radio">
             <div class="radio-option">
-              <input type="radio" id="active" name="statut" value="Active"[(ngModel)]="newClient.statut">
+              <input type="radio" id="active" name="statut" value="actif"[(ngModel)]="newClient.statut">
               <label for="active">Actif</label>
             </div>
             <div class="radio-option">
