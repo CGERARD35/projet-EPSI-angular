@@ -21,8 +21,14 @@
   <div class="card" *ngFor="let client of clients$ | async">
     <div class="contact-header">
       <p>{{client.prenom}} {{client.nom | uppercase}}</p>
-      <p class="contact-active">{{client.statut}}</p>
-      <button class="principal-button" id="edit-button" type="button" (click)="deleteClient(client.id)"> Delete</button>
+      <ng-container *ngIf="client.statut === 'actif' then active else inactive" ></ng-container>
+      <ng-template #active>
+        <p class="contact-active">{{client.statut}}</p>
+      </ng-template>
+      <ng-template #inactive>
+        <p class="contact-inactif">{{client.statut}}</p>
+      </ng-template>
+      <a class="fa-solid fa-trash-can" (click)="deleteClient(client.id)"></a>
       <a routerLink="../edit/{{client.id}}"title="Modifier le client"><i class="fa-solid fa-pen-to-square"></i></a>
     </div>
     <div class="contact-footer">
