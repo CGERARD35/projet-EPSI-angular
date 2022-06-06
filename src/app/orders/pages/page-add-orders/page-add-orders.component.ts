@@ -34,7 +34,6 @@ export class PageAddOrdersComponent implements OnInit {
     this.productInitialisation();
     this.getClients();
     this.getProducts();
-    this.getOrders();
   }
 
   public getClients(){
@@ -78,13 +77,10 @@ export class PageAddOrdersComponent implements OnInit {
     this.newOrder.client.prenom = this.client.prenom;
     this.newOrder.client.company = this.client.societe;
     this.newOrder.prix = this.product.prix * this.newOrder.duree;
-    this.getOrders();
     this.ordersService.addOrder(this.newOrder).subscribe(
       (order)=> {
         this.newOrder = order
+        this.getOrders();
       })
-    this.getOrders();
   }
-
-
 }
