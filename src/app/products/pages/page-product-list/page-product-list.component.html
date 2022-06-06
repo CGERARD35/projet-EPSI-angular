@@ -21,7 +21,14 @@
   <div class="card" *ngFor="let produit of produits$ | async">
     <div class="contact-header">
       <p>{{produit.nom}}</p>
-      <p class="contact-active">{{produit.statut}}</p>
+
+      <ng-container *ngIf="produit.statut === 'Actif' then actif else innactif" ></ng-container>
+      <ng-template #actif>
+        <p class="contact-active">{{produit.statut}}</p>
+      </ng-template>
+      <ng-template #innactif>
+        <p class="contact-inactif">{{produit.statut}}</p>
+      </ng-template>
       <div>
         <a routerLink="../edit/{{produit.id}}" title="Modifier le produit"><i class="fa-solid fa-pen-to-square"></i></a>
         <a routerLink="../delete/{{produit.id}}" title="Supprimer le produit"><i class="fa-solid fa-trash-can"></i></a>
