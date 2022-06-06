@@ -265,7 +265,7 @@
       "dateCommande": "22/05/20",
       "prix": "2000000",
       "duree": "2",
-      "statut": "Impayée",
+      "statut": "Payée",
       "notes": "zaezaeazeazeddd",
       "client": {
         "nom": "Aton",
@@ -473,7 +473,7 @@
       "dateCommande": "2022-06-09",
       "prix": 25000,
       "duree": 5,
-      "statut": "Payée",
+      "statut": "Impayée",
       "notes": "qsd",
       "client": {
         "nom": "Gus",
