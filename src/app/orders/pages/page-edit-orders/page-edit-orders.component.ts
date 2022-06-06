@@ -14,7 +14,8 @@ export class PageEditOrdersComponent implements OnInit {
   public order = new Order();
 
   constructor(private activatedRoute : ActivatedRoute,
-              private orderService : OrdersService) { }
+              private orderService : OrdersService,
+  ) { }
 
   ngOnInit(): void {
     this.activatedRoute.url.subscribe(
@@ -36,8 +37,12 @@ export class PageEditOrdersComponent implements OnInit {
 
 
   public updateOrder() {
+    this.order.prix = this.order.duree*this.order.produit.prix;
     this.orderService.updateOrder(this.order).subscribe(
-      order => {this.order = order}
+      order => {
+        this.order = order;
+        this.orderService.getAllOrders();
+      }
     )
   }
 }

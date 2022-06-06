@@ -26,4 +26,5 @@ export class Cli implements ClientOrderI {
 
 export class Produit implements ProduitOrderI {
   nomProduit = '';
+  prix = 0;
 }

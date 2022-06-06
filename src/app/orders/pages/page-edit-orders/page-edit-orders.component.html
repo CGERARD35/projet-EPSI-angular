@@ -31,15 +31,15 @@
         </div>
 
         <div class="form-line">
-          <label for="portable-phone">Durée de la prestation (en jours)</label>
-          <input id="portable-phone" placeholder="Saisir la durée de la prestation"
-                 type="tel" name="portablePhone" [(ngModel)]="order.duree">
+          <label for="duration-prestaion">Durée de la prestation (en jours)</label>
+          <input id="duration-prestaion" placeholder="Saisir la durée de la prestation"
+                 type="" name="portablePhone" [(ngModel)]="order.duree">
         </div>
-
         <div class="form-line">
-          <label for="fix-phone">Prix de la commande</label>
-          <p id="fix-phone" placeholder="Saisir le prix de la commande~"
-             type="tel" name="fixPhone" [(ngModel)]="order.prix">{{order.prix | currency :'EUR'}} </p>
+          <label for="order-price">Prix de la commande</label>
+          <p id="order-price" placeholder="Saisir le prix de la commande~"
+             type="text" name="order-price"
+             [(ngModel)]="order.prix">{{order.produit.prix*order.duree | currency :'EUR'}} </p>
         </div>
       </div>
       <div class="form-bloc">

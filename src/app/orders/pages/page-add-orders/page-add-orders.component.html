@@ -42,7 +42,7 @@
                  type="number" name="duration-service" required
                  [(ngModel)]="newOrder.duree">
         </div>
-
+        <input hidden [(ngModel)]="newOrder.produit.prix">
         <div class="form-line">
           <label for="prix">Prix de la commande</label>
           <p id="prix" placeholder="Saisir le prix de la commande~"

@@ -21,7 +21,7 @@ export class PageListOrdersComponent implements OnInit {
   }
 
   ordersPaid() {
-    this.ordersService.getAllOrders().subscribe(
+    return this.ordersService.getAllOrders().subscribe(
       value => console.log(value
         .map(value1 => value1)
         .filter(value1 => value1.statut === "Payée")
