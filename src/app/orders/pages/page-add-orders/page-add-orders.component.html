@@ -14,7 +14,7 @@
         <div class="form-line">
           <p>Client</p>
           <select (change)="selectClient($event)">
-            <option *ngFor="let client of clients$ | async" [value]="client.id" [selected]="client.id === 1">
+            <option *ngFor="let client of clients$ | async" [value]="client.id">
              {{client.nom}} {{client.prenom}} ~ {{client.societe}}
             </option>
           </select>
@@ -22,7 +22,7 @@
         <div class="form-line">
           <p>Produit</p>
           <select (change)="selectProduct($event)">
-            <option *ngFor="let product of products$ | async" [value]="product.id" [selected]="client.id === 1">
+            <option *ngFor="let product of products$ | async" [value]="product.id">
               {{product.nom}}
             </option>
           </select>

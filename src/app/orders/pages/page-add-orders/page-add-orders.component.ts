@@ -14,9 +14,9 @@ import {Order} from "../../../core/models/order";
 })
 export class PageAddOrdersComponent implements OnInit {
 
-  private clientId = 0;
+  public clientId = 1
   public client = new Client();
-  private productId = 0
+  public productId = 1
   public product = new Product()
   public clients$!: Observable<Client[]>;
   public products$! : Observable<Product[]>;
@@ -27,9 +27,11 @@ export class PageAddOrdersComponent implements OnInit {
     private clientsService : ClientsService,
     private productsServices : ProductsService,
     private ordersService : OrdersService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
+    this.clientInitialisation();
+    this.productInitialisation();
     this.getClients();
     this.getProducts();
     this.getOrders();
@@ -44,7 +46,12 @@ export class PageAddOrdersComponent implements OnInit {
   }
 
   public getOrders(){
-    this.orders$ =   this.ordersService.getAllOrders();
+    this.orders$ = this.ordersService.getAllOrders();
+  }
+
+  clientInitialisation(){
+    this.clientsService.getItemById(this.clientId).subscribe(
+      (client) => this.client = client)
   }
 
 
@@ -52,6 +59,11 @@ export class PageAddOrdersComponent implements OnInit {
     this.clientId  = event.target.value;
     this.clientsService.getItemById(this.clientId).subscribe(
       (client) => this.client = client)
+  }
+
+  productInitialisation() {
+    this.productsServices.getItemById(this.productId).subscribe(
+      (product) => this.product = product)
   }
 
   selectProduct(event: any) {
@@ -66,10 +78,13 @@ export class PageAddOrdersComponent implements OnInit {
     this.newOrder.client.prenom = this.client.prenom;
     this.newOrder.client.company = this.client.societe;
     this.newOrder.prix = this.product.prix * this.newOrder.duree;
+    this.getOrders();
     this.ordersService.addOrder(this.newOrder).subscribe(
-      (order)=> this.newOrder = order)
-    this.getClients()
-    this.getOrders()
-    this.getProducts()
+      (order)=> {
+        this.newOrder = order
+      })
+    this.getOrders();
   }
+
+
 }
