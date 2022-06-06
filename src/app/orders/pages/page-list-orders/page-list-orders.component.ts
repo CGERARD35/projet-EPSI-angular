@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Observable} from "rxjs";
+import {map, Observable} from "rxjs";
 import {Order} from "../../../core/models/order";
 import {OrdersService} from "../../services/orders.service";
+
 
 @Component({
   selector: 'app-page-list-orders',
@@ -17,6 +18,20 @@ export class PageListOrdersComponent implements OnInit {
   ngOnInit(): void {
     this.orders$ = this.ordersService.getAllOrders();
     this.loadScript('../../../../assets/searchbar.js');
+  }
+
+  ordersPaid() {
+    this.ordersService.getAllOrders().subscribe(
+      value => console.log(value
+        .map(value1 => value1)
+        .filter(value1 => value1.statut === "Payée")
+    ))
+  }
+
+  ordersUnpaid() {
+    this.orders$.pipe(
+        map(orders => orders.filter(value => value.statut === "Impayée"))
+    ).subscribe(results => console.log(results))
   }
 
   public loadScript(url: string) {

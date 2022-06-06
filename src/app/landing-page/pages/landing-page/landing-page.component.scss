@@ -1,7 +1,7 @@
 .home-left{
   background: var(--orange) 100%;
   width: 0vw;
-  height: 100vh;
+  height: calc(100vh + 18px);
   display: flex;
   align-items: center;
   .home-left-title{

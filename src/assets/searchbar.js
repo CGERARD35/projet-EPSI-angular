@@ -18,32 +18,40 @@ function filterList(){
 }
 
 // TRI PAR ACTIVITE
-//
-// const searchByActivity = document.querySelectorAll(".sorting-link");
-//   searchByActivity.forEach(link => {
-//     console.log(link.textContent)
-//     link.addEventListener('click', activList)
-//
-//   })
-//
-// function activList(){
-//     let cards = document.querySelectorAll(".card");
-//     cards.forEach(card => {
-//         let name = card.firstElementChild.childNodes[1].textContent
-//         // Obtenir les actif/non actif
-//         console.log(name)
-//       if(name.includes("Payé")){
-//             card.style.display = "block"
-//         }  else {
-//             card.style.display = "none"
-//         }
-//
-//       if(name.includes("Impayé")){
-//         card.style.display = "block"
-//       }  else {
-//         card.style.display = "none"
-//       }
-//
-//
-//     })
-// }
+
+var searchByActivity = document.querySelectorAll(".sorting-link");
+
+searchByActivity[0].addEventListener('click', allList);
+function allList(){
+  let cards = document.querySelectorAll(".card");
+  cards.forEach(card => {
+      card.style.display = "block"
+  })
+}
+
+searchByActivity[1].addEventListener('click', activList);
+function activList(){
+    let cards = document.querySelectorAll(".card");
+    cards.forEach(card => {
+        let name = card.firstElementChild.childNodes[1].textContent
+      if(name.includes("Payée")){
+            card.style.display = "block"
+        }  else {
+            card.style.display = "none"
+        }
+    })
+}
+
+searchByActivity[2].addEventListener('click', inactiveList);
+
+function inactiveList(){
+  let cards = document.querySelectorAll(".card");
+  cards.forEach(card => {
+    let name = card.firstElementChild.childNodes[1].textContent
+    if(name.includes("Impayée")){
+      card.style.display = "block"
+    }  else {
+      card.style.display = "none"
+    }
+  })
+}

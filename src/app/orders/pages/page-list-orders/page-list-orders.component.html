@@ -5,9 +5,9 @@
 <div class="search-bar">
   <div class="search-container">
     <div class="search-bar-links">
-      <a routerLink="../../orders" class="sorting-link" title="Tous les orders">Toutes</a><span>|</span>
-      <a routerLink="../../orders" class="sorting-link" title="Tous les orders actif">Payées</a><span>|</span>
-      <a routerLink="../../orders" class="sorting-link" title="Tous les orders inactif">Impayées</a>
+      <a routerLink="/orders" class="sorting-link" title="Tous les orders">Toutes</a><span>|</span>
+      <a routerLink="/orders" class="sorting-link" title="Toutes les commandes payées" (click)="ordersPaid()">Payées</a><span>|</span>
+      <a routerLink="/orders" class="sorting-link" title="Tous les commandes non payées" (click)="ordersUnpaid()">Impayées</a>
     </div>
 
     <div class="search-bar-by-name">
