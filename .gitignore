@@ -5,12 +5,13 @@
 /tmp
 /out-tsc
 /bazel-out
+/mock_db/db.json
+
 
 # Node
 /node_modules
 npm-debug.log
 yarn-error.log
-/mock_db
 
 # IDEs and editors
 .idea/
