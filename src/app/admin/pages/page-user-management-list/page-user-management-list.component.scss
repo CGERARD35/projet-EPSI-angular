@@ -1,6 +1,7 @@
 @import "src/styles/_cards";
 
 .container-table-user {
+  margin: 100px auto;
   //width: calc(100% - 100px);
   margin-left: 100px;
   display: flex;
@@ -80,11 +81,13 @@
 
 @media only screen and (max-width: 768px) {
   .container-table-user {
-    margin: 0;
+    margin: 100px 0;
   }
 }
 @media only screen and (max-width: 600px) {
   .container-table-user {
+    margin: 50px 0;
+
     display: block;
     overflow-x: auto;
   }
