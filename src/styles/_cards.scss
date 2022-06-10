@@ -166,7 +166,7 @@
       transform: translatey(-3px);
       border: .12rem ridge var(--flashy-green);
       box-shadow: 1px 5px 22px var(--black);
-      .contact-header .contact-inactif{
+      .contact-header .contact-inactive{
         animation: displayRed .9s infinite ease-in-out;
       }
     }
@@ -197,7 +197,7 @@
   padding: .8rem 1.2rem;
   color: var(--dark-blue);
   font-size: .95rem;
-  .contact-active, .contact-inactif{
+  .contact-active, .contact-inactive{
     background-color: var(--dark-green);
     font-weight: 400;
     color: var(--white);
@@ -206,7 +206,7 @@
     padding: 0.2rem .7rem;
     border-radius: 20px;
   }
-  .contact-inactif{
+  .contact-inactive{
     background-color: var(--dark-red);
   }
 }

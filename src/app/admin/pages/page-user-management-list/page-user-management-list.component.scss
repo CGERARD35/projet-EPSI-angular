@@ -44,7 +44,7 @@
 
 
 
-.contact-active, .contact-inactif{
+.contact-active, .contact-inactive{
   background-color: var(--dark-green);
   font-weight: 400;
   color: var(--white);
@@ -54,7 +54,7 @@
   text-align: center;
 }
 
-.contact-inactif {
+.contact-inactive {
   background-color: var(--dark-red);
 }
 
