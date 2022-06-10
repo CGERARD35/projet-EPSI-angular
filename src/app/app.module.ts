@@ -8,6 +8,7 @@ import { SharedModule } from "./shared/shared.module";
 import {ToastrModule} from "ngx-toastr";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -25,6 +26,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [
+  ]
 })
 export class AppModule { }

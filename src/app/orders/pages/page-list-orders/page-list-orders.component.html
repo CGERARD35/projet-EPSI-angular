@@ -15,7 +15,7 @@
       <input id="searchbar" type="text" title="Rechercher" placeholder="Nom du client...">
     </div>
   </div>
-  <a routerLink="../add" class="adding-link" title="ajouter une commande"><i class="fa-solid fa-plus"></i>Ajouter commande</a>
+  <a routerLink="../add" class="adding-link" title="ajouter une commande"><app-icon-plus></app-icon-plus>Ajouter commande</a>
 </div>
 <!--fin search input-->
 
@@ -30,12 +30,12 @@
       <ng-template #impayee>
         <p class="contact-inactive">{{order.statut}}</p>
       </ng-template>
-      <a routerLink="../edit/{{order.id}}"title="Modifier la commande"><i class="fa-solid fa-pen-to-square"></i></a>
+      <a><app-icon-edit class="pen-to-square" routerLink="../edit/{{order.id}}"title="Modifier la commande"></app-icon-edit></a>
     </div>
     <div class="contact-footer">
-      <p><i class="fa-solid fa-briefcase"></i>Produit : {{order.produit.nomProduit}}</p>
-      <p><i class="fa-solid fa-envelope"></i>Montant : {{order.prix | currency : 'EUR'}} </p>
-      <p><i class="fa-solid fa-phone"></i>commande n°{{order.id}} | {{order.statut}}</p>
+      <p><app-icon-product class="green-icon"></app-icon-product>Produit : {{order.produit.nomProduit}}</p>
+      <p><app-icon-price class="green-icon"></app-icon-price>Montant : {{order.prix | currency : 'EUR'}} </p>
+      <p><app-icon-list class="green-icon"></app-icon-list>commande n°{{order.id}} | {{order.statut}}</p>
     </div>
   </div>
 </div>

@@ -6,6 +6,7 @@ import { PageAddProductComponent } from './pages/page-add-product/page-add-produ
 import { PageProductListComponent } from './pages/page-product-list/page-product-list.component';
 import { PageEditProductComponent } from './pages/page-edit-product/page-edit-product.component';
 import {FormsModule} from "@angular/forms";
+import {IconsModule} from "../icons/icons.module";
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import {FormsModule} from "@angular/forms";
     imports: [
         CommonModule,
         ProductsRoutingModule,
-        FormsModule
+        FormsModule,
+        IconsModule
     ]
 })
 export class ProductsModule { }

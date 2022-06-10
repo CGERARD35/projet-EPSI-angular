@@ -6,6 +6,7 @@ import { PageAddClientComponent } from './pages/page-add-client/page-add-client.
 import { PageEditClientComponent } from './pages/page-edit-client/page-edit-client.component';
 import { PageClientsListComponent } from './pages/page-clients-list/page-clients-list.component';
 import {FormsModule} from "@angular/forms";
+import {IconsModule} from "../icons/icons.module";
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import {FormsModule} from "@angular/forms";
         CommonModule,
         ClientsRoutingModule,
         FormsModule,
+        IconsModule,
     ],
   exports: [
     PageClientsListComponent,
