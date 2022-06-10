@@ -3,8 +3,8 @@
   <div class="search-container">
     <div class="search-bar-links">
       <a routerLink="/products" class="sorting-link" title="Tous les produits">Tous</a><span>|</span>
-      <a routerLink="/products" class="sorting-link" title="Tous les produits actif" (click)="productActif()">Actif</a><span>|</span>
-      <a routerLink="/products" class="sorting-link" title="Tous les produits inactif" (click)="productInactif()">Inactif</a>
+      <a routerLink="/products" class="sorting-link" title="Tous les produits actif" (click)="productActif()">Actifs</a><span>|</span>
+      <a routerLink="/products" class="sorting-link" title="Tous les produits inactif" (click)="productInactif()">Inactifs</a>
     </div>
 
     <div class="search-bar-by-name">
@@ -31,7 +31,7 @@
       </ng-template>
       <div>
         <a routerLink="../edit/{{produit.id}}" title="Modifier le produit"><i class="fa-solid fa-pen-to-square"></i></a>
-        <a routerLink="../delete/{{produit.id}}" title="Supprimer le produit"><i class="fa-solid fa-trash-can"></i></a>
+        <a (click)="deleteProduct(produit.id)" title="Supprimer le produit"><i class="fa-solid fa-trash-can"></i></a>
       </div>
     </div>
     <div class="contact-footer">

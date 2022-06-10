@@ -11,6 +11,8 @@ import {ProductsService} from "../../../products/products.service";
 export class PageProductListComponent implements OnInit {
 
   public produits$!: Observable<Product[]>;
+  public status!: string;
+
 
 
   constructor(private productService: ProductsService) { }
@@ -33,6 +35,15 @@ export class PageProductListComponent implements OnInit {
     this.produits$.pipe(
       map(products => products.filter(value => value.statut === "Inactif"))
     ).subscribe(results => console.log(results))
+  }
+
+  public deleteProduct(productId: number) {
+    this.productService.deleteItemById(productId).subscribe(
+      () => {
+        this.status = "Supprimé";
+        this.produits$ = this.productService.getCollection();
+      }
+    )
   }
 
   public loadScript(url: string) {
