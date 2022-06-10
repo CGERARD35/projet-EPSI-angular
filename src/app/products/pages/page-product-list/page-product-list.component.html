@@ -2,9 +2,9 @@
 <div class="search-bar">
   <div class="search-container">
     <div class="search-bar-links">
-      <a routerLink="#" class="sorting-link" title="Tous les clients">Tous</a><span>|</span>
-      <a routerLink="#" class="sorting-link" title="Tous les clients actif">Actif</a><span>|</span>
-      <a routerLink="#" class="sorting-link" title="Tous les clients inactif">Inactif</a>
+      <a routerLink="/products" class="sorting-link" title="Tous les produits">Tous</a><span>|</span>
+      <a routerLink="/products" class="sorting-link" title="Tous les produits actif" (click)="productActif()">Actif</a><span>|</span>
+      <a routerLink="/products" class="sorting-link" title="Tous les produits inactif" (click)="productInactif()">Inactif</a>
     </div>
 
     <div class="search-bar-by-name">
@@ -22,11 +22,11 @@
     <div class="contact-header">
       <p>{{produit.nom}}</p>
 
-      <ng-container *ngIf="produit.statut === 'Actif' then actif else innactif" ></ng-container>
+      <ng-container *ngIf="produit.statut === 'Actif' then actif else inactif" ></ng-container>
       <ng-template #actif>
         <p class="contact-active">{{produit.statut}}</p>
       </ng-template>
-      <ng-template #innactif>
+      <ng-template #inactif>
         <p class="contact-inactive">{{produit.statut}}</p>
       </ng-template>
       <div>
