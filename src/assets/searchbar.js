@@ -34,7 +34,7 @@ function activList(){
     let cards = document.querySelectorAll(".card");
     cards.forEach(card => {
         let name = card.firstElementChild.childNodes[1].textContent
-      if(name.includes("Payée") || name.includes("Actif")){
+      if(name.includes("Payée") || name.includes("Actifs")){
             card.style.display = "block"
         }  else {
             card.style.display = "none"
@@ -48,7 +48,7 @@ function inactiveList(){
   let cards = document.querySelectorAll(".card");
   cards.forEach(card => {
     let name = card.firstElementChild.childNodes[1].textContent
-    if(name.includes("Impayée") || name.includes("Inactif")){
+    if(name.includes("Impayée") || name.includes("Inactifs")){
       card.style.display = "block"
     }  else {
       card.style.display = "none"
