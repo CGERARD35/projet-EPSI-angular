@@ -8,7 +8,7 @@ import {Admin} from "../core/models/admin";
 })
 export class AdminService {
 
-  private url: string='http://localhost:3000/admin';
+  private url: string='/api/admin';
 
   constructor(private httpClient: HttpClient) { }
 

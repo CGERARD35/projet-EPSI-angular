@@ -8,7 +8,7 @@ import {Client} from "../core/models/client";
 })
 export class ClientsService {
 
-  private url: string='http://localhost:3000/clients';
+  private url: string='/api/clients';
 
   constructor(private httpClient: HttpClient) { }
 

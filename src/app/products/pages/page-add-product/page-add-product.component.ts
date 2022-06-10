@@ -19,19 +19,20 @@ export class PageAddProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  private getProduct(){
-    this.productService.getCollection().subscribe(
-      product => {
-        console.log(product)
-        this.product = product
-      }
-    )
-  }
+  // private getProduct(){
+  //   this.productService.getCollection().subscribe(
+  //     product => {
+  //       console.log(product)
+  //       this.product = product
+  //     }
+  //   )
+  // }
 
   public addProduct() {
     this.productService.addItemById(this.newProduct).subscribe(
       () => {
-        this.getProduct();
+        // this.getProduct();
+        this.productService.getCollection();
       }
     )
 

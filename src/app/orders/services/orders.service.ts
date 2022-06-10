@@ -8,7 +8,7 @@ import {Order} from "../../core/models/order";
 })
 export class OrdersService{
 
-  private url: string='http://localhost:3000/commande';
+  private url: string='/api/commande';
 
   constructor(private httpClient : HttpClient) { }
 
