@@ -3,8 +3,8 @@
   <div class="search-container">
     <div class="search-bar-links">
       <a routerLink="/products" class="sorting-link" title="Tous les produits">Tous</a><span>|</span>
-      <a routerLink="/products" class="sorting-link" title="Tous les produits actif" (click)="productActif()">Actifs</a><span>|</span>
-      <a routerLink="/products" class="sorting-link" title="Tous les produits inactif" (click)="productInactif()">Inactifs</a>
+      <a routerLink="/products" class="sorting-link" title="Tous les produits actif">Actifs</a><span>|</span>
+      <a routerLink="/products" class="sorting-link" title="Tous les produits inactif">Inactifs</a>
     </div>
 
     <div class="search-bar-by-name">
@@ -18,24 +18,49 @@
 
 
 <div class="cards-container">
-  <div class="card" *ngFor="let produit of produits$ | async">
-    <div class="contact-header">
-      <p>{{produit.nom}}</p>
-
-      <ng-container *ngIf="produit.statut === 'Actif' then actif else inactif" ></ng-container>
-      <ng-template #actif>
-        <p class="contact-active">{{produit.statut}}</p>
-      </ng-template>
-      <ng-template #inactif>
-        <p class="contact-inactive">{{produit.statut}}</p>
-      </ng-template>
-        <app-icon-delete class="trash-can" (click)="deleteProduct(produit.id)"></app-icon-delete>
-        <a><app-icon-edit class="pen-to-square"  routerLink="../edit/{{produit.id}}" title="Modifier le produit"></app-icon-edit></a>
-    </div>
-    <div class="contact-footer">
-      <p><app-icon-key class="green-icon"></app-icon-key>ID : {{produit.id}}</p>
-      <p><app-icon-price class="green-icon"></app-icon-price>Prix : {{produit.prix}}</p>
-      <p><app-icon-folder-open class="green-icon"></app-icon-folder-open>Type : {{produit.type}}</p>
-    </div>
+  <div *ngFor="let produit of produits$ | async">
+    <ng-container *ngIf="produit.statut === 'Actif' then cardActive else cardInactive" ></ng-container>
+    <ng-template #cardActive>
+      <div class="card card-active">
+        <div class="contact-header">
+          <p>{{produit.nom}}</p>
+          <ng-container *ngIf="produit.statut === 'Actif' then actif else inactif" ></ng-container>
+          <ng-template #actif>
+            <p class="contact-active">{{produit.statut}}</p>
+          </ng-template>
+          <ng-template #inactif>
+            <p class="contact-inactive">{{produit.statut}}</p>
+          </ng-template>
+          <app-icon-delete class="trash-can" (click)="deleteProduct(produit.id)"></app-icon-delete>
+          <a><app-icon-edit class="pen-to-square"  routerLink="../edit/{{produit.id}}" title="Modifier le produit"></app-icon-edit></a>
+        </div>
+        <div class="contact-footer">
+          <p><app-icon-key class="green-icon"></app-icon-key>ID : {{produit.id}}</p>
+          <p><app-icon-price class="green-icon"></app-icon-price>Prix : {{produit.prix}}</p>
+          <p><app-icon-folder-open class="green-icon"></app-icon-folder-open>Type : {{produit.type}}</p>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template #cardInactive>
+      <div class="card card-inactive">
+        <div class="contact-header">
+          <p>{{produit.nom}}</p>
+          <ng-container *ngIf="produit.statut === 'Actif' then actif else inactif" ></ng-container>
+          <ng-template #actif>
+            <p class="contact-active">{{produit.statut}}</p>
+          </ng-template>
+          <ng-template #inactif>
+            <p class="contact-inactive">{{produit.statut}}</p>
+          </ng-template>
+          <app-icon-delete class="trash-can" (click)="deleteProduct(produit.id)"></app-icon-delete>
+          <a><app-icon-edit class="pen-to-square"  routerLink="../edit/{{produit.id}}" title="Modifier le produit"></app-icon-edit></a>
+        </div>
+        <div class="contact-footer">
+          <p><app-icon-key class="green-icon"></app-icon-key>ID : {{produit.id}}</p>
+          <p><app-icon-price class="green-icon"></app-icon-price>Prix : {{produit.prix}}</p>
+          <p><app-icon-folder-open class="green-icon"></app-icon-folder-open>Type : {{produit.type}}</p>
+        </div>
+      </div>
+    </ng-template>
   </div>
 </div>

@@ -2,8 +2,8 @@
   <div class="search-container">
     <div class="search-bar-links">
       <a routerLink="/orders" class="sorting-link" title="Tous les orders">Toutes</a><span>|</span>
-      <a routerLink="/orders" class="sorting-link" title="Toutes les commandes payées" (click)="ordersPaid()">Payées</a><span>|</span>
-      <a routerLink="/orders" class="sorting-link" title="Tous les commandes non payées" (click)="ordersUnpaid()">Impayées</a>
+      <a routerLink="/orders" class="sorting-link" title="Toutes les commandes payées">Payées</a><span>|</span>
+      <a routerLink="/orders" class="sorting-link" title="Tous les commandes non payées">Impayées</a>
     </div>
 
     <div class="search-bar-by-name">
@@ -16,22 +16,47 @@
 <!--fin search input-->
 
 <div class="cards-container">
-  <div class="card" *ngFor="let order of orders$ | async">
-    <div class="contact-header">
-      <p>{{order.client.nom | uppercase}} {{order.client.prenom}}</p>
-      <ng-container *ngIf="order.statut === 'Payée' then payee else impayee" ></ng-container>
-      <ng-template #payee>
-        <p class="contact-active">{{order.statut}}</p>
-      </ng-template>
-      <ng-template #impayee>
-        <p class="contact-inactive">{{order.statut}}</p>
-      </ng-template>
-      <a><app-icon-edit class="pen-to-square" routerLink="../edit/{{order.id}}"title="Modifier la commande"></app-icon-edit></a>
-    </div>
-    <div class="contact-footer">
-      <p><app-icon-product class="green-icon"></app-icon-product>Produit : {{order.produit.nomProduit}}</p>
-      <p><app-icon-price class="green-icon"></app-icon-price>Montant : {{order.prix | currency : 'EUR'}} </p>
-      <p><app-icon-list class="green-icon"></app-icon-list>commande n°{{order.id}} | {{order.statut}}</p>
-    </div>
+  <div  *ngFor="let order of orders$ | async">
+    <ng-container *ngIf="order.statut === 'Payée' then cardActive else cardInactive" ></ng-container>
+    <ng-template #cardActive>
+      <div class="card card-active">
+        <div class="contact-header">
+          <p>{{order.client.nom | uppercase}} {{order.client.prenom}}</p>
+          <ng-container *ngIf="order.statut === 'Payée' then payee else impayee" ></ng-container>
+          <ng-template #payee>
+            <p class="contact-active">{{order.statut}}</p>
+          </ng-template>
+          <ng-template #impayee>
+            <p class="contact-inactive">{{order.statut}}</p>
+          </ng-template>
+          <a><app-icon-edit class="pen-to-square" routerLink="../edit/{{order.id}}"title="Modifier la commande"></app-icon-edit></a>
+        </div>
+        <div class="contact-footer">
+          <p><app-icon-product class="green-icon"></app-icon-product>Produit : {{order.produit.nom}}</p>
+          <p><app-icon-price class="green-icon"></app-icon-price>Montant : {{order.prix | currency : 'EUR'}} </p>
+          <p><app-icon-list class="green-icon"></app-icon-list>commande n°{{order.id}} | {{order.statut}}</p>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template #cardInactive>
+      <div class="card card-inactive">
+        <div class="contact-header">
+          <p>{{order.client.nom | uppercase}} {{order.client.prenom}}</p>
+          <ng-container *ngIf="order.statut === 'Payée' then payee else impayee" ></ng-container>
+          <ng-template #payee>
+            <p class="contact-active">{{order.statut}}</p>
+          </ng-template>
+          <ng-template #impayee>
+            <p class="contact-inactive">{{order.statut}}</p>
+          </ng-template>
+          <a><app-icon-edit class="pen-to-square" routerLink="../edit/{{order.id}}"title="Modifier la commande"></app-icon-edit></a>
+        </div>
+        <div class="contact-footer">
+          <p><app-icon-product class="green-icon"></app-icon-product>Produit : {{order.produit.nom}}</p>
+          <p><app-icon-price class="green-icon"></app-icon-price>Montant : {{order.prix | currency : 'EUR'}} </p>
+          <p><app-icon-list class="green-icon"></app-icon-list>commande n°{{order.id}} | {{order.statut}}</p>
+        </div>
+      </div>
+    </ng-template>
   </div>
 </div>

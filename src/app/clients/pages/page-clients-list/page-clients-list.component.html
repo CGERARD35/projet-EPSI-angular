@@ -16,23 +16,49 @@
 <!--fin search input-->
 
 <div class="cards-container">
-  <div class="card" *ngFor="let client of clients$ | async">
-    <div class="contact-header">
-      <p>{{client.prenom}} {{client.nom | uppercase}}</p>
-      <ng-container *ngIf="client.statut === 'Actif' then active else inactive" ></ng-container>
-      <ng-template #active>
-        <p class="contact-active">{{client.statut}}</p>
-      </ng-template>
-      <ng-template #inactive>
-        <p class="contact-inactive">{{client.statut}}</p>
-      </ng-template>
-      <app-icon-delete class="trash-can" (click)="deleteClient(client.id)"></app-icon-delete>
-      <a><app-icon-edit class="pen-to-square" routerLink="../edit/{{client.id}}"title="Modifier le client"></app-icon-edit></a>
-    </div>
-    <div class="contact-footer">
-      <p><app-icon-society class="green-icon"></app-icon-society>{{client.societe}}</p>
-      <p><app-icon-mail class="green-icon"></app-icon-mail>{{client.mail}}</p>
-      <p><app-icon-phone class="green-icon"></app-icon-phone>{{client.portable}} / {{client.fixe}}</p>
-    </div>
+  <div *ngFor="let client of clients$ | async">
+    <ng-container *ngIf="client.statut === 'Actif' then cardActive else cardInactive" ></ng-container>
+    <ng-template #cardActive>
+      <div class="card card-active">
+        <div class="contact-header">
+          <p>{{client.prenom}} {{client.nom | uppercase}}</p>
+          <ng-container *ngIf="client.statut === 'Actif' then active else inactive" ></ng-container>
+          <ng-template #active>
+            <p class="contact-active">{{client.statut}}</p>
+          </ng-template>
+          <ng-template #inactive>
+            <p class="contact-inactive">{{client.statut}}</p>
+          </ng-template>
+          <app-icon-delete class="trash-can" (click)="deleteClient(client.id)"></app-icon-delete>
+          <a><app-icon-edit class="pen-to-square" routerLink="../edit/{{client.id}}"title="Modifier le client"></app-icon-edit></a>
+        </div>
+        <div class="contact-footer">
+          <p><app-icon-society class="green-icon"></app-icon-society>{{client.societe}}</p>
+          <p><app-icon-mail class="green-icon"></app-icon-mail>{{client.mail}}</p>
+          <p><app-icon-phone class="green-icon"></app-icon-phone>{{client.portable}} / {{client.fixe}}</p>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template #cardInactive>
+      <div class="card card-inactive">
+        <div class="contact-header">
+          <p>{{client.prenom}} {{client.nom | uppercase}}</p>
+          <ng-container *ngIf="client.statut === 'Actif' then active else inactive" ></ng-container>
+          <ng-template #active>
+            <p class="contact-active">{{client.statut}}</p>
+          </ng-template>
+          <ng-template #inactive>
+            <p class="contact-inactive">{{client.statut}}</p>
+          </ng-template>
+          <app-icon-delete class="trash-can" (click)="deleteClient(client.id)"></app-icon-delete>
+          <a><app-icon-edit class="pen-to-square" routerLink="../edit/{{client.id}}"title="Modifier le client"></app-icon-edit></a>
+        </div>
+        <div class="contact-footer">
+          <p><app-icon-society class="green-icon"></app-icon-society>{{client.societe}}</p>
+          <p><app-icon-mail class="green-icon"></app-icon-mail>{{client.mail}}</p>
+          <p><app-icon-phone class="green-icon"></app-icon-phone>{{client.portable}} / {{client.fixe}}</p>
+        </div>
+      </div>
+    </ng-template>
   </div>
 </div>

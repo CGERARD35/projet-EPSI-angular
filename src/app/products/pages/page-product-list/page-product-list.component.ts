@@ -23,19 +23,6 @@ export class PageProductListComponent implements OnInit {
     this.loadScript('../../../../assets/searchbar.js');
   }
 
-  productActif() {
-    return this.productService.getCollection().subscribe(
-      value => console.log(value
-        .map(value1 => value1)
-        .filter(value1 => value1.statut === "Actif")
-      ))
-  }
-
-  productInactif() {
-    this.produits$.pipe(
-      map(products => products.filter(value => value.statut === "Inactif"))
-    ).subscribe(results => console.log(results))
-  }
 
   public deleteProduct(productId: number) {
     this.productService.deleteItemById(productId).subscribe(

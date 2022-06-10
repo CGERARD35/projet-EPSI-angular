@@ -156,6 +156,16 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
   padding-top: 30px;
+  .card-inactive{
+    &:hover {
+      border: .12rem ridge var(--light-red);
+    }
+  }
+  .card-active{
+    &:hover {
+      border: .12rem ridge var(--light-green);
+    }
+  }
   .card{
     width: 300px;
     height: 120px;
@@ -166,7 +176,6 @@
     transition: transform .3s;
     &:hover{
       transform: translatey(-3px);
-      border: .12rem ridge var(--flashy-green);
       box-shadow: 1px 5px 22px var(--black);
       .contact-header .contact-inactive{
         animation: displayRed .9s infinite ease-in-out;
@@ -204,7 +213,6 @@
     font-weight: 400;
     color: var(--white);
     font-size: .8rem;
-    margin-top: -.1rem;
     padding: 0.2rem .7rem;
     border-radius: 20px;
   }
