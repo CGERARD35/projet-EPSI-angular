@@ -8,7 +8,7 @@ export class Order implements OrderI {
   statut = '';
   notes = '';
   client: ClientOrderI = new Cli();
-  produit = new Produit();
+  produit : ProduitOrderI= new Produit();
 
   constructor(obj?: Partial<Order>) {
     if (obj) {
@@ -25,6 +25,6 @@ export class Cli implements ClientOrderI {
 }
 
 export class Produit implements ProduitOrderI {
-  nomProduit = '';
+  nom = '';
   prix = 0;
 }

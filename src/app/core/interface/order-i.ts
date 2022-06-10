@@ -16,6 +16,6 @@ export interface ClientOrderI {
 }
 
 export interface ProduitOrderI {
-  nomProduit : string,
+  nom : string,
   prix : number,
 }

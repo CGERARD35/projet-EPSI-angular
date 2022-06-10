@@ -20,20 +20,6 @@ export class PageListOrdersComponent implements OnInit {
     this.loadScript('../../../../assets/searchbar.js');
   }
 
-  ordersPaid() {
-    return this.ordersService.getAllOrders().subscribe(
-      value => console.log(value
-        .map(value1 => value1)
-        .filter(value1 => value1.statut === "Payée")
-    ))
-  }
-
-  ordersUnpaid() {
-    this.orders$.pipe(
-        map(orders => orders.filter(value => value.statut === "Impayée"))
-    ).subscribe(results => console.log(results))
-  }
-
   public loadScript(url: string) {
     const body = <HTMLDivElement> document.body;
     const script = document.createElement('script');

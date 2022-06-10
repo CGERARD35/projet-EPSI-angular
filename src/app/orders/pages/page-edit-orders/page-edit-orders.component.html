@@ -16,13 +16,13 @@
         </div>
         <div class="form-line">
           <p class="title">Produit</p>
-          <p>{{order?.produit?.nomProduit}}</p>
+          <p>{{order?.produit?.nom}}</p>
         </div>
 
         <div class="form-line">
           <label for="client-first-name">Date de la commande</label>
           <input id="client-first-name" placeholder="Saisir la date de la commande"
-                 type="date" name="clientFirstName" [(ngModel)]="order.dateCommande" required>
+                 type="date"  name="clientFirstName" [(ngModel)]="order.dateCommande"  required>
         </div>
 
         <div class="form-line">
