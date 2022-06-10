@@ -17,5 +17,4 @@ export class Client implements ClientI{
       Object.assign(this, obj);
     }
   }
-
 }
