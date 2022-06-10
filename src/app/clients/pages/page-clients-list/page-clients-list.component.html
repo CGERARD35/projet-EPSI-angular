@@ -11,10 +11,9 @@
       <input id="searchbar" type="text" title="Rechercher" placeholder="Nom du client...">
     </div>
   </div>
-  <a routerLink="../add" class="adding-link" title="ajouter un client"><i class="fa-solid fa-plus"></i>Ajouter un client</a>
+  <a routerLink="../add" class="adding-link" title="ajouter un client"><app-icon-plus></app-icon-plus>Ajouter un client</a>
 </div>
 <!--fin search input-->
-
 
 <div class="cards-container">
   <div class="card" *ngFor="let client of clients$ | async">
@@ -27,13 +26,13 @@
       <ng-template #inactive>
         <p class="contact-inactive">{{client.statut}}</p>
       </ng-template>
-      <a class="fa-solid fa-trash-can" (click)="deleteClient(client.id)"></a>
-      <a routerLink="../edit/{{client.id}}"title="Modifier le client"><i class="fa-solid fa-pen-to-square"></i></a>
+      <app-icon-delete class="trash-can" (click)="deleteClient(client.id)"></app-icon-delete>
+      <a><app-icon-edit class="pen-to-square" routerLink="../edit/{{client.id}}"title="Modifier le client"></app-icon-edit></a>
     </div>
     <div class="contact-footer">
-      <p><i class="fa-solid fa-briefcase"></i>{{client.societe}}</p>
-      <p><i class="fa-solid fa-envelope"></i>{{client.mail}}</p>
-      <p><i class="fa-solid fa-phone"></i>{{client.portable}} / {{client.fixe}}</p>
+      <p><app-icon-society class="green-icon"></app-icon-society>{{client.societe}}</p>
+      <p><app-icon-mail class="green-icon"></app-icon-mail>{{client.mail}}</p>
+      <p><app-icon-phone class="green-icon"></app-icon-phone>{{client.portable}} / {{client.fixe}}</p>
     </div>
   </div>
 </div>

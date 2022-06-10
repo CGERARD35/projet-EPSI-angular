@@ -12,7 +12,7 @@
       <input id="searchbar" type="text" title="Rechercher" placeholder="Nom du produit...">
     </div>
   </div>
-  <a routerLink="../add" class="adding-link" title="ajouter un produit"><i class="fa-solid fa-plus"></i>Ajouter un produit</a>
+  <a routerLink="../add" class="adding-link" title="ajouter un produit"><app-icon-plus></app-icon-plus>Ajouter un produit</a>
 </div>
 <!--fin search input-->
 
@@ -29,15 +29,13 @@
       <ng-template #inactif>
         <p class="contact-inactive">{{produit.statut}}</p>
       </ng-template>
-      <div>
-        <a routerLink="../edit/{{produit.id}}" title="Modifier le produit"><i class="fa-solid fa-pen-to-square"></i></a>
-        <a (click)="deleteProduct(produit.id)" title="Supprimer le produit"><i class="fa-solid fa-trash-can"></i></a>
-      </div>
+        <app-icon-delete class="trash-can" (click)="deleteProduct(produit.id)"></app-icon-delete>
+        <a><app-icon-edit class="pen-to-square"  routerLink="../edit/{{produit.id}}" title="Modifier le produit"></app-icon-edit></a>
     </div>
     <div class="contact-footer">
-      <p><i class="fa-solid fa-key"></i>ID : {{produit.id}}</p>
-      <p><i class="fa-solid fa-money-check-dollar"></i>Prix : {{produit.prix}}</p>
-      <p><i class="fa-solid fa-quote-left"></i>Type : {{produit.type}}</p>
+      <p><app-icon-key class="green-icon"></app-icon-key>ID : {{produit.id}}</p>
+      <p><app-icon-price class="green-icon"></app-icon-price>Prix : {{produit.prix}}</p>
+      <p><app-icon-folder-open class="green-icon"></app-icon-folder-open>Type : {{produit.type}}</p>
     </div>
   </div>
 </div>

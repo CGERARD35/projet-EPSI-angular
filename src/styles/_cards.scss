@@ -95,6 +95,8 @@
 
 }
 
+
+
 @media only screen and (max-width: 768px) {
   .search-bar{
     margin-left: 7.5%;
@@ -170,7 +172,7 @@
         animation: displayRed .9s infinite ease-in-out;
       }
     }
-    i{
+    .pen-to-square{
       color: var(--orange);
       font-size: 1.2rem;
     }
@@ -216,7 +218,7 @@
   font-size: .8rem;
   p{
     margin-bottom: .3rem;
-    i{
+    .green-icon{
       font-size: .7rem;
       margin-right: .8rem;
       color : var(--light-green);
@@ -302,4 +304,10 @@
       width: 300px;
     }
   }
+}
+
+//couleur poubelle
+.trash-can {
+  color: var(--dark-red);
+  cursor: pointer;
 }
