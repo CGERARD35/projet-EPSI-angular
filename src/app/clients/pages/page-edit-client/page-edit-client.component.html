@@ -4,7 +4,7 @@
     <div class="title-bloc">
       <h1 class="form-title">Modifier Client</h1>
       <div class="form-button">
-          <button class="principal-button" id="edit-button" type="button" (click)="updateClient(); showToastr()"> Modifier</button>
+          <button class="principal-button" id="edit-button" type="button" (click)="updateClient(); showToastr()" [routerLink]="'/clients'"> Modifier</button>
         <button class="principal-button" id="cancel" type="button" [routerLink]="'/clients'">Annuler</button>
       </div>
     </div>
@@ -64,12 +64,12 @@
         </fieldset>
         <div class="form-notes">
           <label for="notes">Notes</label>
-          <textarea id="notes" name="notes">{{client.notes}}</textarea>
+          <textarea id="notes" name="notes" [(ngModel)]="client.notes"></textarea>
         </div>
       </div>
     </div>
     <div class="form-button-small-screen">
-      <button class="button-small-screen"  id="edit-button-bottom" (click)="updateClient()">Modifier</button>
+      <button class="button-small-screen"  id="edit-button-bottom" (click)="updateClient(); showToastr()" [routerLink]="'/clients'">Modifier</button>
       <button class="button-small-screen" id="cancel-bottom" type="button" [routerLink]="'/clients'">Annuler</button>
     </div>
   </form>

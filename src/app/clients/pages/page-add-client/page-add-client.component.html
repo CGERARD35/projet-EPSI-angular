@@ -5,7 +5,7 @@
       <h1 class="form-title">Nouveau Client</h1>
       <p>Client ajouté</p>
       <div class="form-button">
-        <button class="principal-button" id="add-button" type="submit" (click)="addClient()">Ajouter</button>
+        <button class="principal-button" id="add-button" type="submit" (click)="addClient(); showToastr()" [routerLink]="'/clients'">Ajouter</button>
         <button class="principal-button" id="cancel" type="button" [routerLink]="'/clients'">Annuler</button>
       </div>
     </div>
@@ -58,12 +58,12 @@
         </fieldset>
         <div class="form-notes">
           <label for="notes">Notes</label>
-          <textarea id="notes" name="notes">{{newClient.notes}}</textarea>
+          <textarea id="notes" name="notes" [(ngModel)]="newClient.notes"></textarea>
         </div>
       </div>
     </div>
     <div class="form-button-small-screen">
-      <button class="button-small-screen"  id="add-button-bottom" type="submit" (click)="addClient()">Ajouter</button>
+      <button class="button-small-screen"  id="add-button-bottom" type="submit" (click)="addClient(); showToastr()" [routerLink]="'/clients'">Ajouter</button>
       <button class="button-small-screen" id="cancel-bottom" type="button" [routerLink]="'/clients'">Annuler</button>
     </div>
   </form>

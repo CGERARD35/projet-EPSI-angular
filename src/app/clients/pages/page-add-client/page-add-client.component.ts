@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ClientsService} from "../../clients.service";
 import {Client} from "../../../core/models/client";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-page-add-client',
@@ -13,7 +14,7 @@ export class PageAddClientComponent implements OnInit {
   public newClient: Client = new Client;
   public client!:Client[];
 
-  constructor(private activatedRoute: ActivatedRoute, private clientService: ClientsService) {
+  constructor(private activatedRoute: ActivatedRoute, private clientService: ClientsService, private toastr: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -34,6 +35,10 @@ export class PageAddClientComponent implements OnInit {
         this.getClient();
       }
     )
+  }
+
+  showToastr() {
+    this.toastr.success('', 'Client ajouté');
 
   }
 }
