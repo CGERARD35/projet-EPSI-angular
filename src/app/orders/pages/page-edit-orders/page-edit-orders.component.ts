@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {OrdersService} from "../../services/orders.service";
 import {Order} from "../../../core/models/order";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-page-edit-orders',
@@ -14,6 +14,7 @@ export class PageEditOrdersComponent implements OnInit {
   public order = new Order();
 
   constructor(private activatedRoute : ActivatedRoute,
+              private router: Router,
               private orderService : OrdersService,
   ) { }
 
@@ -41,7 +42,7 @@ export class PageEditOrdersComponent implements OnInit {
     this.orderService.updateOrder(this.order).subscribe(
       order => {
         this.order = order;
-        this.orderService.getAllOrders();
+        this.router.navigate(['/orders']);
       }
     )
   }
