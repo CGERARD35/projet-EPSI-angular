@@ -6,6 +6,7 @@ import {Product} from "../../../core/models/product";
 import {ProductsService} from "../../../products/products.service";
 import {OrdersService} from "../../services/orders.service";
 import {Order} from "../../../core/models/order";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-page-add-orders',
@@ -26,7 +27,8 @@ export class PageAddOrdersComponent implements OnInit {
   constructor(
     private clientsService : ClientsService,
     private productsServices : ProductsService,
-    private ordersService : OrdersService
+    private ordersService : OrdersService,
+    private router: Router,
   ) {}
 
   ngOnInit(): void {
@@ -81,7 +83,7 @@ export class PageAddOrdersComponent implements OnInit {
     this.ordersService.addOrder(this.newOrder).subscribe(
       (order)=> {
         this.newOrder = order
-        this.getOrders();
+        this.router.navigate(['/orders']);
       })
   }
 }
