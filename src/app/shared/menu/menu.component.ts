@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
+  public show : boolean = false;
+
   constructor() {
   }
 
@@ -14,4 +16,7 @@ export class MenuComponent implements OnInit {
 
   }
 
+  public showAndHideMenu(): void {
+    this.show = !this.show;
+  }
 }

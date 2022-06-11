@@ -4,13 +4,13 @@
   left: 0;
   height: 100%;
   background-color: var(--middle-blue);
-  //background-color: var(--blue);
   color: var(--white);
   font-size: .7rem;
   text-align: center;
   padding: 1.2rem 0rem;
   z-index: 2;
   width: 100px;
+  transition: all ease-in-out 3s;
   a{
     cursor: pointer;
     color: var(--white);
@@ -97,14 +97,19 @@
     transform-origin: 0% 50%;
     transform: scaleX(1);
   }
-
 }
 
 @media only screen and (max-width: 768px) {
-  .aside{
-    display: none;
-    left: -100px;
-  }
+    .visible{
+      transition: transform ease-in-out .4s;
+      top: 30px;
+      transform: translateX(0px);
+    }
+    .hidden{
+      transition: transform ease-in-out .4s;
+      top: 30px;
+      transform: translateX(-100px);
+    }
   .menu-burger{
     display: flex;
     z-index: 300;
@@ -113,18 +118,25 @@
     justify-content: center;
     cursor: pointer;
     margin-top: .2rem;
-    &:hover {
-      .burger-line:nth-of-type(1){
+      .crossBlue{
+        margin-bottom: 4px;
+        height: 2px;
+        width: 20px;
         transform: rotate(45deg) translateY(2px) translateX(2px);
         background-color: var(--blue);
+        transition: all .3s;
       }
-      .burger-line:nth-of-type(2){
+      .crossNone{
         display: none;
       }
-      .burger-line:nth-of-type(3){
+      .crossOrange{
+        transition: all .3s;
+        margin-bottom: 4px;
+        height: 2px;
+        width: 20px;
         transform: rotate(-45deg) translateY(-3px) translateX(2px);
       }
-    }
+
     .burger-line{
       transition: all .3s;
       margin-bottom: 4px;
