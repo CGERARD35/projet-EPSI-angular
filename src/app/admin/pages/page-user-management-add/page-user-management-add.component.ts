@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {Product} from "../../../core/models/product";
+import {ActivatedRoute} from "@angular/router";
+import {AdminService} from "../../admin.service";
+import {Admin} from "../../../core/models/admin";
 
 @Component({
   selector: 'app-page-user-management-add',
@@ -7,9 +11,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageUserManagementAddComponent implements OnInit {
 
-  constructor() { }
+  public newUser: Admin = new Admin;
+  public admin!: Admin[];
+
+  constructor(private activatedRoute: ActivatedRoute, private adminService: AdminService) {
+  }
 
   ngOnInit(): void {
   }
 
+
+
+  public addUser() {
+    this.adminService.addItemById(this.newUser).subscribe(
+      () => {
+        this.adminService.getCollection();
+        //Ajouter Link routing pour réactualiser la liste
+        //Ajouter toaster en cas d'erreur
+      }
+    )
+  }
 }

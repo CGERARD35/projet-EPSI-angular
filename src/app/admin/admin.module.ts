@@ -6,6 +6,7 @@ import { PageUserManagementListComponent } from './pages/page-user-management-li
 import {IconsModule} from "../icons/icons.module";
 import { PageUserManagementAddComponent } from './pages/page-user-management-add/page-user-management-add.component';
 import { PageUserManagementEditComponent } from './pages/page-user-management-edit/page-user-management-edit.component';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { PageUserManagementEditComponent } from './pages/page-user-management-ed
     imports: [
         CommonModule,
         AdminRoutingModule,
-        IconsModule
+        IconsModule,
+        FormsModule
     ]
 })
 export class AdminModule { }

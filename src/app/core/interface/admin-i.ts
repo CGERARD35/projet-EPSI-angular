@@ -3,7 +3,7 @@ export interface AdminI {
   nom: string,
   prenom: string,
   statut : string,
-  email: string,
+  mail: string,
   password: string,
   role: string
 }
