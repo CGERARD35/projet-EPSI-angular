@@ -5,15 +5,17 @@
     <div class="navbar-logo"></div>
     <h1 class="navbar-logo-title"><span>O</span>ne Day</h1>
   </a>
-  <div class="menu-burger">
-    <span class="burger-line"></span>
-    <span class="burger-line"></span>
-    <span class="burger-line"></span>
+  <div class="menu-burger" (click)="showAndHideMenu()">
+    <span [ngClass]="{'burger-line' : show === false, 'crossBlue' : show === true}"></span>
+    <span [ngClass]="{'burger-line' : show === false}"></span>
+    <span [ngClass]="{'burger-line' : show === false}"></span>
+    <span [ngClass]="{'burger-line' : show === false, 'burger-line crossOrange' : show === true}"></span>
   </div>
 </nav>
 
+
 <!-- Composant Menu -->
-<aside class="aside">
+<aside class="aside" [ngClass]="{'hidden' : show === false, 'visible' : show === true}">
   <div class="bar-link" routerLinkActive="active">
     <a routerLink="user" title="Votre profil">
       <i class="fa-solid fa-user-gear"></i>
@@ -57,5 +59,7 @@
     </a>
   </div>
 </aside>
+
+
 <router-outlet class="tr-content"></router-outlet>
 
