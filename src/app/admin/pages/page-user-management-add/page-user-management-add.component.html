@@ -1,0 +1,66 @@
+<!-- Début Formulaire Nouvel Utilisateur -->
+<section class="section-form">
+  <form class="form" method="POST">
+    <div class="title-bloc">
+      <h1 class="form-title">Nouvel Utilisateur</h1>
+      <div class="form-button">
+        <button class="principal-button" id="add-button" type="submit"  [routerLink]="'/admin'">Ajouter</button>
+        <button class="principal-button" id="cancel" type="button" [routerLink]="'/admin'">Annuler</button>
+      </div>
+    </div>
+    <div class="bloc">
+      <div class="form-bloc">
+        <div class="form-line">
+          <label for="client-last-name">Nom de l'utilisateur</label>
+          <input id="client-last-name" placeholder="Saisir le nom de l'utilisateur" type="text" name="user-name" required>
+        </div>
+
+        <div class="form-line">
+          <label for="client-first-name">Prénom de l'utilisateur</label>
+          <input id="client-first-name" placeholder="Saisir le prénom de l'utilisateur" type="text" name="user-prenom" required>
+        </div>
+
+        <div class="form-line">
+          <label for="mail">Email</label>
+          <input id="mail" placeholder="Saisir le mail" type="text" name="mail" >
+        </div>
+
+        <div class="form-line">
+          <label for="userRole">Role</label>
+          <select name="userRole" id="userRole">
+            <option value="">--Veuillez choisir une option--</option>
+            <option value="ADMIN">ADMIN</option>
+            <option value="USER">USER</option>
+          </select>
+        </div>
+
+
+
+
+      </div>
+      <div class="form-bloc">
+        <fieldset class="form-line">
+          <legend>Statut</legend>
+          <div class="form-radio">
+            <div class="radio-option">
+              <input type="radio" id="active" name="statut" value="Actif">
+              <label for="active">Actif</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="inactive" name="statut" value="Inactif">
+              <label for="inactive">Inactif</label>
+            </div>
+          </div>
+        </fieldset>
+
+      </div>
+    </div>
+    <div class="form-button-small-screen">
+      <button class="button-small-screen"  id="add-button-bottom" type="submit" [routerLink]="'/admin'">Ajouter</button>
+      <button class="button-small-screen" id="cancel-bottom" type="button" [routerLink]="'/admin'">Annuler</button>
+    </div>
+  </form>
+  <!-- End Formulaire Nouveau Client -->
+
+</section>
+
