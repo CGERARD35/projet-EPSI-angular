@@ -10,6 +10,7 @@
   padding: 1.2rem 0rem;
   z-index: 2;
   width: 100px;
+  transition: transform ease-in-out .4s;
   a{
     cursor: pointer;
     color: var(--white);
@@ -99,16 +100,14 @@
 }
 
 @media only screen and (max-width: 768px) {
-    .visible{
-      transition: transform ease-in-out .4s;
-      top: 30px;
-      transform: translateX(0px);
-    }
-    .hidden{
-      transition: transform ease-in-out .4s;
-      top: 30px;
-      transform: translateX(-100px);
-    }
+  .visible{
+    transition: transform ease-in-out .4s;
+    transform: translateX(0px);
+  }
+  .hidden{
+    transition: transform ease-in-out .4s;
+    transform: translateX(-100px);
+  }
   .menu-burger{
     display: flex;
     z-index: 300;
