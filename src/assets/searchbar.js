@@ -1,3 +1,4 @@
+//TRI PAR NOM
 var input = document.getElementById("searchbar");
 input.addEventListener('input', filterList)
 function filterList(){
@@ -33,7 +34,7 @@ searchByActivity[1].addEventListener('click', activList);
 function activList(){
     let cards = document.querySelectorAll(".card");
     cards.forEach(card => {
-        let name = card.firstElementChild.childNodes[1].textContent
+      let name = card.firstElementChild.childNodes[1].textContent
       if(name.includes("Payée") || name.includes("Actif")){
             card.style.display = "block"
         }  else {
@@ -55,3 +56,19 @@ function inactiveList(){
     }
   })
 }
+
+function cardHover(){
+  let cards = document.querySelectorAll(".card");
+  cards.forEach(card => {
+    let name = card.firstElementChild.childNodes[1].textContent
+    if(name.includes("Impayée") || name.includes("Inactif")){
+      card.classList.add("card-inactive")
+    }  else {
+      card.classList.add("card-active")
+    }
+  })
+}
+function delayedCardHover() {
+  window.setTimeout(cardHover, 200);
+}
+delayedCardHover()
