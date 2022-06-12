@@ -27,14 +27,8 @@
 
         <div class="form-line">
           <label for="userRole">Role</label>
-          <select name="userRole" id="userRole">
-            <option value="">--Veuillez choisir une option--</option>
-            <option value="ADMIN" [(ngModel)]="newUser.statut">ADMIN</option>
-            <option value="USER" [(ngModel)]="newUser.statut">USER</option>
-          </select>
+          <input id="userRole" placeholder="saisir le role" type="text" name="userRole" [(ngModel)]="newUser.role" required>
         </div>
-
-
 
 
       </div>
