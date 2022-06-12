@@ -74,7 +74,8 @@ export class PageAddOrdersComponent implements OnInit {
   }
 
   createOrder() {
-    this.newOrder.produit.nom = this.product.nom;
+    this.newOrder.produitId = this.product.id;
+    this.newOrder.clientId = this.client.id;
     this.newOrder.produit.prix = this.product.prix;
     this.newOrder.client.nom = this.client.nom;
     this.newOrder.client.prenom = this.client.prenom;

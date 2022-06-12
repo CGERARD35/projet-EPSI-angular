@@ -5,6 +5,8 @@ export interface OrderI {
   duree: number,
   statut : string,
   notes: string,
+  clientId : number,
+  produitId : number,
   client: ClientOrderI,
   produit: ProduitOrderI,
 }

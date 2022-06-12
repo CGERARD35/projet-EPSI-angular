@@ -7,6 +7,8 @@ export class Order implements OrderI {
   duree = 0;
   statut = '';
   notes = '';
+  clientId = 0;
+  produitId = 0;
   client: ClientOrderI = new Cli();
   produit : ProduitOrderI= new Produit();
 
