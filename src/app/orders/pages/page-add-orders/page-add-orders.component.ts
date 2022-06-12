@@ -15,7 +15,7 @@ import {Router} from "@angular/router";
 })
 export class PageAddOrdersComponent implements OnInit {
 
-  public clientId = 1
+  public getClientId: any[] = [] ;
   public client = new Client();
   public productId = 1
   public product = new Product()
@@ -51,14 +51,15 @@ export class PageAddOrdersComponent implements OnInit {
   }
 
   clientInitialisation(){
-    this.clientsService.getItemById(this.clientId).subscribe(
-      (client) => this.client = client)
+    this.clientsService.getCollection().subscribe(
+      value => this.getClientId = value
+        .map(value1 => value1.id));
   }
 
 
   selectClient(event: any) {
-    this.clientId  = event.target.value;
-    this.clientsService.getItemById(this.clientId).subscribe(
+    this.getClientId  = event.target.value;
+    this.clientsService.getItemById(this.getClientId[0]).subscribe(
       (client) => this.client = client)
   }
 
@@ -74,8 +75,8 @@ export class PageAddOrdersComponent implements OnInit {
   }
 
   createOrder() {
+    this.newOrder.clientId = this.getClientId[0];
     this.newOrder.produitId = this.product.id;
-    this.newOrder.clientId = this.client.id;
     this.newOrder.produit.prix = this.product.prix;
     this.newOrder.client.nom = this.client.nom;
     this.newOrder.client.prenom = this.client.prenom;

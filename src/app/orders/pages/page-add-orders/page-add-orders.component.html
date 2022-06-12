@@ -15,7 +15,7 @@
           <p>Client</p>
           <select (change)="selectClient($event)">
             <option *ngFor="let client of clients$ | async" [value]="client.id">
-             {{client.nom}} {{client.prenom}} ~ {{client.societe}} {{client.id}}
+             {{client.nom}} {{client.prenom}} ~ {{client.societe}}
             </option>
           </select>
         </div>
@@ -23,7 +23,7 @@
           <p>Produit</p>
           <select (change)="selectProduct($event)">
             <option *ngFor="let product of products$ | async" [value]="product.id">
-              {{product.nom}} {{product.id}}
+              {{product.nom}}
             </option>
           </select>
         </div>
