@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ProductsService} from "../../products.service";
 import {Product} from "../../../core/models/product";
 import {ActivatedRoute} from "@angular/router";
+import {ToastrService} from "ngx-toastr";
 
 
 @Component({
@@ -14,7 +15,7 @@ export class PageEditProductComponent implements OnInit {
   public productId = 0;
   public product: Product = new Product();
 
-  constructor(private productService: ProductsService,private activatedRoute: ActivatedRoute) { }
+  constructor(private productService: ProductsService,private activatedRoute: ActivatedRoute, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.productId = Number(this.activatedRoute.snapshot.paramMap.get('id'))
@@ -37,4 +38,8 @@ export class PageEditProductComponent implements OnInit {
     )
   }
 
+  showToastr() {
+    this.toastr.success('', 'Produit modifié');
+
+  }
 }

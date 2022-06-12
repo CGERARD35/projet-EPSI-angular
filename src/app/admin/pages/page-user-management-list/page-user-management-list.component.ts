@@ -11,6 +11,7 @@ import {Admin} from "../../../core/models/admin";
 export class PageUserManagementListComponent implements OnInit {
 
   public admin$!: Observable<Admin[]>;
+  public status!: string;
 
   constructor(private adminService: AdminService) { }
 
@@ -18,6 +19,15 @@ export class PageUserManagementListComponent implements OnInit {
     this.admin$ = this.adminService.getCollection();
 
     this.loadScript('../../../../assets/searchbar.js');
+  }
+
+  public deleteUser(userId: number) {
+    this.adminService.deleteItemById(userId).subscribe(
+      () => {
+        this.status = "Supprimé";
+        this.admin$ = this.adminService.getCollection();
+      }
+    )
   }
 
   public loadScript(url: string) {

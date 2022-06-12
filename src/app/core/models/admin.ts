@@ -5,7 +5,7 @@ export class Admin implements AdminI{
   nom = '';
   prenom = '';
   statut = '';
-  email = '';
+  mail = '';
   password = '';
   role = '';
 

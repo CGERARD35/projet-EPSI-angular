@@ -1,3 +1,19 @@
+<div class="search-bar">
+  <div class="search-container">
+    <div class="search-bar-links">
+      <a routerLink="#" class="sorting-link" title="Tous les users">Tous</a><span>|</span>
+      <a routerLink="#" class="sorting-link">Actifs</a><span>|</span>
+      <a routerLink="#" class="sorting-link">Inactifs</a>
+    </div>
+
+    <div class="search-bar-by-name">
+      <label for="searchbar"></label>
+      <input id="searchbar" type="text" title="Rechercher" placeholder="Nom du client...">
+    </div>
+  </div>
+  <a routerLink="../add" class="adding-link" title="ajouter un user"><app-icon-plus></app-icon-plus>Ajouter commande</a>
+</div>
+<!--fin search input-->
 
 <div class="container-table-user">
 
@@ -17,10 +33,18 @@
     <tr *ngFor="let admin of admin$ | async">
       <td>{{admin.id}}</td>
       <td>{{admin.nom}} {{admin.prenom}}</td>
-      <td>{{admin.email}}</td>
+      <td>{{admin.mail}}</td>
       <td>{{admin.role}}</td>
-      <td><a><app-icon-edit class="pen-to-square"></app-icon-edit></a> <a><app-icon-delete class="trash-can"></app-icon-delete></a></td>
-      <td><p class="contact-active">{{admin.statut}}</p></td>
+      <td><a><app-icon-edit class="pen-to-square" routerLink="../edit/{{admin.id}}"></app-icon-edit></a> <a><app-icon-delete class="trash-can" (click)="deleteUser(admin.id)"></app-icon-delete></a></td>
+      <td>
+        <ng-container *ngIf="admin.statut === 'Actif' then actif else inactif" ></ng-container>
+        <ng-template #actif>
+          <p class="contact-active">{{admin.statut}}</p>
+        </ng-template>
+        <ng-template #inactif>
+          <p class="contact-inactive">{{admin.statut}}</p>
+        </ng-template>
+      </td>
     </tr>
     </tbody>
   </table>
