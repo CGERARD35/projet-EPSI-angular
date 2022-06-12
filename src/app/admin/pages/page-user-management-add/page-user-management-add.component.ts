@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Product} from "../../../core/models/product";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {AdminService} from "../../admin.service";
 import {Admin} from "../../../core/models/admin";
 import {ToastrService} from "ngx-toastr";
@@ -15,7 +15,7 @@ export class PageUserManagementAddComponent implements OnInit {
   public newUser: Admin = new Admin;
   public admin!: Admin[];
 
-  constructor(private activatedRoute: ActivatedRoute, private adminService: AdminService, private toastr: ToastrService) {
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, private adminService: AdminService, private toastr: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -27,7 +27,7 @@ export class PageUserManagementAddComponent implements OnInit {
     this.adminService.addItemById(this.newUser).subscribe(
       () => {
         this.adminService.getCollection();
-        //Ajouter Link routing pour réactualiser la liste
+        this.router.navigate(['/admin']);
         //Ajouter toaster en cas d'erreur
       }
     )

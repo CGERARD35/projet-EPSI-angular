@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Product} from "../../../core/models/product";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {ProductsService} from "../../products.service";
 import {ToastrService} from "ngx-toastr";
 
@@ -14,7 +14,8 @@ export class PageAddProductComponent implements OnInit {
   public newProduct: Product = new Product;
   public product!:Product[];
 
-  constructor(private activatedRoute: ActivatedRoute, private productService: ProductsService, private toastr: ToastrService) {
+
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, private productService: ProductsService, private toastr: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -33,7 +34,7 @@ export class PageAddProductComponent implements OnInit {
     this.productService.addItemById(this.newProduct).subscribe(
       () => {
         this.getProduct();
-        //Ajouter Link routing pour réactualiser la liste
+        this.router.navigate(['/products']);
         //Ajouter toaster en cas d'erreur
       }
     )
