@@ -3,6 +3,7 @@ import {Product} from "../../../core/models/product";
 import {ActivatedRoute} from "@angular/router";
 import {AdminService} from "../../admin.service";
 import {Admin} from "../../../core/models/admin";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-page-user-management-add',
@@ -14,7 +15,7 @@ export class PageUserManagementAddComponent implements OnInit {
   public newUser: Admin = new Admin;
   public admin!: Admin[];
 
-  constructor(private activatedRoute: ActivatedRoute, private adminService: AdminService) {
+  constructor(private activatedRoute: ActivatedRoute, private adminService: AdminService, private toastr: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -30,5 +31,10 @@ export class PageUserManagementAddComponent implements OnInit {
         //Ajouter toaster en cas d'erreur
       }
     )
+  }
+
+  showToastr() {
+    this.toastr.success('', 'Utilisateur ajouté');
+
   }
 }

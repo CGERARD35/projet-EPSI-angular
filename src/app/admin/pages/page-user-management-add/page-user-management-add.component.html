@@ -4,7 +4,7 @@
     <div class="title-bloc">
       <h1 class="form-title">Nouvel Utilisateur</h1>
       <div class="form-button">
-        <button class="principal-button" id="add-button" type="submit" (click)="addUser()" [routerLink]="'/admin'">Ajouter</button>
+        <button class="principal-button" id="add-button" type="submit" (click)="addUser(); showToastr()" [routerLink]="'/admin'">Ajouter</button>
         <button class="principal-button" id="cancel" type="button" [routerLink]="'/admin'">Annuler</button>
       </div>
     </div>
@@ -23,6 +23,11 @@
         <div class="form-line">
           <label for="mail">Email</label>
           <input id="mail" placeholder="Saisir le mail" type="text" name="mail" [(ngModel)]="newUser.mail" required>
+        </div>
+
+        <div class="form-line">
+          <label for="password">Mot de passe</label>
+          <input id="password" placeholder="Saisir le mot de passe" type="text" name="password" [(ngModel)]="newUser.password" required>
         </div>
 
         <div class="form-line">
@@ -50,7 +55,7 @@
       </div>
     </div>
     <div class="form-button-small-screen">
-      <button class="button-small-screen"  id="add-button-bottom" type="submit" (click)="addUser()" [routerLink]="'/admin'">Ajouter</button>
+      <button class="button-small-screen"  id="add-button-bottom" type="submit" (click)="addUser(); showToastr()" [routerLink]="'/admin'">Ajouter</button>
       <button class="button-small-screen" id="cancel-bottom" type="button" [routerLink]="'/admin'">Annuler</button>
     </div>
   </form>
