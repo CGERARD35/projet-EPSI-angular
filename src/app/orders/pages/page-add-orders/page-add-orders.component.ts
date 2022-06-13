@@ -7,6 +7,7 @@ import {ProductsService} from "../../../products/products.service";
 import {OrdersService} from "../../services/orders.service";
 import {Order} from "../../../core/models/order";
 import {Router} from "@angular/router";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-page-add-orders',
@@ -29,6 +30,7 @@ export class PageAddOrdersComponent implements OnInit {
     private productsServices : ProductsService,
     private ordersService : OrdersService,
     private router: Router,
+    private toastr : ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -52,8 +54,8 @@ export class PageAddOrdersComponent implements OnInit {
 
   clientInitialisation(){
     this.clientsService.getCollection().subscribe(
-      value => this.getClientId = value
-        .map(value1 => value1.id));
+      clients => this.getClientId = clients
+        .map(client => client.id));
   }
 
 
@@ -84,8 +86,11 @@ export class PageAddOrdersComponent implements OnInit {
     this.newOrder.prix = this.product.prix * this.newOrder.duree;
     this.ordersService.addOrder(this.newOrder).subscribe(
       (order)=> {
-        this.newOrder = order
+        this.newOrder = order,
         this.router.navigate(['/orders']);
+        this.toastr.success("Commande ajoutée", "Ok");
+      },error => {
+        this.toastr.warning("Commande non ajoutée", "Champs manquants ");
       })
   }
 }

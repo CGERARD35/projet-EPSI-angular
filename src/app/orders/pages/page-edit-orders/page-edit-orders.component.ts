@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {OrdersService} from "../../services/orders.service";
 import {Order} from "../../../core/models/order";
 import {ActivatedRoute, Router} from "@angular/router";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-page-edit-orders',
@@ -16,6 +17,7 @@ export class PageEditOrdersComponent implements OnInit {
   constructor(private activatedRoute : ActivatedRoute,
               private router: Router,
               private orderService : OrdersService,
+              private toastr : ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -43,6 +45,7 @@ export class PageEditOrdersComponent implements OnInit {
       order => {
         this.order = order;
         this.router.navigate(['/orders']);
+        this.toastr.success("Commande modifiée", "Ok");
       }
     )
   }
