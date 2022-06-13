@@ -17,7 +17,7 @@
     z-index: 5;
     width: 100%;
     &:hover{
-      i {
+      .icons {
         background: var(--dark-blue);
         color: var(--orange);
       }
@@ -27,7 +27,7 @@
         text-shadow: 0px 0px 0px var(--dark-blue);
       }
     }
-    i{
+    .icons{
       padding: 1.6rem 0rem;
       margin-bottom: .2rem;
       font-size: 1.5rem;
@@ -65,7 +65,7 @@
   text-shadow: 0px 0px 0px var(--white);
 }
 
-.active a i{
+.active a .icons{
   color: var(--orange-neutral);
 }
 

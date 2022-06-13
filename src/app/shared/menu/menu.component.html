@@ -18,43 +18,43 @@
 <aside class="aside" [ngClass]="{'hidden' : show === false, 'visible' : show === true}">
   <div class="bar-link" routerLinkActive="active">
     <a routerLink="user" title="Votre profil">
-      <i class="fa-solid fa-user-gear"></i>
+      <app-icon-user-gear class="icons"></app-icon-user-gear>
       <p class="username">Benjamin</p>
     </a>
   </div>
   <div class="bar-link" routerLinkActive="active">
     <a routerLink="admin"  title="Administration">
-      <i class="fa-solid fa-user"></i>
+      <app-icon-user class="icons"></app-icon-user>
       <p>Administration</p>
     </a>
   </div>
   <div class="bar-link" routerLinkActive="active">
     <a routerLink="clients" title="Clients">
-      <i class="fa-solid fa-address-card"></i>
+      <app-icon-address-card class="icons"></app-icon-address-card>
       <p>Clients</p>
     </a>
   </div>
   <div class="bar-link" routerLinkActive="active">
     <a routerLink="orders" title="Commandes">
-      <i class="fa-solid fa-cart-shopping"></i>
+      <app-icon-cart-shopping class="icons"></app-icon-cart-shopping>
       <p>Commandes</p>
     </a>
   </div>
   <div class="bar-link" routerLinkActive="active">
     <a routerLink="products" title="Produits">
-      <i class="fa-brands fa-product-hunt"></i>
+      <app-icon-product-menu class="icons"></app-icon-product-menu>
       <p>Produits</p>
     </a>
   </div>
   <div class="bar-link" routerLinkActive="active">
     <a routerLink="statistics" title="Statistiques">
-      <i class="fa-solid fa-chart-pie"></i>
+      <app-icon-stats class="icons"></app-icon-stats>
       <p>Statistiques</p>
     </a>
   </div>
   <div class="bar-link" routerLinkActive="active">
     <a routerLink="#" title="Deconnexion">
-      <i class="fa-solid fa-share-from-square"></i>
+      <app-icon-logout class="icons"></app-icon-logout>
       <p>Deconnexion</p>
     </a>
   </div>
