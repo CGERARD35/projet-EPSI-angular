@@ -26,6 +26,7 @@
       <ng-template #impayee>
         <p class="contact-inactive">{{order.statut}}</p>
       </ng-template>
+      <app-icon-delete class="trash-can" (click)="deleteOrder(order.client.nom.toUpperCase() + ' ' + order.client.prenom, order.id)"></app-icon-delete>
       <a><app-icon-edit class="pen-to-square" routerLink="../edit/{{order.id}}"title="Modifier la commande"></app-icon-edit></a>
     </div>
     <div class="contact-footer">
