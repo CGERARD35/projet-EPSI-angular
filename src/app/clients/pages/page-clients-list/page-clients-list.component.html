@@ -26,7 +26,7 @@
       <ng-template #inactive>
         <p class="contact-inactive">{{client.statut}}</p>
       </ng-template>
-      <app-icon-delete class="trash-can" (click)="deleteClient(client.id)"></app-icon-delete>
+      <app-icon-delete class="trash-can" (click)="deleteConfirm(client.nom.toUpperCase() + ' ' + client.prenom, client.id)"></app-icon-delete>
       <a><app-icon-edit class="pen-to-square" routerLink="../edit/{{client.id}}"title="Modifier le client"></app-icon-edit></a>
     </div>
     <div class="contact-footer">

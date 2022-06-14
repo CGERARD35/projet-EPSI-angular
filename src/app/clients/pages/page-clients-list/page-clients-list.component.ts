@@ -25,7 +25,6 @@ export class PageClientsListComponent implements OnInit {
   public deleteClient(clientId: number){
     this.clientService.deleteItemById(clientId).subscribe(
       () => {
-        this.status = "Supprimé";
         this.clients$ = this.clientService.getCollection();
       }
     )
@@ -39,6 +38,13 @@ export class PageClientsListComponent implements OnInit {
     script.async = false;
     script.defer = true;
     body.appendChild(script);
+  }
+
+  deleteConfirm(nom: string, clientId: number) {
+    if (confirm("Voulez vous vraiment supprimer "+nom+ ' ?')) {
+      this.deleteClient(clientId);
+    }
+
   }
 
 }
