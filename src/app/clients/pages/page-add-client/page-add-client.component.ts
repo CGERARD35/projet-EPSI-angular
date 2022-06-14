@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {ClientsService} from "../../clients.service";
 import {Client} from "../../../core/models/client";
 import {ToastrService} from "ngx-toastr";
@@ -14,7 +14,10 @@ export class PageAddClientComponent implements OnInit {
   public newClient: Client = new Client;
   public client!:Client[];
 
-  constructor(private activatedRoute: ActivatedRoute, private clientService: ClientsService, private toastr: ToastrService) {
+  constructor(private activatedRoute: ActivatedRoute,
+              private clientService: ClientsService,
+              private toastr: ToastrService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -29,16 +32,26 @@ export class PageAddClientComponent implements OnInit {
     )
   }
 
-  public addClient() {
-    this.clientService.addItemById(this.newClient).subscribe(
+  public addClient(client: Client) {
+    this.clientService.addItem(client).subscribe(
       () => {
         this.getClient();
+        this.router.navigate(['/clients']);
+        this.successToastr();
+      }, error => {
+        this.warningToastr();
       }
+
     )
   }
 
-  showToastr() {
+  successToastr() {
     this.toastr.success('', 'Client ajouté');
 
   }
+  warningToastr() {
+    this.toastr.warning('Impossible d\'ajouter le client', 'Problème');
+  }
+
+
 }

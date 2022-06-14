@@ -31,4 +31,8 @@ export class ClientsService {
   addItemById(client: Client): Observable<Client> {
     return this.httpClient.post<Client>(this.url, client);
   }
+
+  addItem(client: Client): Observable<void> {
+    return this.httpClient.post<void>(this.url, client);
+  }
 }

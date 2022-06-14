@@ -5,8 +5,9 @@ import { ClientsRoutingModule } from './clients-routing.module';
 import { PageAddClientComponent } from './pages/page-add-client/page-add-client.component';
 import { PageEditClientComponent } from './pages/page-edit-client/page-edit-client.component';
 import { PageClientsListComponent } from './pages/page-clients-list/page-clients-list.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {IconsModule} from "../icons/icons.module";
+import { FormClientComponent } from './components/form-client/form-client.component';
 
 
 @NgModule({
@@ -14,12 +15,14 @@ import {IconsModule} from "../icons/icons.module";
     PageAddClientComponent,
     PageEditClientComponent,
     PageClientsListComponent,
+    FormClientComponent,
 ],
     imports: [
         CommonModule,
         ClientsRoutingModule,
         FormsModule,
         IconsModule,
+        ReactiveFormsModule,
     ],
   exports: [
     PageClientsListComponent,
