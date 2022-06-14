@@ -6,6 +6,7 @@
 /out-tsc
 /bazel-out
 /mock_db/db.json
+/documentation
 
 
 # Node
