@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {ClientsService} from "../../clients.service";
 import {Client} from "../../../core/models/client";
 import {ToastrService} from "ngx-toastr";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-page-edit-client',
@@ -14,37 +15,27 @@ export class PageEditClientComponent implements OnInit {
   public clientId = 0;
   public client: Client = new Client;
 
+  public item$!: Observable<Client>;
+
   constructor(private activatedRoute: ActivatedRoute,
               private clientService: ClientsService,
-              private toastr: ToastrService) {
+              private toastr: ToastrService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
     this.clientId = Number(this.activatedRoute.snapshot.paramMap.get('id'))
-    console.log(this.clientId)
-    this.getCurrentClient();
+    this.item$ = this.clientService.getItemById(this.clientId);
   }
 
-  private getCurrentClient() {
-    this.clientService.getItemById(this.clientId).subscribe(
-      client => {
-        this.client = client
-      }
-    )
+  public updateClient(item: Client) {
 
-  }
-
-  updateClient() {
-    console.log(this.client)
-    this.clientService.updateItemById(this.client).subscribe(
+    if (this.clientService.updateItemById(this.client).subscribe(
       result =>  {
-        this.client = result
+        this.router.navigate(['clients']);
       }
-    )
+    )) {this.toastr.success('', 'Client modifié');
+    };
   }
 
-  showToastr() {
-    this.toastr.success('', 'Client modifié');
-
-  }
 }
