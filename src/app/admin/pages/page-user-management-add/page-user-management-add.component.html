@@ -32,7 +32,11 @@
 
         <div class="form-line">
           <label for="userRole">Role</label>
-          <input id="userRole" placeholder="saisir le role" type="text" name="userRole" [(ngModel)]="newUser.role" required>
+          <select name="userRole" id="userRole" [(ngModel)]="newUser.role">
+            <option value="">----Veuillez choisir une option----</option>
+            <option value="ROLE_ADMIN">ADMIN</option>
+            <option value="ROLE_USER">USER</option>
+          </select>
         </div>
 
 
