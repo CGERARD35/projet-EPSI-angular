@@ -16,9 +16,12 @@
 <!--fin search input-->
 
 <div class="cards-container">
+  <!-- ngFor crée un client dans tableau client$  -->
   <div class="card" *ngFor="let client of clients$ | async">
     <div class="contact-header">
+      <!-- prend le prenom et le nom du client du tableau client$ (nom en majuscule)-->
       <p>{{client.prenom}} {{client.nom | uppercase}}</p>
+      <!-- ngIf si statut est actif alors affichage du mot actif sinon inactif -->
       <ng-container *ngIf="client.statut === 'Actif' then active else inactive" ></ng-container>
       <ng-template #active>
         <p class="contact-active">{{client.statut}}</p>
@@ -26,10 +29,12 @@
       <ng-template #inactive>
         <p class="contact-inactive">{{client.statut}}</p>
       </ng-template>
+      <!-- affiche fenetre de confirmation de suppression au click avec le nom et le prenom, supprime à partir de l'ID -->
       <app-icon-delete class="trash-can" (click)="deleteConfirm(client.nom.toUpperCase() + ' ' + client.prenom, client.id)"></app-icon-delete>
       <a><app-icon-edit class="pen-to-square" routerLink="../edit/{{client.id}}"title="Modifier le client"></app-icon-edit></a>
     </div>
     <div class="contact-footer">
+      <!-- icons + récupération attributs client-->
       <p><app-icon-society class="green-icon"></app-icon-society>{{client.societe}}</p>
       <p><app-icon-mail class="green-icon"></app-icon-mail>{{client.mail}}</p>
       <p><app-icon-phone class="green-icon"></app-icon-phone>{{client.portable}} / {{client.fixe}}</p>

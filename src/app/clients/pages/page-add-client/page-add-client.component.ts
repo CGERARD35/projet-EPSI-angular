@@ -23,6 +23,7 @@ export class PageAddClientComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // getClient permet d'aller chercher les clients créés
   private getClient(){
     this.clientService.getCollection().subscribe(
       client => {
@@ -32,25 +33,18 @@ export class PageAddClientComponent implements OnInit {
     )
   }
 
+// addClient: permet d'ajouter un client
   public addClient(client: Client) {
+    // utilise le Service Client et la méthode addItem qui permet le post du Client
     this.clientService.addItem(client).subscribe(
       () => {
         this.getClient();
+        // router.navigate renvoi vers la page ../clients
         this.router.navigate(['/clients']);
-        this.successToastr();
-      }, error => {
-        this.warningToastr();
+        // affiche un message toastr si le client est ajouté
+        this.toastr.success('', 'Client ajouté');
       }
-
-    )
-  }
-
-  successToastr() {
-    this.toastr.success('', 'Client ajouté');
-
-  }
-  warningToastr() {
-    this.toastr.warning('Impossible d\'ajouter le client', 'Problème');
+    );
   }
 
 

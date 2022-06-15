@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AuthService} from "../../services/auth.service";
+import {Router} from "@angular/router";
+import {Admin} from "../../../core/models/admin";
+import {BehaviorSubject} from "rxjs";
 
 @Component({
   selector: 'app-connection-page',
@@ -7,9 +11,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConnectionPageComponent implements OnInit {
 
-  constructor() { }
+  public mail: string = '';
+  public password: string = '';
+
+
+  public user!: Admin[];
+
+  constructor(private authService: AuthService, private router: Router) {
+  }
 
   ngOnInit(): void {
   }
+
+
+  public login(): void {
+
+    this.authService.authenticate(this.mail, this.password).subscribe({
+        next: () => {
+          this.router.navigate(['/clients']);
+        },
+        error: () => {
+          console.error('Utilisateur inconnu.');
+        }
+      }
+    )
+  }
+
 
 }
