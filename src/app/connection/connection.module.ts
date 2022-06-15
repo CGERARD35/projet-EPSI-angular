@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ConnectionPageComponent } from './pages/connection-page/connection-page.component';
 import {RouterModule} from "@angular/router";
 import {ConnectionRoutingModule} from "./connection-routing.module";
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -11,9 +12,10 @@ import {ConnectionRoutingModule} from "./connection-routing.module";
         ConnectionPageComponent
     ],
     imports: [
-      CommonModule,
-      RouterModule,
-      ConnectionRoutingModule,
+        CommonModule,
+        RouterModule,
+        ConnectionRoutingModule,
+        FormsModule,
     ],
     exports: [
       ConnectionPageComponent,
