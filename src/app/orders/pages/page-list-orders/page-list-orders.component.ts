@@ -3,6 +3,7 @@ import {map, Observable} from "rxjs";
 import {Order} from "../../../core/models/order";
 import {OrdersService} from "../../services/orders.service";
 import {ToastrService} from "ngx-toastr";
+import {PayementOrders} from "../../../core/enums/payement";
 
 
 @Component({
@@ -13,6 +14,7 @@ import {ToastrService} from "ngx-toastr";
 export class PageListOrdersComponent implements OnInit {
 
   public orders$!: Observable<Order[]>;
+  public orderPayee = PayementOrders.PAYEE;
 
   constructor(
     private ordersService : OrdersService,

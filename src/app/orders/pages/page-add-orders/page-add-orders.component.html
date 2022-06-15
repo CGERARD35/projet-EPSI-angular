@@ -55,15 +55,15 @@
           <div class="form-radio">
             <div class="radio-option">
               <input type="radio" id="paye" name="statut"
-                     value="Payée"
+                     value="{{payee}}"
                      [(ngModel)]="newOrder.statut">
-              <label for="paye">Payée</label>
+              <label for="paye">{{payee}}</label>
             </div>
             <div class="radio-option">
               <input type="radio" id="impaye" name="statut"
-                     value="Impayée" required
+                     value="{{impayee}}" required
                      [(ngModel)]="newOrder.statut">
-              <label for="impaye">Impayée</label>
+              <label for="impaye">{{impayee}}</label>
             </div>
           </div>
         </fieldset>

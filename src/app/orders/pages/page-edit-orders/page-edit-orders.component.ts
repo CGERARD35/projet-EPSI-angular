@@ -3,6 +3,7 @@ import {OrdersService} from "../../services/orders.service";
 import {Order} from "../../../core/models/order";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
+import {PayementOrders} from "../../../core/enums/payement";
 
 @Component({
   selector: 'app-page-edit-orders',
@@ -13,6 +14,8 @@ export class PageEditOrdersComponent implements OnInit {
 
   public orderId = 0;
   public order = new Order();
+  public payee = PayementOrders.PAYEE;
+  public impayee = PayementOrders.IMPAYEE
 
   constructor(private activatedRoute : ActivatedRoute,
               private router: Router,

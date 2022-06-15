@@ -1,4 +1,4 @@
 <app-form-client
   *ngIf="item$ | async as item"
   [initClient]="item"
-  (submittedClient)="action($event)"></app-form-client>
+  (submittedClient)="updateClient($event)"></app-form-client>

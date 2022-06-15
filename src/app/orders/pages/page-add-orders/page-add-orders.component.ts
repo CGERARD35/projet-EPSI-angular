@@ -8,6 +8,7 @@ import {OrdersService} from "../../services/orders.service";
 import {Order} from "../../../core/models/order";
 import {Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
+import {PayementOrders} from "../../../core/enums/payement";
 
 @Component({
   selector: 'app-page-add-orders',
@@ -24,6 +25,8 @@ export class PageAddOrdersComponent implements OnInit {
   public products$! : Observable<Product[]>;
   public newOrder = new Order();
   private orders$!: Observable<Order[]>;
+  public payee = PayementOrders.PAYEE;
+  public impayee = PayementOrders.IMPAYEE
 
   constructor(
     private clientsService : ClientsService,

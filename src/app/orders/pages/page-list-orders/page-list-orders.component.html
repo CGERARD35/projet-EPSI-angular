@@ -19,7 +19,7 @@
   <div class="card" *ngFor="let order of orders$ | async">
     <div class="contact-header">
       <p>{{order.client.nom | uppercase}} {{order.client.prenom}}</p>
-      <ng-container *ngIf="order.statut === 'Payée' then payee else impayee" ></ng-container>
+      <ng-container *ngIf="order.statut === orderPayee then payee else impayee" ></ng-container>
       <ng-template #payee>
         <p class="contact-active">{{order.statut}}</p>
       </ng-template>
@@ -32,7 +32,7 @@
     <div class="contact-footer">
       <p><app-icon-product class="green-icon"></app-icon-product>Produit : {{order.produit.nom}}</p>
       <p><app-icon-price class="green-icon"></app-icon-price>Montant : {{order.prix | currency : 'EUR'}} </p>
-      <p><app-icon-list class="green-icon"></app-icon-list>commande n°{{order.id}} | {{order.statut}}</p>
+      <p><app-icon-list class="green-icon"></app-icon-list>commande n°{{order.id}} | durée : {{order.duree}} jours</p>
     </div>
   </div>
 </div>

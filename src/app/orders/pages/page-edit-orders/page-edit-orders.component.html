@@ -48,13 +48,13 @@
           <div class="form-radio">
             <div class="radio-option">
               <input type="radio" id="paye" name="statut"
-                     value="Payée" [(ngModel)]="order.statut" [checked]="order.statut === 'Payée'" >
-              <label for="paye">Payée</label>
+                     value="{{payee}}" [(ngModel)]="order.statut" [checked]="order.statut === payee" >
+              <label for="paye">{{payee}}</label>
             </div>
             <div class="radio-option">
               <input type="radio" id="impaye" name="statut"
-                     value="Impayée" [(ngModel)]="order.statut" [checked]="order.statut === 'Impayée'">
-              <label for="impaye">Impayée</label>
+                     value="{{impayee}}" [(ngModel)]="order.statut" [checked]="order.statut === impayee">
+              <label for="impaye">{{impayee}}</label>
             </div>
           </div>
         </fieldset>
