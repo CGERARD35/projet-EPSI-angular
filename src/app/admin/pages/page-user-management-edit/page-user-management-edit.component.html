@@ -2,9 +2,9 @@
 <section class="section-form">
   <form class="form" method="POST">
     <div class="title-bloc">
-      <h1 class="form-title">Nouvel Utilisateur</h1>
+      <h1 class="form-title">Modifier Utilisateur</h1>
       <div class="form-button">
-        <button class="principal-button" id="add-button" type="submit" (click)="updateUser(); showToastr()" [routerLink]="'/admin'">Ajouter</button>
+        <button class="principal-button" id="add-button" type="submit" (click)="updateUser()">Ajouter</button>
         <button class="principal-button" id="cancel" type="button" [routerLink]="'/admin'">Annuler</button>
       </div>
     </div>
@@ -59,7 +59,7 @@
       </div>
     </div>
     <div class="form-button-small-screen">
-      <button class="button-small-screen"  id="add-button-bottom" type="submit" (click)="updateUser(); showToastr()" [routerLink]="'/admin'">Ajouter</button>
+      <button class="button-small-screen"  id="add-button-bottom" type="submit" (click)="updateUser()">Ajouter</button>
       <button class="button-small-screen" id="cancel-bottom" type="button" [routerLink]="'/admin'">Annuler</button>
     </div>
   </form>
