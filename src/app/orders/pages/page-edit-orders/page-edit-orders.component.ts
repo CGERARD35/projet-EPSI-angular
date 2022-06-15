@@ -52,6 +52,8 @@ export class PageEditOrdersComponent implements OnInit {
         }
       )
       this.toastr.success("La commande n° " + this.order.id + " a été modifiée" , "Commande modifiée");
+    } else {
+      this.toastr.warning("Champs manquants ou erronés", "Commande non modifiée");
     }
   }
 }
