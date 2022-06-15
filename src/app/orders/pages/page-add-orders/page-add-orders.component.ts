@@ -91,9 +91,9 @@ export class PageAddOrdersComponent implements OnInit {
       (order)=> {
         this.newOrder = order,
         this.router.navigate(['/orders']);
-        this.toastr.success("Commande ajoutée", "Ok");
+        this.toastr.success("Commande ajoutée", "La commande "+this.newOrder.id+ " a été ajoutée");
       },error => {
-        this.toastr.warning("Commande non ajoutée", "Champs manquants ");
+        this.toastr.warning("Champs manquants ou erronés", "Commande non ajoutée");
       })
   }
 }

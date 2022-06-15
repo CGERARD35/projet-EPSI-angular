@@ -44,12 +44,14 @@ export class PageEditOrdersComponent implements OnInit {
 
   public updateOrder() {
     this.order.prix = this.order.duree*this.order.produit.prix;
-    this.orderService.updateOrder(this.order).subscribe(
-      order => {
-        this.order = order;
-        this.router.navigate(['/orders']);
-        this.toastr.success("Commande modifiée", "Ok");
-      }
-    )
+    if (this.order.prix > 0){
+      this.orderService.updateOrder(this.order).subscribe(
+        order => {
+          this.order = order;
+          this.router.navigate(['/orders']);
+        }
+      )
+      this.toastr.success("La commande n° " + this.order.id + " a été modifiée" , "Commande modifiée");
+    }
   }
 }
