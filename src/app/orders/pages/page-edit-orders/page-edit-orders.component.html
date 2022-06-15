@@ -22,7 +22,7 @@
         <div class="form-line">
           <label for="client-first-name">Date de la commande</label>
           <input id="client-first-name" placeholder="Saisir la date de la commande"
-                 type="date"  name="clientFirstName" [(ngModel)]="order.dateCommande"  required>
+                 type="date" name="clientFirstName" [(ngModel)]="order.dateCommande" required>
         </div>
 
         <div class="form-line">
@@ -31,9 +31,9 @@
         </div>
 
         <div class="form-line">
-          <label for="duration-prestaion">Durée de la prestation (en jours)</label>
-          <input id="duration-prestaion" placeholder="Saisir la durée de la prestation"
-                 type="" name="portablePhone" [(ngModel)]="order.duree">
+          <label for="duration-prestation">Durée de la prestation (en jours)</label>
+          <input id="duration-prestation" placeholder="Saisir la durée de la prestation"
+                 type="number" name="duree" [(ngModel)]="order.duree">
         </div>
         <div class="form-line">
           <label for="order-price">Prix de la commande</label>
@@ -48,13 +48,13 @@
           <div class="form-radio">
             <div class="radio-option">
               <input type="radio" id="paye" name="statut"
-                     value="Payée" [(ngModel)]="order.statut" [checked]="order.statut === 'Payée'" >
-              <label for="paye">Payée</label>
+                     value="{{payee}}" [(ngModel)]="order.statut" [checked]="order.statut === payee" >
+              <label for="paye">{{payee}}</label>
             </div>
             <div class="radio-option">
               <input type="radio" id="impaye" name="statut"
-                     value="Impayée" [(ngModel)]="order.statut" [checked]="order.statut === 'Impayée'">
-              <label for="impaye">Impayée</label>
+                     value="{{impayee}}" [(ngModel)]="order.statut" [checked]="order.statut === impayee">
+              <label for="impaye">{{impayee}}</label>
             </div>
           </div>
         </fieldset>

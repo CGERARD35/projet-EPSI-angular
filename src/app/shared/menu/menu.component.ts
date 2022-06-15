@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {AdminService} from "../../admin/admin.service";
 import {Admin} from "../../core/models/admin";
-import {Observable} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
 import {Route, Router} from "@angular/router";
+import {AuthService} from "../../connection/services/auth.service";
 
 @Component({
   selector: 'app-menu',
@@ -12,13 +13,17 @@ import {Route, Router} from "@angular/router";
 export class MenuComponent implements OnInit {
 
   public show : boolean = false;
+  public connectedUser$ = new BehaviorSubject<Admin | null>(null);
 
-  constructor(private router: Router,
-              private userService : AdminService) {
+  constructor(
+              private router: Router,
+              private userService : AdminService,
+              private authService : AuthService
+  ) {
   }
 
   ngOnInit(): void {
-
+    this.connectedUser$ = this.authService.connectedUser$
   }
 
   public showAndHideMenu(): void {
