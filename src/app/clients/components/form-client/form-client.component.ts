@@ -46,7 +46,7 @@ export class FormClientComponent implements OnInit {
     } else {
       // TODO: markAllAsTouched
       this.clientForm.markAllAsTouched();
-      this.toastr.warning('Champs manquants', 'ATTENTION');
+      this.toastr.warning('Champs incorrect', 'ATTENTION');
     }
   }
 

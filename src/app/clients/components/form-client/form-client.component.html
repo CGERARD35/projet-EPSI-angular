@@ -44,17 +44,33 @@
         <div class="form-line">
           <label for="portable-phone">Téléphone portable</label>
           <input id="portable-phone" formControlName="portable" placeholder="06 ~" type="tel" name="portablePhone">
+          <div class="required-field"
+               *ngIf="clientForm.get('portable')?.hasError('maxlength')
+         && clientForm.get('portable')?.touched">
+            *Le nombre de numéro est incorrect
+          </div>
         </div>
 
         <div class="form-line">
           <label for="fix-phone">Téléphone fixe</label>
           <input id="fix-phone" formControlName="fixe" placeholder="02 ~" type="tel" name="fixPhone">
+          <div class="required-field"
+               *ngIf="clientForm.get('fixe')?.hasError('maxlength')
+         && clientForm.get('fixe')?.touched">
+            *Le nombre de numéro est incorrect
+          </div>
         </div>
 
         <div class="form-line">
           <label for="mail">e-mail</label>
           <input id="mail" formControlName="mail" placeholder="exemple@exemple.com" type="email" name="mail">
+          <div class="required-field"
+               *ngIf="clientForm.get('mail')?.hasError('email')
+         && clientForm.get('mail')?.errors">
+            *E-mail incorrect
+          </div>
         </div>
+
 
       </div>
       <div class="form-bloc">
