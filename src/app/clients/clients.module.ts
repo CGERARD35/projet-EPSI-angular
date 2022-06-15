@@ -8,6 +8,7 @@ import { PageClientsListComponent } from './pages/page-clients-list/page-clients
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {IconsModule} from "../icons/icons.module";
 import { FormClientComponent } from './components/form-client/form-client.component';
+import {SharedModule} from "../shared/shared.module";
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { FormClientComponent } from './components/form-client/form-client.compon
         FormsModule,
         IconsModule,
         ReactiveFormsModule,
+        SharedModule,
     ],
   exports: [
     PageClientsListComponent,

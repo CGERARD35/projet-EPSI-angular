@@ -2,7 +2,13 @@
 <!-- Appel le formulaire client-->
 <!-- Initialise le new Client-->
 <!-- TODO: (submittedClient)="addClient($event) -->
-  <app-form-client [initClient]="newClient" (submittedClient)="addClient($event)">
-  </app-form-client>
+<app-form-client
+  [initClient]="newClient"
+  (submittedClient)="addClient($event)">
+  <p class="title">Nouveau Client</p>
+ <p class="btn-principal">Ajouter</p>
+ <p class="btn-small-screen">Ajouter</p>
+ </app-form-client>
+
 
 

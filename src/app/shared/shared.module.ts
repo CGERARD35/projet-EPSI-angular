@@ -4,9 +4,11 @@ import { MenuComponent } from './menu/menu.component';
 import {RouterModule} from "@angular/router";
 import {IconsModule} from "../icons/icons.module";
 
+
 @NgModule({
     declarations: [
-      MenuComponent
+      MenuComponent,
+
     ],
 
     imports: [
@@ -16,7 +18,8 @@ import {IconsModule} from "../icons/icons.module";
 
     ],
     exports:[
-      MenuComponent
+      MenuComponent,
+
     ]
 })
 export class SharedModule { }

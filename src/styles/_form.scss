@@ -98,7 +98,6 @@
   .section-form {
     margin-left: 50px;
     flex-direction: column;
-    .form{
       // permet d'afficher les boutons en bas du formulaire lorsque l'écran est inférieur a 768px
       .form-button-small-screen{
         display: flex;
@@ -110,13 +109,13 @@
       }
       //Enlève les boutons en haut du formulaire lorsque l'écran est inférieur a 768px
       .form-button {
-        display: none;
+        opacity: 0;
       }
       textarea[name="notes"] {
         min-height: 150px;
         width: auto;
       }
-    }
+
   }
 }
 
