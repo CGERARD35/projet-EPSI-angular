@@ -28,13 +28,11 @@ export class PageUserManagementAddComponent implements OnInit {
       () => {
         this.adminService.getCollection();
         this.router.navigate(['/admin']);
+        this.toastr.success('', 'Utilisateur ajouté');
+
         //Ajouter toaster en cas d'erreur
       }
     )
   }
 
-  showToastr() {
-    this.toastr.success('', 'Utilisateur ajouté');
-
-  }
 }

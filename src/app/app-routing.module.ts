@@ -13,6 +13,7 @@ const routes: Routes = [
       import('./connection/connection.module')
         .then((module_) => module_.ConnectionModule)
   },
+  // {path: 'logout', pathMatch:'full', redirectTo: 'connexion'},
   {
   path: '',
   component: MenuComponent,
@@ -38,7 +39,7 @@ const routes: Routes = [
     { path: 'admin',  loadChildren : () =>
         import('./admin/admin.module')
           .then((module_) => module_.AdminModule)
-    },
+    }
   ]},
   {path:'**', loadChildren:
       () => import('./page-not-found/page-not-found.module')

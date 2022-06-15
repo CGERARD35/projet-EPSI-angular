@@ -25,7 +25,7 @@ export class AuthService {
       .set('password', password);
 
     //call http sur connexion avec le header authorization en basic
-    return this.http.get<Admin>(('/connexion'), {headers, params})
+    return this.http.get<Admin>(('/api/v1/admin/connexion'), {headers, params})
       .pipe(
         tap(user => this.connectedUser$.next(user))
       );

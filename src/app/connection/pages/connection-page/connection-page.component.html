@@ -10,11 +10,12 @@
           <div class="login-logo"></div>
         </h2>
         <label for="email">Mail :</label>
-        <input id="email" type="email" required [(ngModel)]="mail"><br>
+        <input id="email" name="mail" type="email" required [(ngModel)]="mail"><br>
         <label for="password">Password :</label>
-        <input type="password" id="password" [(ngModel)]="password" required>
+        <input type="password" id="password" name="password" [(ngModel)]="password" required>
         <button class="login-button" (click)="login()">Enter</button>
       </form>
+
     </div>
   </main>
   <div class="home-right">

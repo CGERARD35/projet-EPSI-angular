@@ -31,4 +31,8 @@ export class AdminService {
   addItemById(admin: Admin): Observable<void> {
     return this.httpClient.post<void>(this.url, admin);
   }
+
+  deconnect(){
+    return this.httpClient.get("/api/v1/logout");
+  }
 }
