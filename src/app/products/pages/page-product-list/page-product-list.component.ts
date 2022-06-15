@@ -25,6 +25,7 @@ export class PageProductListComponent implements OnInit {
 
 
   public deleteProduct(productId: number) {
+    if (confirm('Voulez-vous vraiment supprimer ce produit ?'))
     this.productService.deleteItemById(productId).subscribe(
       () => {
         this.status = "Supprimé";

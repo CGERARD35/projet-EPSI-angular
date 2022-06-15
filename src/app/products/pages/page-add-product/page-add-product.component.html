@@ -4,7 +4,7 @@
     <div class="title-bloc">
       <h1 class="form-title">Nouveau Produit</h1>
       <div class="form-button">
-        <button class="principal-button" id="add-button" type="submit" (click)="addProduct(); showToastr()" [routerLink]="'/products'">Ajouter</button>
+        <button class="principal-button" id="add-button" type="submit" (click)="addProduct()">Ajouter</button>
         <button class="principal-button" id="cancel" type="button" [routerLink]="'/products'">Annuler</button>
       </div>
     </div>
@@ -42,7 +42,7 @@
       </div>
     </div>
     <div class="form-button-small-screen">
-      <button class="button-small-screen"  id="add-button-bottom" type="submit" (click)="addProduct(); showToastr()" [routerLink]="'/products'">Ajouter</button>
+      <button class="button-small-screen"  id="add-button-bottom" type="submit" (click)="addProduct()">Ajouter</button>
       <button class="button-small-screen" id="cancel-bottom" type="button" [routerLink]="'/products'">Annuler</button>
     </div>
   </form>

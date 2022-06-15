@@ -29,8 +29,10 @@ export class PageUserManagementAddComponent implements OnInit {
         this.adminService.getCollection();
         this.router.navigate(['/admin']);
         this.toastr.success('', 'Utilisateur ajouté');
+      },
+      error => {
+        this.toastr.warning('', 'Champs Incorrect');
 
-        //Ajouter toaster en cas d'erreur
       }
     )
   }
