@@ -1,11 +1,13 @@
 <!-- Début Formulaire Nouveau Client -->
 
 <section class="section-form">
-  <form [formGroup]="clientForm" (ngSubmit)="addClient()">
+  <!-- groupe du formulaire + méthode de submit du formulaire -->
+  <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
     <div class="title-bloc">
-      <h1 class="form-title">Nouveau Client</h1>
+      <h1 class="form-title">Client</h1>
       <div class="form-button">
-        <button class="principal-button" id="add-button" type="submit" (click)="addClient()" >Ajouter</button>
+        <button class="principal-button" id="add-button" type="submit" >Ajouter</button>
+        <!-- routerLink renvoi à la page /clients -->
         <button class="principal-button" id="cancel" type="button" [routerLink]="'/clients'">Annuler</button>
       </div>
     </div>
@@ -13,14 +15,27 @@
       <div class="form-bloc">
         <div class="form-line">
           <label for="client-last-name">Nom du client</label>
+          <!-- formControlName correspond à la création du formulaire dans le TS-->
           <input id="client-last-name" formControlName="nom" placeholder="Saisir le nom du client" type="text" name="clientLastName">
-        </div>
+          <!-- Message erreur quand le champs est vide -->
+          <div class="required-field"
+               *ngIf="clientForm.get('nom')?.hasError('required')
+         && clientForm.get('nom')?.touched">
+            *Champs requis
+          </div>
 
-        <div class="form-line">
-          <label for="client-first-name">Prénom du Client</label>
-          <input id="client-first-name" formControlName="prenom" placeholder="Saisir le prénom du client" type="text" name="clientFirstName">
-        </div>
+          </div>
 
+          <div class="form-line">
+            <label for="client-first-name">Prénom du Client</label>
+            <input id="client-first-name" formControlName="prenom" placeholder="Saisir le prénom du client" type="text" name="clientFirstName">
+
+          <div class="required-field"
+             *ngIf="clientForm.get('prenom')?.hasError('required')
+         && clientForm.get('prenom')?.touched">
+               *Champs requis
+          </div>
+          </div>
         <div class="form-line">
           <label for="society">Société</label>
           <input id="society" formControlName="societe" placeholder="Saisir la société" type="text" name="society">
@@ -55,6 +70,11 @@
               <label for="inactive">Inactif</label>
             </div>
           </div>
+          <div class="required-field"
+               *ngIf="clientForm.get('nom')?.hasError('required')
+                  && clientForm.get('prenom')?.touched">
+            *Champs requis
+          </div>
         </fieldset>
         <div class="form-notes">
           <label for="notes">Notes</label>
@@ -63,7 +83,7 @@
       </div>
     </div>
     <div class="form-button-small-screen">
-      <button class="button-small-screen"  id="add-button-bottom" type="submit" (click)="addClient()">Ajouter</button>
+      <button class="button-small-screen"  id="add-button-bottom" type="submit">Ajouter</button>
       <button class="button-small-screen" id="cancel-bottom" type="button" [routerLink]="'/clients'">Annuler</button>
     </div>
   </form>

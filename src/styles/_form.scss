@@ -40,6 +40,10 @@
           margin-top: 5px;
           border-radius: 4px;
         }
+        .required-field {
+          color: var(--light-red);
+          margin-left: 10px;
+        }
       }
       .form-radio {
         display: flex;
@@ -76,6 +80,7 @@
     }
   }
 }
+
 @media screen and (max-width: 768px) {
   .bloc {
     flex-direction: column;
@@ -94,6 +99,7 @@
     margin-left: 50px;
     flex-direction: column;
     .form{
+      // permet d'afficher les boutons en bas du formulaire lorsque l'écran est inférieur a 768px
       .form-button-small-screen{
         display: flex;
         justify-content: center;
@@ -102,6 +108,7 @@
           width:100px;
         }
       }
+      //Enlève les boutons en haut du formulaire lorsque l'écran est inférieur a 768px
       .form-button {
         display: none;
       }
@@ -117,6 +124,7 @@
   .section-form {
     margin-left: 150px;
     flex-direction: column;
+    //Enlève les boutons en bas du formulaire lorsque l'écran est supérieur a 769px
     .form-button-small-screen{
       display: none;
     }

@@ -21,7 +21,7 @@ export class PageClientsListComponent implements OnInit {
 
     this.loadScript('../../../../assets/searchbar.js');
   }
-
+// supprimer client par l'ID + renvoyer les clients après le delete
   public deleteClient(clientId: number){
     this.clientService.deleteItemById(clientId).subscribe(
       () => {
@@ -30,6 +30,7 @@ export class PageClientsListComponent implements OnInit {
     )
   }
 
+  // Appeler un fichier JS
   public loadScript(url: string) {
     const body = <HTMLDivElement> document.body;
     const script = document.createElement('script');
@@ -40,6 +41,7 @@ export class PageClientsListComponent implements OnInit {
     body.appendChild(script);
   }
 
+  // fenêtre de confirmation de delete + delete
   deleteConfirm(nom: string, clientId: number) {
     if (confirm("Voulez vous vraiment supprimer "+nom+ ' ?')) {
       this.deleteClient(clientId);
