@@ -3,6 +3,7 @@ import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
 import {Admin} from "../../../core/models/admin";
 import {BehaviorSubject} from "rxjs";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-connection-page',
@@ -17,7 +18,7 @@ export class ConnectionPageComponent implements OnInit {
 
   public user!: Admin[];
 
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(private authService: AuthService, private router: Router,private toaster: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -31,7 +32,7 @@ export class ConnectionPageComponent implements OnInit {
           this.router.navigate(['/clients']);
         },
         error: () => {
-          console.error('Utilisateur inconnu.');
+          this.toaster.error('', 'Email ou mot de passe inconnu.');
         }
       }
     )
