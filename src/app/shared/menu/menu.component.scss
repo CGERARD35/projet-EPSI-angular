@@ -76,6 +76,9 @@
     display: block;
     width: 100%;
   }
+  .username{
+    pointer-events: none;
+  }
 
   a::before,
   a::after {

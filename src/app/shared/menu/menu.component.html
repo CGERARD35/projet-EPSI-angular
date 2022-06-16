@@ -17,9 +17,9 @@
 <!-- Composant Menu -->
 <aside class="aside" [ngClass]="{'hidden' : show === false, 'visible' : show === true}">
   <div class="bar-link" routerLinkActive="active">
-    <a routerLink="user" title="Votre profil">
+    <a title="Votre profil" class="username">
       <app-icon-user-gear class="icons"></app-icon-user-gear>
-      <p class="username">Benjamin</p>
+      <p class="username">{{(connectedUser$ | async)?.nom}}</p>
     </a>
   </div>
   <div *ngIf="(connectedUser$ | async)?.role === 'ROLE_ADMIN'" class="bar-link" routerLinkActive="active">
