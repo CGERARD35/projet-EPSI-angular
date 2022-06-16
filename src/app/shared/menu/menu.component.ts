@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AdminService} from "../../admin/admin.service";
 import {Admin} from "../../core/models/admin";
-import {BehaviorSubject, Observable} from "rxjs";
+import {BehaviorSubject, Observable, tap} from "rxjs";
 import {Route, Router} from "@angular/router";
 import {AuthService} from "../../connection/services/auth.service";
 
@@ -13,7 +13,7 @@ import {AuthService} from "../../connection/services/auth.service";
 export class MenuComponent implements OnInit {
 
   public show : boolean = false;
-  public connectedUser$ = new BehaviorSubject<Admin | null>(null);
+  public connectedUser$!: Observable<Admin | null>;
 
   constructor(
               private router: Router,
@@ -23,7 +23,10 @@ export class MenuComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.connectedUser$ = this.authService.connectedUser$
+    this.connectedUser$ = this.authService.getConnectedUser$()
+      .pipe(
+        tap(value => console.log('Utilisateur connecté: ', value))
+      );
   }
 
   public showAndHideMenu(): void {

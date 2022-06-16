@@ -22,7 +22,7 @@
       <p class="username">Benjamin</p>
     </a>
   </div>
-  <div *ngIf="connectedUser$?.value?.role === 'ROLE_ADMIN'" class="bar-link" routerLinkActive="active">
+  <div *ngIf="(connectedUser$ | async)?.role === 'ROLE_ADMIN'" class="bar-link" routerLinkActive="active">
     <a routerLink="admin"  title="Administration">
       <app-icon-user class="icons"></app-icon-user>
       <p>Administration</p>

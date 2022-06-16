@@ -9,10 +9,14 @@ import {Admin} from "../../core/models/admin";
 })
 export class AuthService {
 
-  public connectedUser$ = new BehaviorSubject<Admin | null>(null);
+  private connectedUser$ = new BehaviorSubject<Admin | null>(null);
 
 
   constructor(private http: HttpClient) { }
+
+  public getConnectedUser$(): Observable<Admin | null> {
+    return  this.connectedUser$.asObservable();
+  }
 
   public authenticate(mail: string, password: string): Observable<Admin> {
     //auth grace au header
