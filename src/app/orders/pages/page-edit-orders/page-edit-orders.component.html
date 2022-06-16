@@ -27,7 +27,7 @@
 
         <div class="form-line">
           <p class="title">Société</p>
-          <p>{{order?.client?.company}}</p>
+          <p>{{order?.client?.societe}}</p>
         </div>
 
         <div class="form-line">
@@ -38,8 +38,7 @@
         <div class="form-line">
           <label for="order-price">Prix de la commande</label>
           <p id="order-price" placeholder="Saisir le prix de la commande~"
-             type="text" name="order-price"
-             [(ngModel)]="order.prix">{{order.produit.prix*order.duree | currency :'EUR'}} </p>
+             type="text" name="order-price">{{order.produit.prix*order.duree | currency :'EUR'}} </p>
         </div>
       </div>
       <div class="form-bloc">

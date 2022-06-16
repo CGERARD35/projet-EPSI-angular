@@ -23,7 +23,7 @@ export class Order implements OrderI {
 export class Cli implements ClientOrderI {
   nom = '';
   prenom = '';
-  company = '';
+  societe = '';
 }
 
 export class Produit implements ProduitOrderI {

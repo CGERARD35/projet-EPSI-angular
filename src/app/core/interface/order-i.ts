@@ -14,7 +14,7 @@ export interface OrderI {
 export interface ClientOrderI {
   nom : string,
   prenom : string,
-  company : string,
+  societe : string,
 }
 
 export interface ProduitOrderI {
