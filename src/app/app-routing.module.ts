@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 import {MenuComponent} from "./shared/menu/menu.component";
+import {AuthGuard} from "./core/guards/auth.guard";
+import {AdminGuard} from "./core/guards/admin.guard";
 
 const routes: Routes = [
 
@@ -13,12 +15,13 @@ const routes: Routes = [
       import('./connection/connection.module')
         .then((module_) => module_.ConnectionModule)
   },
-  // {path: 'logout', pathMatch:'full', redirectTo: 'connexion'},
   {
+  canActivate: [AuthGuard],
   path: '',
   component: MenuComponent,
   children: [
-    { path: 'clients',  loadChildren : () =>
+    {
+      path: 'clients',  loadChildren : () =>
         import('./clients/clients.module')
           .then((module_) => module_.ClientsModule)
     },
@@ -36,7 +39,8 @@ const routes: Routes = [
         import('./products/products.module')
           .then((module_) => module_.ProductsModule)
     },
-    { path: 'admin',  loadChildren : () =>
+    { canActivate: [AdminGuard],
+      path: 'admin',  loadChildren : () =>
         import('./admin/admin.module')
           .then((module_) => module_.AdminModule)
     }

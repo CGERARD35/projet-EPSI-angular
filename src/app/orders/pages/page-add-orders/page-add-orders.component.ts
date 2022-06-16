@@ -19,7 +19,7 @@ export class PageAddOrdersComponent implements OnInit {
 
   public getClientId: any[] = [] ;
   public client = new Client();
-  public productId = 1
+  public productId = 1;
   public product = new Product()
   public clients$!: Observable<Client[]>;
   public products$! : Observable<Product[]>;
