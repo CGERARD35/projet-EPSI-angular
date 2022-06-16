@@ -110,6 +110,7 @@
       //Enlève les boutons en haut du formulaire lorsque l'écran est inférieur a 768px
       .form-button {
         opacity: 0;
+        pointer-events: none;
       }
       textarea[name="notes"] {
         min-height: 150px;
