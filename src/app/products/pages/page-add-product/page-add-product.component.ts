@@ -35,13 +35,10 @@ export class PageAddProductComponent implements OnInit {
       () => {
         this.getProduct();
         this.router.navigate(['/products']);
-        //Ajouter toaster en cas d'erreur
+        this.toastr.success('', 'Produit ajouté');
       }
     )
   }
 
-  showToastr() {
-    this.toastr.success('', 'Produit ajouté');
 
-  }
 }

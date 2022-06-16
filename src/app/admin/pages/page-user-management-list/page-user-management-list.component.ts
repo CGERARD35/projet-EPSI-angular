@@ -22,7 +22,8 @@ export class PageUserManagementListComponent implements OnInit {
   }
 
   public deleteUser(userId: number) {
-    this.adminService.deleteItemById(userId).subscribe(
+    if (confirm('Voulez-vous vraiment supprimer cet utilisateur ?'))
+      this.adminService.deleteItemById(userId).subscribe(
       () => {
         this.status = "Supprimé";
         this.admin$ = this.adminService.getCollection();

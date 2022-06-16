@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {ClientsService} from "../../../clients/clients.service";
 import {AdminService} from "../../admin.service";
 import {Admin} from "../../../core/models/admin";
 import {ToastrService} from "ngx-toastr";
+import {Client} from "../../../core/models/client";
 
 @Component({
   selector: 'app-page-user-management-edit',
@@ -16,6 +17,7 @@ export class PageUserManagementEditComponent implements OnInit {
   public admin: Admin = new Admin();
 
   constructor(private activatedRoute: ActivatedRoute,
+              private route: Router,
               private adminService: AdminService,
               private toastr: ToastrService) { }
 
@@ -34,15 +36,17 @@ export class PageUserManagementEditComponent implements OnInit {
 
    updateUser() {
     this.adminService.updateItemById(this.admin).subscribe(
-      result =>  {
-          this.admin = result
+      () =>  {
+          this.route.navigate(['admin']);
+          this.toastr.success('', 'Utilisateur modifié');
+      },
+      error => {
+        this.toastr.warning('Veuillez remplir tous les champs', 'Champs manquant');
+
       }
     )
   }
 
-  showToastr() {
-    this.toastr.success('', 'Utilisateur modifié');
 
-  }
 
 }
